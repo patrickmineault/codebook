@@ -1,0 +1,7 @@
+format: jb-book
+root: intro.myst
+parts:
+- caption: Tutorials
+  chapters:
+    - file: attitude.myst
+    - file: brains.myst
