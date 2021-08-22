@@ -1,6 +1,10 @@
-# Writing good research code
+# Overview
 
-> Is my code fast? No. But is it well documented? No. But does it work? Also no. --[@KyleMorgenstein](https://twitter.com/KyleMorgenstein)
+```{epigraph}
+Is my code fast? No. But is it well documented? No. But does it work? Also no. 
+
+-- [@KyleMorgenstein](https://twitter.com/KyleMorgenstein)
+```
 
 ## Who is this for?
 
@@ -17,8 +21,11 @@ Did I hit a nerve? Yes! Then you're in for a treat! This book is there to help y
 
 ## Prerequisites
 
+I've tried to write this book in a progressive manner: some content is targeted at complete novices, other to programmers who are farther along on their journey. However, I generally assume that you have some familiarity with the following:
+
 * **Python**: this intro is Python-centric. You can write good code for Matlab, R, or Julia, but we won't cover that here. You don't need to be a Python expert, but you'll get the most out of this if you've been using Python on a regular basis for at least a month, and if you have some passing familiarity with the python data science ecosystem (numpy, matplotlib, pandas, etc.).
-* **Git & Github**: a lot of the practices introduced here will require you to change your code, which could cause existing functionality to break, or even accidentally delete something important! You can think of git and github as a time machine for your code, so you can revert to an earlier state. [There's a great intro to git for beginners from software carpentries](https://swcarpentry.github.io/git-novice/).
+* **Git & Github**: a lot of the practices introduced here will require you to change your code, which could cause existing functionality to break. You might even accidentally delete something important! Mastering git and github means you will have a time machine for your code, so you can revert to an earlier state. [There's a great intro to git for beginners from software carpentries](https://swcarpentry.github.io/git-novice/).
+* **The command line**: Many of the practices I advocate here will involve running some commands on the command line. I'm going to assume that you have some familiarity with running commands from a Unix-style shell (e.g. bash). [There's a great intro to the unix shell from software carpentries](http://swcarpentry.github.io/shell-novice/).Things you have to type on the command line will be indicated by a `$` prompt. If you're using Windows, you will still be able to run many tools from the Windows command prompt. Long term, your life will be easier if you install the Windows Subsystem for Linux (WSL) which will give you access to a Unix-style shell; [I've written a friendly guide to help you do this](wsl.myst). 
 
 Some of the examples I use are neuroscience-inspired - but neuroscience background is absolutely not a requirement. 
 
