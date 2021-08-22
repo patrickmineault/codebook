@@ -1,7 +1,16 @@
 format: jb-book
 root: intro.myst
 parts:
-- caption: Tutorials
+- caption: Intro
   chapters:
     - file: attitude.myst
     - file: brains.myst
+- caption: Lessons
+  chapters:
+    - file: setup.myst
+    - file: tidy.myst
+- caption: Extras
+  chapters:
+    - file: ide.myst
+    - file: wsl.myst
+
