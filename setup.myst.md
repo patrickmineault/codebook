@@ -268,6 +268,10 @@ To create the `codebook` folder with all its subfolders and setup.py, simply use
 
 This will create an instance of the `true-neutral` project skeleton (hosting on my github here). Follow the prompts and it will create the folder structure above, including the setup file. Next, sync to your own remote repository following the github instructions, and pip install the package you've created for yourself.
 
+```{margin}
+There are many other interesting cookiecutters. Check out the [data science cookiecutter](https://drivendata.github.io/cookiecutter-data-science/) for a more elaborate project template for data science projects.
+```
+
 ## Discussion
 
 Using structured projects linked to git will help your long-term memory. Using a project template will allow you to instantly understand how files are laid out months after you've last worked on that project. Using a virtual environment will allow you to recreate that environment in the far future. And git will give you a time machine to work with.
