@@ -4,7 +4,10 @@ Learning to code is a lifelong journey. The upper ceiling on programming skills 
 
 Some foundational skills you will learn here will give you a lot of bang for your buck. As you move forward in your learning journey, it's helpful to take stock of where you started from and how much you've learned. You can read just parts of this book to help you along your journey, or you can read the whole thing: it's all up to you.
 
-```{figure} figures/reproducible_research.png
+```{figure} figures/reproducible_research.svg
+---
+figclass: boxed
+---
 Some skills you'll acquire along your learning journey.
 ```
 
@@ -17,14 +20,13 @@ When I talk to students about writing code, a lot of them describe feelings like
 * cringe
 * frustration
 
-
 ```{tip}
 If you feel overwhelmed by a bug in your code, read this lovely zine from [Julia Evans](https://wizardzines.com/comics/attitude-matters/)
 ```
 
-Much of that frustration can come from a mismatch between what you want to accomplish (a lot) and what you have the ability to accomplish (not as much as you'd like). Programming instruction often encourages exploration, embracing errors as learning opportunities and encouraging let your imagination run free. This type of instruction can imply that you will learn a lot by simply programming a lot every day. You might then feel guilty when you're not as proficient as you want after several years.
+Much of that frustration comes from a mismatch between what you want to accomplish (a lot) and what you have the ability to accomplish (not as much as you'd like). Programming instruction often emphasizes exploration, embracing errors as learning opportunities and encouraging let your imagination run free. This type of instruction can imply that you will learn a lot by simply programming a lot every day. You might then feel guilty and inadequate when you're not as proficient as you want after several years.
 
-In fact, unstructured exploration is a very inefficient way to get someone from novice to expert. It's like expecting you to rediscover calculus by introducing the concept of infitesimals! Research shows that *structured instruction* - like the one in this book - is far more effective at teaching programming skills [^Felienne]. You're taking the right step by reading this book! 
+In fact, unstructured exploration is a very inefficient way to learn a complex skill like programming. It's like expecting a student to rediscover calculus by themselves! Research shows that *structured instruction* - like the one in this book - is far more effective at teaching programming skills [^Felienne]. You're taking the right step by reading this book! 
 
 [^Felienne]: Felienne Hermans, [The Programmer's Brain](https://www.manning.com/books/the-programmers-brain) (2021). 
 

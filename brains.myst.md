@@ -64,7 +64,11 @@ You work on a project for many months, and you submit a paper. You receive revie
 
 While the scientific method, as traditionally taught, is fairly linear, real lab work often involves a high nonlinear process of discovery. 
 
-```{figure} figures/lifecycle_complex.png
+```{figure} figures/lifecycle_complex.svg
+---
+width: 450px
+figclass: boxed
+---
 Generating a research paper can be a messy process.
 ```
 
