@@ -9,6 +9,7 @@ parts:
   chapters:
     - file: setup.myst
     - file: tidy.myst
+    - file: docs.myst
 - caption: Extras
   chapters:
     - file: ide.myst
