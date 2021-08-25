@@ -276,7 +276,7 @@ There are many other interesting cookiecutters. Check out the [data science cook
 
 Using structured projects linked to git will help your long-term memory. Using a project template will allow you to instantly understand how files are laid out months after you've last worked on that project. Using a virtual environment will allow you to recreate that environment in the far future. And git will give you a time machine to work with.
 
-As an added bonus, if you can make it easy for future *you* to use your project, you will make it easier for *other people* to use it as well. 
+As an added bonus, if you can make it easy for future *you* to use your project, you will make it easier for *other people* to use it as well. If you don't believe me, consider this: everything at Google is in one giant repository with [billions of lines of code](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext#FNE). As a new software engineer, you're invited to commit to that repository during your first week. Because everything is organized according to [strict conventions](https://github.com/google/styleguide/blob/gh-pages/pyguide.md), so it's not as *terrifying* as it sounds to jump in. 
 
 
 
