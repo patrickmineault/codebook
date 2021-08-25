@@ -1,0 +1,58 @@
+#site-navigation {
+    background-color: transparent !important;
+}
+
+.topbar {
+    background-color: transparent !important;
+    box-shadow: 0 !important;
+}
+
+.scrolled .topbar {
+    background-color: transparent !important;
+    box-shadow: 0 0 0 0 white !important;
+}
+
+.topbar-main {
+    visibility: hidden;
+}
+
+
+#bd-toc-nav {
+    background-color: transparent !important;
+}
+
+.bd-sidebar {
+    border-right: 0px !important;
+}
+
+blockquote p {
+    width: 100% !important;
+}
+
+body {
+    width: 100% !important;
+    padding-left: 0px !important;
+}
+
+.admonition-title {
+    padding: .4rem .6rem .4rem 2.5rem !important;
+}
+
+code {
+    font-size: 75% !important;
+}
+
+.admonition {
+    background-color: white;
+}
+
+.boxed  {
+    padding: 12px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+h1 {
+    margin-top: 0px !important;
+}
