@@ -131,7 +131,7 @@ If you use notebooks to develop software, you are probably using the wrong tool.
 -- [Yihui Xie](https://yihui.org/en/2018/09/notebook-war/)
 ```
 
-Jupyter notebooks present a special challange to keep tidy because of their inherently nonlinear nature. It's commonplace for long-running notebooks to accumulate cruft at the end of the notebooks: dead cells, out-of-date analyses, inaccurate commentary. 
+Jupyter notebooks present a special challenge to keep tidy because of their inherently nonlinear nature. It's commonplace for long-running notebooks to accumulate cruft at the end of the notebooks: dead cells, out-of-date analyses, inaccurate commentary. 
 
 Before you commit a notebook to git, get into the habit of *restarting the kernel and running all*. Often, you will find that the code will not run top to bottom. This is easy to fix when you remember the context of code; in several months, it will be next to impossible to understand.
 
@@ -153,4 +153,4 @@ There should be one -- and preferably only one -- obvious way to do it.
 
 It's easy to mock style guides as pedantic nitpicking. After all, style, like spelling, is ultimately arbitrary. However, adhering to a standard style can help you preserve your working memory. Don't spend precious mental energy making lots of micro-decisions about variable names and how many spaces to put after a parenthesis: use the style guide. If there's a standard obvious way of doing things, do it that way. 
 
-The short term advantage of using consistent structure get amplified through time. Once you've put aside a project for long enough, you will need to reacquaint yourself with it anew, and cruft and dead ends will no longer make sense. Maintaining good code hygiene will make your future self happy.
+The short term advantage of using consistent structure gets amplified over time. Once you've put aside a project for long enough, you will need to reacquaint yourself with it anew, and cruft and dead ends will no longer make sense. Maintaining good code hygiene will make your future self happy.
