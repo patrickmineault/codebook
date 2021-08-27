@@ -145,7 +145,7 @@ Refactoring and cleaning up a notebook can be a pain in the jupyter environment:
 
 ## Discussion
 
-```epigraph
+```{epigraph}
 There should be one -- and preferably only one -- obvious way to do it.
 
 -- [The Zen of Python](https://zen-of-python.info/there-should-be-one-and-preferably-only-one-obvious-way-to-do-it.html#13)
