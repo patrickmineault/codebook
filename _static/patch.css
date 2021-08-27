@@ -56,3 +56,12 @@ code {
 h1 {
     margin-top: 0px !important;
 }
+
+summary {
+    font-size: 125%;
+    padding: 8px 10px !important;
+}
+
+.margin p {
+    font-size: 1.2rem !important;
+}
