@@ -76,3 +76,11 @@ figures:
 The plot can be created with `make plot`. The `Makefile` contains a complete description of the inputs and outputs to different scripts, and thus serves as a self-documenting artifact. [Software carpentries](https://swcarpentry.github.io/make-novice/) have an excellent tutorial on `make`.
 
 `make` uses a domain-specific language (DSL) to define a DAG. It might feel daunting to learn yet another language to document a pipeline. There are numerous alternatives to `make` that define DAGs in pure Python, including [`doit`](https://pydoit.org/). There are also more complex tools that can implement Python DAGs and run them in the cloud, including [`luigi`](https://github.com/spotify/luigi), [`airflow`](https://airflow.apache.org/), and [`dask`](https://docs.dask.org/en/latest/custom-graphs.html).
+
+
+# Decoupling configuration
+
+* Keep your configuration our of your code
+    * Use `argparse` to specify options via the command line
+    * Keep configuration options located in an importable `config.py` file
+    * Use `python-dotenv` to store secrets in a `.env` file
