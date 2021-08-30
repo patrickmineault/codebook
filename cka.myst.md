@@ -50,3 +50,28 @@ Q: What's not ideal about this code? `research_code.cka_not_great.py`
 # Live coding!
 
 (the result is `cka_step2.py`)
+
+
+A: 
+# Demo
+
+Let's code CKA tests. We will turn properties of CKA listed in the paper into tests.
+
+# What we know about CKA
+
+* Only makes sense if two matrices are the same size along the first dimension
+* Pearson correlation: If $\mathbf{X}$ and $\mathbf{Y}$ are one-dimensional, then $CKA = \rho( \mathbf X, \mathbf Y)^2$.
+* $CKA(\mathbf X, \mathbf X) = 1$
+
+# Live coding
+
+Note: to follow at home, look at `cka_step3.py` and `tests/test_cka_step3.py`.
+
+# What else can we know about CKA? Let's read the paper!
+
+* 2.1 _not_ invariant to non-isotropic scaling
+* 2.2 invariant to rotations, $CKA(\alpha \mathbf{X U}, \beta \mathbf{Y V}) = CKA(\mathbf X, \mathbf Y)$
+
+![Invariance to rotation](../figures/invariance_to_ortho.PNG){height=85px}
+
+* 2.3 invariant to isotropic scaling, $CKA(\alpha \mathbf X, \beta \mathbf Y) = CKA(\mathbf X, \mathbf Y)$
