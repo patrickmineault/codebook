@@ -8,20 +8,18 @@ Setting up a project in an organized way is a great way to ensure that you will 
 4. Create a project skeleton
 5. Install a project package
 
-In addition, I've created a utility to make this as easy as possible.
-
 ## Pick a name and create a folder for your project
 
 When you start a project, you will need to decide how to structure it. As an academic, a project will tend to naturally map to one paper. Therefore, **one project = one paper = one folder = one git repository** is a generally a good default structure.
 
-```{warning}
-You might want to create extra standalone projects for tools you re-use across different papers
+```{margin}
+You might want to create extra standalone projects for tools you re-use across different papers.
 ```
 
 Pick a short and descriptive name for your project and create a folder in your Documents folder. For instance, when I created this project, the first step was to run:
 
-```{code}
-~/Documents $ mkdir codebook
+```console
+~/Documents$ mkdir codebook
 ```
 
 ## Initialize a git repository and sync to Github
@@ -47,14 +45,14 @@ git remote add origin https://github.com/patrickmineault/codebook.git
 git push -u origin main
 ```
 
-```{note}
+```{margin}
 I've never attempted to remember these commands. I always just copy and paste.
 ```
 
-From then on, you can commit anywhere between a few times a day to a few times per week, depending on how the project is going. Try to make the git commit messages meaningful and to group related changes together. A changelist with 100 changed files and a message "update" is not that helpful when you're trying to track when a bug was introduced several months after the fact.
+From then on, you can commit anywhere between a few times a day to a few times per week, depending on how the project is going. Try to make the git commit messages meaningful and to group related changes together. A changelist with 100 changed files and a message "update" is not helpful when you're trying to track when a bug was introduced several months after the fact.
 
 ```{note}
-If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I like to [use the git panel in VSCode](ide.myst). 
+If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I prefer [the git panel in VSCode](ide.myst). 
 ```
 
 ## Set up a virtual environment
@@ -73,13 +71,13 @@ width: 492px
 Python environments can be a real pain. From [xkcd.com](https://xkcd.com/1987/) by Randall Munroe.
 ```
 
-Many novices starting out in Python use one big monolithic Python environment. Every package is `pip install`ed in that one environment. This will work great until they run into a dependency issue and they accidentally break their install. Getting back to a good state can take several tedious hours because there's no real documentation for what was installed for each project. 
+Many novices starting out in Python use one big monolithic Python environment. Every package is installed in that one environment. The problem is that this environment is not documented anywhere. Hence, if they need to move to another computer, or they need to recreate the environment from scratch several months later, they're in for several hours or days of frustration.
 
-The solution is to use a *virtual environment* to manage dependencies. Each virtual environment specifies which versions of software and packages a project uses. The specs can be different for different projects, and each virtual environment can be easily created, documented, duplicated or destroyed. You can use `conda`,  `pipenv`, `poetry`, `venv`, `virtualenv` or `asdf` - among other - to manage dependencies. Which one you prefer is a matter of personal taste and countless internet feuds. Here I present the `conda` workflow, which is particularly popular among the data science crowd.
+The solution is to use a *virtual environment* to manage dependencies. Each virtual environment specifies which versions of software and packages a project uses. The specs can be different for different projects, and each virtual environment can be easily swapped, created, duplicated or destroyed. You can use software like `conda`,  `pipenv`, `poetry`, `venv`, `virtualenv`, `asdf` or `docker` - among others - to manage dependencies. Which one you prefer is a matter of personal taste and [countless internet feuds](https://twitter.com/patrickmineault/status/1429560804869873664?s=20). Here I present the `conda` workflow, which is particularly popular among the data science crowd.
 
 ### Conda
 
-Conda serves as the de facto Python distribution for data science-centric Python. `conda` is both a package manager (something that installs package on your system) and a virtual environment manager (something that can swap out different combinations of packages and binaries - virtual environments - easily). 
+Conda is the *de facto* standard package manager data science-centric Python. `conda` is both a package manager (something that installs package on your system) and a virtual environment manager (something that can swap out different combinations of packages and binaries - virtual environments - easily). 
 
 [Once conda is installed](https://docs.conda.io/en/latest/miniconda.html) - for instance, through miniconda - you can create a new environment and activate it like so:
 
@@ -106,9 +104,11 @@ You can then commit `environment.yml` to document this environment. You can recr
 $ conda create --name recoveredenv --file environment.yml
 ```
 
-```{admonition} Can I use both pip and conda?
+Now, you might ask yourself, can I use both pip and conda together?
 
-A big point of confusion is how conda interacts with `pip`. For conda:
+```{dropdown} ⚠️ Spoilers
+
+**You can use pip inside of a conda environment**. A big point of confusion is how conda relates to `pip`. For conda:
 
 * Conda is both a package manager and a virtual environment manager
 * Conda can install big, complicated-to-install, non-Python software, like `gcc`
@@ -120,7 +120,7 @@ For pip:
 * pip only installs Python packages
 * pip can install every package on PyPI in additional to local packages
 
-**You can use pip inside of a conda environment**. `conda` tracks which packages are pip installed and will include a special section in `environment.yml` for pip packages. [However, installing pip packages may negatively affect conda's ability to install packages correctly after the first pip install](https://www.anaconda.com/blog/using-pip-in-a-conda-environment). Therefore, people generally recommend installing conda packages first, then installing pip packages.
+`conda` tracks which packages are pip installed and will include a special section in `environment.yml` for pip packages. [However, installing pip packages may negatively affect conda's ability to install conda packages correctly after the first pip install](https://www.anaconda.com/blog/using-pip-in-a-conda-environment). Therefore, people generally recommend installing **big conda packages first**, then installing **small pip packages second**.
 ```
 
 ## Create a project skeleton
@@ -137,21 +137,30 @@ In many different programming frameworks - Ruby on Rails, React, etc. - people u
 └── README.md
 ```
 
-`.gitignore` contains the list of files you want git to ignore, while `README.md` contains a short description of your project, including installation instructions. `environment.yml` contains the description of your conda environment.
+`.gitignore` contains a list of files that git should ignore, while `README.md` contains a short description of your project, including installation instructions. `environment.yml` contains the description of your conda environment.
 
 The folders are organized as follows:
 
-* `docs`: Where you put documentation, including Markdown and reStructuredText (reST). Calling it `docs` will make it easy to publish the docs through Github pages.
+* `docs`: Where you put documentation, including Markdown and reStructuredText (reST). Calling it `docs` makes it easy to publish the docs through Github pages.
 * `scripts`: Where you put scripts - Python and bash alike - as well as .ipynb notebooks.
-* `src`: Contains reusable Python modules for your project. This is the kind of python code that you `import`
-* `tests`: Where you put tests for your code. If you've never written formal tests before, don't worry, we'll cover these in a later lesson.
+* `src`: Contains reusable Python modules for your project. This is the kind of python code that you `import`.
+* `tests`: Where you put tests for your code. We'll cover testing in a later lesson.
 
-You can create this project structure manually using `mkdir` on the command line.
+You can create this project structure manually using `mkdir` on the command line:
+
+```console
+mkdir docs
+mkdir scripts
+mkdir src
+mkdir tests
+conda export env > environment.yml
+echo "*.egg-info" > .gitignore
+```
 
 ## Install a project package
 
 ```{warning}
-Creating a project package is slightly annoying, but the payoff is quite substantial: you keep a clean project structure, paths are clean, your project is pip installable, etc.
+Creating a project package is slightly annoying, but the payoff is quite substantial: your project structure will be clean, you won't need to change Python's path, your project will be pip installable, etc.
 ```
 
 You might notice a flaw in the preceding project structure. Let's say you create a reusable `lib.py` under the `src` folder, with a function `my_very_good_function`. How would you reference that function in `scripts/use_lib.py`? This doesn't work:
@@ -163,11 +172,11 @@ Traceback (most recent call last):
 ImportError: attempted relative import with no known parent package
 ```
 
-You have two options, change your Python path, or create an installable package. I don't recommend directly changing the Python path, but I write it here anyway because you will encounter it and it will be confusing if not covered here.
+You have two options, change your Python path, or create an installable package. I recommend the installable package route, but cover the Python path route first because you're likely to encounter it in other projects.
 
 ### Change your Python path (not recommended)
 
-You can put the `src` folder on your Python path. You can [append the `src` folder to the system variable PYTHONPATH when bash starts up (in ~/.bashrc)](https://bic-berkeley.github.io/psych-214-fall-2016/using_pythonpath.html). You might alternatively dynamically append to the system path from Python, via:
+You can put the `src` folder on your Python path. To do so, you can [append the `src` folder to the system variable PYTHONPATH when bash starts up (in ~/.bashrc)](https://bic-berkeley.github.io/psych-214-fall-2016/using_pythonpath.html). You might alternatively dynamically append to the system path from Python, via:
 
 ```{code}
 import sys
@@ -212,6 +221,8 @@ Your files should now look like:
 │   └── __init__.py
 ├── tests
 ├── .gitignore
+├── environment.yml
+├── README.md
 └── setup.py
 ```
 
@@ -223,7 +234,7 @@ Now comes the fun part, installing the package. You can do so using:
 (codebook) ~/Documents/codebook $ pip install -e .
 ```
 
-`.` indicates that we're installing the package in the current directory. `-e` means that the package is editable, which means that if you change the files inside the `src` folder, you don't need to re-install the package for your changes to be picked up.
+`.` indicates that we're installing the package in the current directory. `-e` indicates that the package should be editable, which means that if you change the files inside the `src` folder, you don't need to re-install the package for your changes to be picked up by Python.
 
 #### 4. Use the package
 
@@ -235,26 +246,31 @@ Once the package is locally installed, it can be easily used regardless of which
 (codebook) ~/Documents/codebook/scripts $ python
 >>> import src.test
 hello world
+>>> exit()
+(codebook) ~/Documents/codebook/scripts $ cd ~
+(codebook) ~ $ python
+>>> import src.test
+hello world
 ```
 
-#### 5. Add to `.gitignore`
+How does this work? When you install a package in editable mode, Python essentially adds your code to its path. That makes it available from anywhere. The path is changed in such a way that `conda`, `vscode` and other tools are aware that your package is installed, so all these tools will work correctly.
 
-Installing the package locally will create folders for Python's internal use. To prevent accidentally committing these files, you can add the following line to `.gitignore`:
+#### 5. (optional) Change the name of the package
 
-`*.egg-info`
-
-#### 6. (optional) Change the name of the package
-
-Note that the name of the folder, `src`, becomes the name of the package. If you'd like to rename the package, for example to `cb`, change the name of the folder and reinstall the like so:
+Note that the name of the folder which contains the code, `src`, becomes the name of the package. If you'd like to rename the package, for example to `cb`, change the name of the folder and reinstall the like so:
 
 ```
 (codebook) ~/Documents/codebook $ mv src cb
 (codebook) ~/Documents/codebook $ pip install -e .
 ```
 
+```{margin}
+`setuptools` knows which folder contains your package by looking for a `__init__.py` at the root of that folder.
+```
+
 ## Use the true-neutral cookiecutter
 
-If doing all this for every new project sounds like a lot of work, you can save yourself some time using the true-neutral cookiecutter, which creates a project skeleton using the template I showed above. Cookiecutter generates project folders from templates. You can install it in the base conda environment with:
+If doing all this for every new project sounds like a lot of work, you can save yourself some time using the `true-neutral` cookiecutter, which creates a project skeleton using the template I showed above. `cookiecutter` generates project folders from templates. You can install it in the base conda environment with:
 
 ```
 (base) ~/Documents $ pip install cookiecutter
@@ -274,9 +290,15 @@ There are many other interesting cookiecutters. Check out the [data science cook
 
 ## Discussion
 
-Using structured projects linked to git will help your long-term memory. Using a project template will allow you to instantly understand how files are laid out months after you've last worked on that project. Using a virtual environment will allow you to recreate that environment in the far future. And git will give you a time machine to work with.
+Using structured projects linked to git will help your long-term memory. You will be able to instantly understand how files are laid out months after you've last worked on that project. Using a virtual environment will allow you to recreate that environment in the far future. And git will give you a time machine to work with.
 
-As an added bonus, if you can make it easy for future *you* to use your project, you will make it easier for *other people* to use it as well. If you don't believe me, consider this: everything at Google is in one giant repository with [billions of lines of code](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext#FNE). As a new software engineer, you're invited to commit to that repository during your first week. Because everything is organized according to [strict conventions](https://github.com/google/styleguide/blob/gh-pages/pyguide.md), so it's not as *terrifying* as it sounds to jump in. 
+Writing for your future self has an added bonus: it can make it easier for *other people* to use your project. Consider this: everything at Google is in one giant repository with [billions of lines of code](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext#FNE). As a new software engineer, you're invited to commit to that repository during your first week. Because everything is organized according to [strict conventions](https://github.com/google/styleguide/blob/gh-pages/pyguide.md), so it's not as *terrifying* as it sounds to jump in. Structure is what enables sustainable growth.
 
+```{figure} figures/google-day2.jpg
+---
+width: 500px
+---
+Day 2 at Google. Days later, these two bozos would go on to work on real Google code.
+```
 
 
