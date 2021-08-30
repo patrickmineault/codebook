@@ -65,3 +65,29 @@ summary {
 .margin p {
     font-size: 1.2rem !important;
 }
+
+#site-title {
+    display: none;
+}
+
+.navbar_extra_footer {
+    display: none;
+}
+
+nav {
+    font-size: 1.2rem;
+}
+
+.epigraph div::before {
+    content: open-quote;
+    position: absolute;
+    left: 10px;
+    font-size: 4rem;
+    color: rgba(192 192 192);
+    margin-top:-20px;
+    quotes: "“" "”";
+}
+
+.MathJax_Display {
+    font-size: 1.2rem;
+}
