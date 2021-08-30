@@ -10,6 +10,7 @@ parts:
     - file: setup.myst
     - file: tidy.myst
     - file: decoupled.myst
+    - file: testing.myst
     - file: docs.myst
 - caption: Extras
   chapters:
