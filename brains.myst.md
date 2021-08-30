@@ -13,13 +13,16 @@ Let's look at how these two types of memory are involved during programming.
 
 ## Working memory
 
-```{admonition} Reflection
-What do you think coding looks like in the brain?
+```{margin}
+Felienne Hermans has a fantastic [talk](https://www.youtube.com/watch?v=g1ib43q3uXQ) and [book](https://www.manning.com/books/the-programmers-brain) on programming in the brain. 
 ```
 
-The term *programming language* makes it seem that reading code is like reading a book - albeit a very obtuse book. Neuroscientists have looked at what circuits are engaged when people read code.  [Ivanova and colleagues at MIT](https://elifesciences.org/articles/58906) measured brain activity while people read Python code in the scanner - and scratch Jr., a visual programming language. They found that activations didn't overlap much with conventional language and speech areas. 
+What do you think coding looks like in the brain? The term *programming language* makes it seem that reading code is like reading natural language. Neuroscientists have looked at what circuits are engaged when people read code.  [Ivanova and colleagues at MIT](https://elifesciences.org/articles/58906) measured brain activity while people read Python in the scanner. They found that activations didn't overlap much with conventional language and speech areas. 
 
 ```{figure} figures/wm-federenko.png
+---
+figclass: boxed
+---
 Code problems (CP; purple bars) created activations with higher overlap with the multiple demand system (left and center) than with the language system (right) compared with other tasks like sentence problems (SP), sentence reading (SR) or nonword reading (NR). From Ivanova et al. (2020), used under a CC-BY 4.0 license.
 ```
 
@@ -29,7 +32,7 @@ Programming involves juggling in your mind many different pieces of information:
 
 ### Saving our working memory
 
-One of our strongest weapons against overloading our working memory is *convention*. Conventions mean that you don't have to remember details in your working memory. For example, let's say you want to call a helper function that splits a url into its constituent parts. You might instinctively know that the function to call is `split_url` and not `splitUrl` or `splitURL` or `URLSplitterFactory().do`. That's because Python has a convention that says that you separate words with underscores (snake case) and not with changes in case (camel case). If you abide by the convention, you've just saved yourself a working memory slot. To be clear, it's a completely arbitrary convention: JS uses the opposite convention (camel case) and it works fine. 
+One of our strongest weapons against overloading our working memory is *convention*. Conventions mean that you don't have to remember details in your working memory - you can rely on your long-term memory instead. For example, let's say you want to call a helper function that splits a url into its constituent parts. You might instinctively know that the function to call is `split_url` and not `splitUrl` or `splitURL` or `URLSplitterFactory().do`. That's because Python has a convention that says that you separate words in a variable name with underscores (snake case). If you abide by the convention, you've just saved yourself a working memory slot. To be clear, it's a completely arbitrary convention: JS uses a different convention (camel case) and it works fine. 
 
 We'll see many more examples of organizing code such that it saves our working memory:
 
@@ -41,25 +44,25 @@ We'll see many more examples of organizing code such that it saves our working m
 
 Your working memory is precious, save it!
 
-```{epigraph}
-Simple is better than complex. Complex is better than complicated.
-
--- [The Zen of Python](https://zen-of-python.info/simple-is-better-than-complex.html#3)
-```
-
 ## Long-term memory
 
-Research code is particularly challenging on **long-term memory**. This is because:
+```{epigraph}
+What is this?
+
+-- You, squinting at code you wrote a year ago
+```
+
+*Research* code in particular is challenging on **long-term memory**. This is because:
 
 * The project's endpoint might be unclear
 * Correct can be hard to define
-* There can be lots exploration and dead ends before you produce a unit of research
+* There can be lots of exploration and dead ends before you produce a unit of research
 * Sometimes, manual steps are involved requiring human judgement
-* You have to remember all the dead ends for the code to even make sense. 
+* You have to remember all the dead ends for the code to even make sense
 
 ```{admonition} Has this ever happened to you? 
 
-You work on a project for many months, and you submit a paper. You receive reviews months later requiring revisions. You sit down to code and it takes you several days to figure out how to run a supplementary analysis that ended up taking only a few lines code.
+You work on a project for many months, and you submit a paper. You receive reviews months later requiring revisions. You sit down to code and it takes you several days to figure out how to run a supplementary analysis that ended up taking only a few lines of code.
 ```
 
 While the scientific method, as traditionally taught, is fairly linear, real lab work often involves a high nonlinear process of discovery. 
@@ -74,24 +77,24 @@ Generating a research paper can be a messy process.
 
 Future you will have forgotten 90% of that process. Code that sticks to convention, is tidy and well-documented will be far easier to use in the future that clever, obtuse code. Boring code is good code! 
 
+## Discussion
+
 ```{epigraph}
 
-Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
+Simple is better than complicated. Complicated is better than complex.
 
--- Kernighan's law [^Kernighan]
+-- The Zen of Python
 ```
 
-[^Kernighan]: Brian Kernighan is a Canadian computer scientist who contributed to the development of Unix and co-authored the first book on the C programming language.
-
-## Wrap-up
-
-We've seen that coding - especially research code - is especially difficult along two axes:
+We've seen that coding - especially research code - is difficult along two axes:
 
 * working memory
 * long-term memory
 
-So what can we do save our memory? Let's jump in!
+We've discussed some of our overall strategies to deal with these limitations, namely:
 
-## Further reading
+* using convention
+* keeping code tidy
+* documenting our code
 
-* Felienne Hermans, [The Programmer's Brain](https://www.manning.com/books/the-programmers-brain) (2021). 
+Let's see how you can implement these strategies in practice. Let's jump in!
