@@ -17,7 +17,7 @@ The primary target audience for this book are grad students and postdocs who do 
 * Have trouble finishing projects
 * Contemplate buying a small organic farm in upstate Vermont and read far too much about goat husbandry
 
-Did I hit a nerve? Yes! Then you're in for a treat! This book is there to help you get from 0 to 1 on good software engineering practices for software projects. 
+Did I hit a nerve? Yes?! Then you're in for a treat! This book is there to help you get from 0 to 1 on good software engineering practices for research projects. 
 
 ## Prerequisites
 
@@ -48,6 +48,12 @@ Sometimes I will ask you a question, and will hide the answer behind a spoilers 
 
 ```{dropdown} ⚠️ Spoilers
 42
+```
+
+At the end of each main lesson, I ask you to put one of the lessons into practice through a 5-minute exercise. It looks like this:
+
+```{admonition} 5-minute exercise
+Brush your teeth. 
 ```
 
 ## Why did I make this?

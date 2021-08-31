@@ -354,7 +354,7 @@ def count_words(text):
     return counts
 ```
 
-`re.sub(r"\s+", " ", ...)` finds one or more instances of consecutive whitespace characters (including spaces, newlines and tabs), and replaces them with exactly one space. You could argue that this is less readable than the original version. Regular expressions can certaintly be cryptic. However, from a feature perspective, this is an improvement because it deals with tabs and newlines properly.
+`re.sub(r"\s+", " ", ...)` finds one or more instances of consecutive whitespace characters (including spaces, newlines and tabs), and replaces them with exactly one space. You could argue that this is less readable than the original version. Regular expressions can certainly be cryptic. However, from a feature perspective, this is an improvement because it deals with tabs and newlines properly.
 
 ```pycon
 >>> count_words("hello   world\n\n\tworld")
@@ -420,3 +420,7 @@ Decoupled code is something we all strive towards. Yet, code often has a natural
 Pure functions are easier to reason about, because they're stateless - that saves your working memory when you're reading code. Code that follows Python's idioms is also easier on your working memory: when you see a line of code that is a familiar pattern, you can see the entire line as one chunk rather than multiple disparate bits. That takes just one working memory slot rather than several. 
 
 Changing existing code is not without its dangers, however. Perhaps we will make a mistake and introduce a bug in our code! How can we check that our improved code still does the correct thing? We'll cover this in the next chapter on testing.
+
+```{admonition} 5-minute exercise
+Take a long function in a script you currently are working on, and split it in two. What challenges did you face?
+```

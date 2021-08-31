@@ -38,7 +38,7 @@ Python uses multi-line strings - docstrings - to document individual functions. 
 * [Google style](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
 * [Numpy style](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html)
 
-reST is more prevalent because it's the default in Sphinx, but I think the Google style is easier to read for humans and I prefer it. Here's how you would document a function which counts the number of occurences of a line:
+reST is more prevalent because it's the default in Sphinx, but I think the Google style is easier to read for humans and I prefer it. Here's how you would document a function which counts the number of occurrences of a line:
 
 ```{margin}
 Sphinx can auto-generate docs from Google and Numpy-style docstrings [with a plugin](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
@@ -156,4 +156,8 @@ There should be one -- and preferably only one -- obvious way to do it.
 
 It's easy to mock style guides as pedantic nitpicking. After all, style, like spelling, is ultimately arbitrary. However, adhering to a standard style can help you preserve your working memory. Don't spend precious mental energy making lots of micro-decisions about variable names and how many spaces to put after a parenthesis: use the style guide. If there's an obvious way of doing things, do it that way. 
 
-The short term advantage of using consistent structure compoungs over time. Once you've put aside a project for long enough, you will need to reacquaint yourself with it anew, and cruft and dead ends will no longer make sense. Maintaining good code hygiene will make your future self happy.
+The short term advantage of using consistent structure compounds over time. Once you've put aside a project for long enough, you will need to reacquaint yourself with it anew, and cruft and dead ends will no longer make sense. Maintaining good code hygiene will make your future self happy.
+
+```{admonition} 5-minute exercise
+Install `pylint` and run on a script you're currently working on. What did you learn?
+```

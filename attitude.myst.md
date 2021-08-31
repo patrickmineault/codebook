@@ -1,6 +1,6 @@
 # Your learning journey
 
-Learning to code is a lifelong journey. The upper ceiling on programming skills is very high. Much like cooking, coding can be done on a purely utilitarian basis, or it can elevated to high art. [Even professional programmers with decades of experience go on months-long retreats to acquire new skills](https://www.recurse.com/about). *A good frame* for getting better at coding is to think of it as a *craft*. Reading this book is a great way to refine your craft through targetted practice [^CalNewport].
+Learning to code is a lifelong journey. The upper ceiling on programming skills is very high. Much like cooking, coding can be done on a purely utilitarian basis, or it can elevated to high art. [Even professional programmers with decades of experience go on months-long retreats to acquire new skills](https://www.recurse.com/about). *A good frame* for getting better at coding is to think of it as a *craft*. Reading this book is a great way to refine your craft through focused practice [^CalNewport].
 
 [^CalNewport]: CS professor Cal Newport explores these themes in his book [So Good They Can't Ignore You](https://www.calnewport.com/books/so-good/).
 
@@ -23,7 +23,7 @@ When I talk to students about writing code, a lot of them describe feelings like
 * frustration
 
 ```{margin}
-Julia Evans [has a lovely zine](https://wizardzines.com/comics/attitude-matters/) on dealing with frustating bugs.
+Julia Evans [has a lovely zine](https://wizardzines.com/comics/attitude-matters/) on dealing with frustrating bugs.
 ```
 
 Much of that frustration comes from a mismatch between what you want to accomplish (a lot) and what you have the ability to accomplish (not as much as you'd like). Programming instruction often emphasizes *exploration(), embracing errors as learning opportunities, and encouraging you to let your imagination run free. This theory of change implies that you will learn a lot by simply programming a lot every day. You might then feel guilty and inadequate when you're not as proficient as you want after several years of daily programming.

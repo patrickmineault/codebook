@@ -18,6 +18,8 @@ html:
   baseurl: https://locahost:8888/
   favicon: images/favicon.ico
   use_fullscreen_button: false
+  comments:
+    hypothesis: true
 
 launch_buttons:
   thebe             : true

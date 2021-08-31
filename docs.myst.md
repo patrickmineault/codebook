@@ -7,7 +7,7 @@ Documentation is a love letter that you write to your future self.
 --Damian Conway
 ```
 
-Research code is written in spurts and fits. You will often put code aside for several months and focus your energy on experiments, passing quals or working on another project. When you come back to your original project, you will be lost. A little prep work by writing docs will help you preserve your knowledge over the long run.
+Research code is written in spurts and fits. You will often put code aside for several months and focus your energy on experiments, passing qualifying exams or working on another project. When you come back to your original project, you will be lost. A little prep work by writing docs will help you preserve your knowledge over the long run.
 
 ## There are many kinds of docs
 
@@ -17,7 +17,7 @@ When I say documentation, what comes to mind? For many people, *documenting code
 * Multi-line comments
 
 ```{margin}
-A unit test is meta-code which tells you the normative behaviour of other code. It's a kind of documentation. Woah.
+A unit test is meta-code which tells you the normative behavior of other code. It's a kind of documentation. Woah.
 ```
 
 * Unit tests
@@ -239,7 +239,7 @@ python generate_plots.py --in_dir assets/trained_model --out_dir docs/figures/
 This allows you to see, at a glance, how to use the code, and what's more, it runs. 
 
 ```{danger}
-Bash is quirky - the syntax is awkward and it's pretty easy to shoot yourself in the foot. If you're going to write elaborate shell scripts,  use [`shellcheck`](https://github.com/koalaman/shellcheck), which will point out common mistakes in your code. Your favorite editor probably has a plugin for shellcheck.
+Bash is quirky - the syntax is awkward and it's pretty easy to shoot yourself in the foot. If you're going to write elaborate shell scripts,  use [`shellcheck`](https://github.com/koalaman/shellcheck), which will point out common mistakes in your code. Your favorite editor probably has a plugin for `shellcheck`.
 
 Also, check out [Julia Evans' zine](https://wizardzines.com/zines/bite-size-command-line/) on bash - it's a life saver.
 ```
@@ -279,7 +279,7 @@ assets docs/figures:
     mkdir docs/figures/
 ```
 
-The plot can be created with `make plot`. The `Makefile` contains a complete description of the inputs and outputs to different scripts, and thus serves as a self-documenting artifact. [Software carpentries](https://swcarpentry.github.io/make-novice/) have an excellent tutorial on `make`. What's more, `make` only rebuilds what needs to rebuilt. In particular, if the network is already trained, `make` will detect it and won't retrain the network again, skipping ahead to the plotting task.
+The plot can be created with `make plot`. The `Makefile` contains a complete description of the inputs and outputs to different scripts, and thus serves as a self-documenting artifact. [Software carpentry](https://swcarpentry.github.io/make-novice/) has an excellent tutorial on `make`. What's more, `make` only rebuilds what needs to rebuilt. In particular, if the network is already trained, `make` will detect it and won't retrain the network again, skipping ahead to the plotting task.
 
 `make` uses a domain-specific language (DSL) to define a DAG. It might feel daunting to learn yet another language to document a pipeline. There are numerous alternatives to `make` that define DAGs in pure Python, including [`doit`](https://pydoit.org/). There are also more complex tools that can implement Python DAGs and run them in the cloud, including [`luigi`](https://github.com/spotify/luigi), [`airflow`](https://airflow.apache.org/), and [`dask`](https://docs.dask.org/en/latest/custom-graphs.html).
 
@@ -358,3 +358,7 @@ Some things are in our control and others not. [...] If [a thing] concerns anyth
 Documentation contains the long-term memory of a project. When you're writing documentation, you're ensuring that your code will remain useful for a long time. Code should be self-documenting to a large degree. However, you will still need to write some textual documentation. 
 
 You can take that occasion to reflect on your project. Sometimes, you'll find that it's more productive to rewrite bad code than to write complex explanations for it. At other times, especially at the very end of a project, refactoring will not be worth the effort, and you will have to let things go. As part of the documentation, you can write about how you could improve on your project. You can use a framing device device like *three lessons I learned in this project*. Learn from your mistakes and do better next time.
+
+```{admonition} 5-minute exercise
+Write a structured `README.md` file for a project you're working on.
+```

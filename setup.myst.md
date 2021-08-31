@@ -112,7 +112,7 @@ Now, you might ask yourself, can I use both pip and conda together?
 
 * Conda is both a package manager and a virtual environment manager
 * Conda can install big, complicated-to-install, non-Python software, like `gcc`
-* Not all Python packages are installable through conda
+* Not all Python packages can be installed through conda
 
 For pip:
 
@@ -185,7 +185,7 @@ sys.path.append('/home/me/Documents/codebook/src')
 from code.lib import my_very_good_function
 ```
 
-The disadvantage is that this tends to be pretty brittle. You have to hardcode the name of folders in multiple places. If they move, you will break your package. It won't work on another computer with different paths, so it will make it hard to share your project with colleagues. Furthermore, dynamic paths don't play well with IDEs like vscode that can only look in the static environment. 
+The disadvantage is that this tends to be pretty brittle. You have to hard-code the name of folders in multiple places. If they move, you will break your package. It won't work on another computer with different paths, so it will make it hard to share your project with colleagues. Furthermore, dynamic paths don't play well with IDEs like vscode that can only look in the static environment. 
 
 ### Create a pip-installable package (recommended)
 
@@ -285,7 +285,7 @@ To create the `codebook` folder with all its subfolders and setup.py, simply use
 This will create an instance of the `true-neutral` project skeleton (hosting on my github here). Follow the prompts and it will create the folder structure above, including the setup file. Next, sync to your own remote repository following the github instructions, and pip install the package you've created for yourself.
 
 ```{margin}
-There are many other interesting cookiecutters. Check out the [data science cookiecutter](https://drivendata.github.io/cookiecutter-data-science/) for a more elaborate project template for data science projects.
+There are many other interesting cookiecutters. Check out the [data science cookiecutter](https://drivendata.github.io/cookiecutter-data-science/) for a more elaborate data science project template.
 ```
 
 ## Discussion
@@ -301,4 +301,6 @@ width: 500px
 Day 2 at Google. Days later, these two bozos would go on to work on real Google code.
 ```
 
-
+```{admonition} 5-minute exercise
+Create an empty project with the true-neutral cookiecutter.
+```

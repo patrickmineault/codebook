@@ -134,7 +134,7 @@ While the first few tests pass, the last one hangs for a long time. What's going
 
 Our `fib(N)` function hangs for a large value of `N` because it spawns a lot of repeated computation. `fib(N)` calls both `fib(N-1)` and `fib(N-2)`. In turn, `fib(N-1)` calls `fib` twice, and so on and so forth. Therefore, the time complexity of this function scales exponentially with $2^N$ - it's very slow.
 
-We can reimplement this function so that it keeps a record of previously computed values. One straightforward way of doing this is with a global cache. **We keep our previously implemented tests**, and reimplement the function:
+We can re-implement this function so that it keeps a record of previously computed values. One straightforward way of doing this is with a global cache. **We keep our previously implemented tests**, and rewrite the function:
 
 ```
 cache = {}
@@ -259,7 +259,7 @@ FAILED test_fib.py::test_raises - RecursionError: maximum recursion depth exceed
 =========================== 1 failed, 2 passed in 1.18s ===========================
 ```
 
-Notice how informative the output of pytest is compared to our homegrown test suite. `pytest` informs us that two of our tests passed - `test_typical` and `test_edge_case` - while the last one failed. Calling our `fib` function with a negative argument or a non-integer argument will make the function call itself recursively with negative numbers - it never stops! Hence,  Python eventually will generate a `RecursionError`. However, our tests are expecting a `NotImplementedError` instead! Our test correctly detected that the code has this odd behaviour. We can fix it up like so:
+Notice how informative the output of pytest is compared to our homegrown test suite. `pytest` informs us that two of our tests passed - `test_typical` and `test_edge_case` - while the last one failed. Calling our `fib` function with a negative argument or a non-integer argument will make the function call itself recursively with negative numbers - it never stops! Hence,  Python eventually will generate a `RecursionError`. However, our tests are expecting a `NotImplementedError` instead! Our test correctly detected that the code has this odd behavior. We can fix it up like so:
 
 ```
 def fib(x):
@@ -387,7 +387,7 @@ There's no ideal number per say, but 1:1 to 3:1 is a commonly quoted range for l
 
 Testing is the key to refactor with confidence. Let's say that your code looks ugly, and you feel like it's time to refactor. 
 
-1. Lock in the current behaviour of your code with regression tests
+1. Lock in the current behavior of your code with regression tests
 1. Check that the tests pass
 1. Rewrite the code to be tidy
 1. Correct the code
@@ -409,3 +409,6 @@ Testing allows you to decrease the uncertainty surface of your code. With the ri
 
 Testing is not an all-or-none proposition: you can start writing lightweight inline tests in your code today. Find a commented out `print` statement in your code. Can you figure out how to replace it with an `assert`?
 
+```{admonition} 5-minute exercise
+Find a commented out `print` statement in your code and transform it into an `assert`.
+```
