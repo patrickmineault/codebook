@@ -91,3 +91,12 @@ nav {
 .MathJax_Display {
     font-size: 1.2rem;
 }
+
+.bd-sidebar {
+    position: relative;
+    overflow-y: visible !important;
+}
+
+footer {
+    visibility: hidden;
+}
