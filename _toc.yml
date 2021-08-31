@@ -12,8 +12,7 @@ parts:
     - file: decoupled.myst
     - file: testing.myst
     - file: docs.myst
+    - file: social.myst
 - caption: Extras
   chapters:
     - file: ide.myst
-    - file: wsl.myst
-
