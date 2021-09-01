@@ -9,10 +9,10 @@ parts:
   chapters:
     - file: setup.myst
     - file: tidy.myst
-    - file: decoupled.myst
-    - file: testing.myst
-    - file: docs.myst
+    - file: decoupled
+    - file: testing
+    - file: docs
     - file: social.myst
 - caption: Extras
   chapters:
-    - file: ide.myst
+    - file: tools.myst
