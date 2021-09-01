@@ -1,16 +1,16 @@
-# Your learning journey
+# Roadmap
 
-Learning to code is a lifelong journey. The upper ceiling on programming skills is very high. Much like cooking, coding can be done on a purely utilitarian basis, or it can elevated to high art. [Even professional programmers with decades of experience go on months-long retreats to acquire new skills](https://www.recurse.com/about). *A good frame* for getting better at coding is to think of it as a *craft*. Reading this book is a great way to refine your craft through focused practice [^CalNewport].
+Learning to code is a lifelong journey. The upper ceiling on programming skills is very high. Much like cooking, coding can be done on a purely utilitarian basis, or it can be elevated to high art. [Professional programmers with decades of experience go on months-long retreats to acquire new skills](https://www.recurse.com/about). *A good frame* for getting better at coding is to think of it as a *craft*. Reading this book is a great way to refine your craft through focused practice [^CalNewport].
 
 [^CalNewport]: CS professor Cal Newport explores these themes in his book [So Good They Can't Ignore You](https://www.calnewport.com/books/so-good/).
 
-Take a look at this roadmap and take stock of where you are now. Come back to this figure after you've read parts of this book - you'll be surprised how much you can learn in a few hours!
+Take a look at this roadmap, which shows some of the concepts we'll cover in the book. Take stock of where you are now. Come back to this figure after you've read parts of this book - you'll be surprised how much you can learn in a few hours!
 
-```{figure} figures/reproducible_research.svg
+```{figure} figures/concepts.svg
 ---
 figclass: boxed
 ---
-Some skills you'll acquire along your learning journey.
+Some concepts we'll cover in this book. How many do you know now? 
 ```
 
 ## Breaking the cycle of frustration
@@ -26,7 +26,7 @@ When I talk to students about writing code, a lot of them describe feelings like
 Julia Evans [has a lovely zine](https://wizardzines.com/comics/attitude-matters/) on dealing with frustrating bugs.
 ```
 
-Much of that frustration comes from a mismatch between what you want to accomplish (a lot) and what you have the ability to accomplish (not as much as you'd like). Programming instruction often emphasizes *exploration(), embracing errors as learning opportunities, and encouraging you to let your imagination run free. This theory of change implies that you will learn a lot by simply programming a lot every day. You might then feel guilty and inadequate when you're not as proficient as you want after several years of daily programming.
+Much of that frustration comes from a mismatch between what you want to accomplish (a lot) and what you have the ability to accomplish (not as much as you'd like). Programming instruction often emphasizes *exploration*, embracing errors as learning opportunities, and encouraging you to let your imagination run free. This theory of change implies that you will learn a lot by simply programming a lot every day. You might then feel guilty and inadequate when you're not as proficient as you want after several years of daily programming.
 
 In fact, unstructured exploration is a very inefficient way to learn a complex skill like programming. It's like expecting a student to rediscover calculus by themselves after teaching them the rudiments of algebra! Research shows that *structured instruction* - like the one in this book - is far more effective at teaching programming skills [^Felienne]. You're taking the right step by reading this book! 
 
