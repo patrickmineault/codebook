@@ -1,7 +1,7 @@
 # Brains & coding
 
 ```{admonition} Optional
-This section is completely optional - feel free to skip to the next section
+This section is optional - it's about the neuroscience of writing code. Feel free to skip to the next section if it doesn't speak to you.
 ```
 
 What makes coding uniquely difficult? Coding is hard on your memory. This book's theme is that **writing good research code is about freeing your memory**. Neuroscientists distinguish different subtypes of memory, and coding strongly depends on two subtypes:
