@@ -52,7 +52,7 @@ I've never attempted to remember these commands. I always just copy and paste.
 From then on, you can commit anywhere between a few times a day to a few times per week, depending on how the project is going. Try to make the git commit messages meaningful and to group related changes together. A changelist with 100 changed files and a message "update" is not helpful when you're trying to track when a bug was introduced several months after the fact.
 
 ```{note}
-If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I prefer [the git panel in VSCode](ide.myst). 
+If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I prefer [the git panel in VSCode](vscode). 
 ```
 
 ## Set up a virtual environment
@@ -185,7 +185,7 @@ sys.path.append('/home/me/Documents/codebook/src')
 from code.lib import my_very_good_function
 ```
 
-The disadvantage is that this tends to be pretty brittle. You have to hard-code the name of folders in multiple places. If they move, you will break your package. It won't work on another computer with different paths, so it will make it hard to share your project with colleagues. Furthermore, dynamic paths don't play well with IDEs like vscode that can only look in the static environment. 
+The disadvantage is that this tends to be pretty brittle. You have to hard-code the name of folders in multiple places. If they move, you will break your package. It won't work on another computer with different paths, so it will make it hard to share your project with colleagues. Furthermore, dynamic paths don't play well with IDEs like [vscode](vscode) that can only look in the static environment. 
 
 ### Create a pip-installable package (recommended)
 

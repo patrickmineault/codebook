@@ -22,7 +22,7 @@ You might know that Python generally uses 4 spaces for indentation, and that fil
 Big software companies like Google [have their own coding style guide](https://google.github.io/styleguide/pyguide.html). Even Guido von Rossum, inventor of Python, had to follow Google's style guide when he was working at Google.
 ```
 
-Reading style guides is nobody's idea of a good time, but thankfully tools exist to help you maintain good coding style. If you prefer to eventually learn the rules, you can install `flake8` or `pylint`. Both tools are *linters* - detectors of bad style - which allow you to find and correct common deviations from the style guide. The ideal place to use the linter is inside of an IDE, [for example VSCode](https://code.visualstudio.com/docs/python/linting). It's also possible to use linters from the command line. 
+Reading style guides is nobody's idea of a good time, but thankfully tools exist to help you maintain good coding style. If you prefer to eventually learn the rules, you can install `flake8` or `pylint`. Both tools are *linters* - detectors of bad style - which allow you to find and correct common deviations from the style guide. The ideal place to use the linter is inside of an IDE, [for example VSCode](vscode). It's also possible to use linters from the command line. 
 
 A more radical way to impose style is to use a *code formatter*. A linter suggests fixes which you implement yourself; a formatter fixes issues automatically whenever you save a file. `black` [imposes consistent Python style](https://github.com/psf/black), and has plugins for all the popular IDEs.
 
