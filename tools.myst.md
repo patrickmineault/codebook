@@ -5,10 +5,26 @@
 
 Integrated development environments (IDE) can help you develop faster and make it easy to implement some of the productivity tips I've discussed previously. Preferred IDEs change from year to year, as new editors become favored while others are shunned. Don't be surprised if in three years you'll be using a different IDE.
 
-[I've evaluated many IDEs](https://xcorr.net/2013/04/17/evaluating-ides-for-scientific-python/), and overall, I like [vscode](https://code.visualstudio.com/) best. It's open source, free, and fast. It has very good integrated Python development tools, and it has an impressive array of plugins for almost any imaginable use case. Others recommend [PyCharm](https://www.jetbrains.com/pycharm/) - it's more targeted towards industry use cases, has best-in-class code understanding, and remains usable with large codebases. It's free for academics.
+```{figure} figures/vscode.png
+---
+width: 800px
+---
+Editing the Markdown source for this page in vscode. 
+```
+
+[I've evaluated many IDEs](https://xcorr.net/2013/04/17/evaluating-ides-for-scientific-python/), and overall, I like [vscode](https://code.visualstudio.com/) best. It's open source, free, and fast. It has very good integrated Python development tools, and it has an impressive array of plugins for almost any imaginable use case. The git and github tools are particularly well integrated, which makes it easy to do source control outside of the command line. There is an integrated debugger, as well as a terminal, so it's one-stop shop for development.
+
+Others recommend [PyCharm](https://www.jetbrains.com/pycharm/) - it has best-in-class code understanding, and scales well to large codebases. It's free for academics.
 
 (wsl)=
 ## Use WSL on Windows
+
+```{figure} figures/wsl.png
+---
+width: 979px
+---
+WSL running on my Windows laptop
+```
 
 Windows' basic terminal lacks basic features. Powershell is powerful but it is very different from other platforms. For a while, the best way to get a Unix-style shell on Windows was to use the git bash tool. In my opinion, these days the best-in-class terminal to use on Windows is *Windows subsystem for Linux* (WSL). 
 
