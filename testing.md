@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Test your code
 
 ```{epigraph}
@@ -34,7 +46,7 @@ $$F = 0, 1, 1, 2, 3, 5, 8, 13, 21, \ldots$$
 
 Let's write up a naive implementation of this.
 
-```
+```{code-cell}
 def fib(x):
     if x <= 2:
         return 1
@@ -82,7 +94,7 @@ Notice that there are no parentheses between `assert` and the statement. `assert
 
 We can also assemble multiple assert operations to create a lightweight test suite. You can hide your asserts behind an `__name__ == '__main__'` statement, so that they will only run when you directly run a file. Let's write some tests in `fib.py`:
 
-```
+```{code-cell}
 def fib(x):
     if x <= 2:
         return 1
@@ -110,7 +122,7 @@ AssertionError
 
 We see our test suite fail immediately for `fib(0)`. We can fix up the boundary conditions of the code, and run the code again. We repeat this process until all our tests pass. Let's look at the fixed up code:
 
-```
+```{code-cell}
 def fib(x):
     if x == 0:
         return 0
@@ -136,7 +148,7 @@ Our `fib(N)` function hangs for a large value of `N` because it spawns a lot of 
 
 We can re-implement this function so that it keeps a record of previously computed values. One straightforward way of doing this is with a global cache. **We keep our previously implemented tests**, and rewrite the function:
 
-```
+```{code-cell}
 cache = {}
 def fib(x):
     global cache
@@ -169,7 +181,7 @@ Tests passed
 
 Hurray! We can be confident that our code works as expected. What if we want to refactor our code so that it doesn't use globals? Not a problem, we keep the tests around, and we rewrite the code to use an inner function:
 
-```
+```{code-cell}
 def fib(x):
     cache = {}
     def fib_inner(x):
@@ -243,7 +255,7 @@ Notice that pytest primarily relies on the `assert` statement to do the heavy li
 
 Running the `pytest` utility from the command line, we find:
 
-```command
+```console
 $ pytest test_fib.py
 ...
     def fib_inner(x):
@@ -261,7 +273,7 @@ FAILED test_fib.py::test_raises - RecursionError: maximum recursion depth exceed
 
 Notice how informative the output of pytest is compared to our homegrown test suite. `pytest` informs us that two of our tests passed - `test_typical` and `test_edge_case` - while the last one failed. Calling our `fib` function with a negative argument or a non-integer argument will make the function call itself recursively with negative numbers - it never stops! Hence,  Python eventually will generate a `RecursionError`. However, our tests are expecting a `NotImplementedError` instead! Our test correctly detected that the code has this odd behavior. We can fix it up like so:
 
-```
+```{code-cell}
 def fib(x):
     if x % 1 != 0 or x < 0:
         raise NotImplementedError('fib(x) only defined on non-negative integers.')
@@ -283,7 +295,7 @@ def fib(x):
 
 Now we can run tests again.
 
-```command
+```console
 $ pytest test_fib.py 
 =============================== test session starts ===============================
 platform linux -- Python 3.8.8, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
@@ -306,7 +318,7 @@ I claimed earlier that *pure functions* are the easiest to test. Let's see what 
 
 Classes are stateful, so we'll need to inspect their state after calling methods on them to make sure they work as expected. For example, consider this Chronometer class:
 
-```
+```{code-cell}
 import time
 
 class Chronometer:
@@ -321,7 +333,7 @@ We might want to check that the `t0` variable is indeed set by the `start` metho
 
 For a function with *I/O side effects*, we'll need to do a little extra work to verify that it works. We might need to create mock files to check whether inputs are read properly and outputs are as expected. `io.StringIO` and the `tempfile` module can help you create these mock objects. For instance, suppose we have a function `file_to_upper` that takes in an input and an output filename, and turns every letter into an uppercase:
 
-```
+```{code-cell}
 def file_to_upper(in_file, out_file):
     fout = open(out_file, 'w')
     with open(in_file, 'r') as f:
@@ -332,7 +344,7 @@ def file_to_upper(in_file, out_file):
 
 Writing a test for this is a little tortured:
 
-```
+```{code-cell}
 import tempfile
 import os
 

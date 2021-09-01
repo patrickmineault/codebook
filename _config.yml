@@ -3,7 +3,7 @@ title: "Good research code"
 author: "Patrick Mineault"
 
 execute:
-  execute_notebooks: "cache"
+  execute_notebooks: "auto"
 
 repository:
   url                       : "https://github.com/patrickmineault/repl-test"  # Online location of your book

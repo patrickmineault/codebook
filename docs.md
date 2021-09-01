@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Write good docs
 
 ```{epigraph}
@@ -57,7 +69,7 @@ Errors should never pass silently.
 
 People don't read manuals. That includes *you*. What people do read are *error messages*. Consider the following function stub, which is meant to convolve two vectors together:
 
-```
+```{code-cell}
 def conv(A, B, padding='valid'):
     """
     Convolves the 1d signals A and B.
@@ -75,7 +87,7 @@ def conv(A, B, padding='valid'):
 
 This is a fine docstring; it tells you how to use the code. Now consider the alternative function:
 
-```
+```{code-cell}
 def conv(A, B, padding='valid'):
     assert A.ndim == 1, "A must be one dimensional"
     assert B.ndim == 1, "B must be one dimensional"
@@ -95,7 +107,7 @@ This code does not tell you how to use it: it *yells* at you if you use it wrong
 
 You can add testable snippets of Python inside of docstrings. These snippets serve both as documentation and as executable tests. Consider our trusty `fib` function. We could write a docstring like this:
 
-```
+```{code-cell}
 def fib(x):
     """Calculate the x'th Fibonacci number.
 
@@ -169,7 +181,7 @@ Let's say you create a command line program `train_net.py` that trains a neural 
 Real training scripts for neural nets can take dozens of parameters. [Here's an example](https://github.com/patrickmineault/your-head-is-there-to-move-you-around/blob/main/train_net.py#L677).
 ```
 
-```
+```{code-cell}
 import argparse
 
 def main(args):

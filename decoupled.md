@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Write decoupled code
 
 ```{epigraph}
@@ -103,7 +115,7 @@ When novices are introduced to Python functions, they usually start with pure fu
 
 For instance, this function which adds two numbers together follows the canonical data flow:
 
-```python
+```{code-cell}
 def add_two_nums(num0, num1):
     return num0 + num1
 ```
@@ -125,7 +137,7 @@ Python is not a functional programming language. It uses a lot of non-pure funct
 
 For instance, consider this function which reverses a list:
 
-```python
+```{code-cell}
 def reversi(arr):
     """Reverses a list."""
     for i in range(len(arr) // 2):
@@ -142,7 +154,7 @@ This function has a side effect: it modifies its argument `arr`. In Python and m
 In the base Python library, a function which modifies its argument returns `None`. For instance, the function `sort` sorts its input argument, modifies it in place, and returns `None`. This function has a side effect, but it's obvious: if a function returns `None`, yet does useful work, it must have a side effect. When we both modify an argument and return it, we break this convention and confuse the Python reader. We can fix this by returning `None` in our function (good), or simply return a new list (better):
 
 ````{tabbed} good
-```python
+```
 def reversi(arr):
     """Reverses a list."""
     for i in range(len(arr) // 2):
@@ -152,7 +164,7 @@ def reversi(arr):
 ````
 
 ````{tabbed} better
-```python
+```
 def reversi(arr):
     """Reverses a list."""
     reved = []
@@ -202,7 +214,7 @@ Let's introduce a small-scale example that we will make progressively better. We
 
 We might code that as:
 
-```python
+```{code-cell}
 def count_words_in_file(in_file, out_file):
     counts = {}
     with open(in_file, 'r') as f:
@@ -238,7 +250,7 @@ Here are some code smells in this example:
 
 Let's start by splitting IO and computation. 
 
-```python
+```{code-cell}
 def count_words(text):
     # Split words on spaces.
     counts = {}
@@ -251,7 +263,6 @@ def count_words(text):
                 counts[w] = 0
 
     return counts
-
 
 def count_words_in_file(in_file, out_file):
     with open(in_file, 'r') as f:
@@ -273,7 +284,7 @@ def count_words_in_file(in_file, out_file):
 
 We have an off-by-one error in counts, and we are also not correctly dealing with newline characters. Let's fix this.
 
-```python
+```{code-cell}
 def count_words(text):
     # Split words on spaces.
     counts = {}
@@ -303,7 +314,7 @@ Not only have we improved the *legibility* of the code, we have improved its *co
 
 Our code has too many levels of nesting. One underlying cause is that we have two branches for when a key of dictionary exists and when it doesn't. Python has a collection in its standard library specifically built to deal with this: `collections.defaultdict`.
 
-```python
+```{code-cell}
 import collections
 
 def count_words(text):
@@ -323,7 +334,7 @@ def count_words(text):
 
 The other level of nesting is due to detecting empty words, `w != ''`. We can decrease the nesting of the counting code by skipping to the next iteration upon encountering an empty word:
 
-```python
+```{code-cell}
 import collections
 
 def count_words(text):
@@ -340,7 +351,7 @@ def count_words(text):
 
 However, the root of the problem is that there can be multiple space characters next to each other - this creates empty words. One solution is to replace multiple spaces with one space. With regular expressions, this can be done in one line:
 
-```python
+```{code-cell}
 import collections
 import re
 
