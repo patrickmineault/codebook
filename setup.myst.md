@@ -16,7 +16,7 @@ When you start a project, you will need to decide how to structure it. As an aca
 You might want to create extra standalone projects for tools you re-use across different papers.
 ```
 
-Pick a short and descriptive name for your project and create a folder in your Documents folder. For instance, when I created this project, the first step was to run:
+Pick a short and descriptive name for your project and create a folder in your Documents folder. For instance, when I created the project for this book, the first step was to run:
 
 ```console
 ~/Documents$ mkdir codebook
@@ -270,7 +270,7 @@ Note that the name of the folder which contains the code, `src`, becomes the nam
 
 ## Use the true-neutral cookiecutter
 
-If doing all this for every new project sounds like a lot of work, you can save yourself some time using the `true-neutral` cookiecutter, which creates a project skeleton using the template I showed above. `cookiecutter` generates project folders from templates. You can install it in the base conda environment with:
+If doing all this for every new project sounds like a lot of work, you can save yourself some time using the *true neutral* cookiecutter, which creates a project skeleton using the template I showed above. `cookiecutter` generates project folders from templates. You can install it in the base conda environment with:
 
 ```
 (base) ~/Documents $ pip install cookiecutter
@@ -279,14 +279,15 @@ If doing all this for every new project sounds like a lot of work, you can save 
 To create the `codebook` folder with all its subfolders and setup.py, simply use the following:
 
 ```
-(base) ~/Documents $ cookiecutter gh:patrickmineault/true-neutral
+(base) ~/Documents $ cookiecutter gh:patrickmineault/true-neutral-cookiecutter
 ```
 
-This will create an instance of the `true-neutral` project skeleton (hosting on my github here). Follow the prompts and it will create the folder structure above, including the setup file. Next, sync to your own remote repository following the github instructions, and pip install the package you've created for yourself.
 
 ```{margin}
 There are many other interesting cookiecutters. Check out the [data science cookiecutter](https://drivendata.github.io/cookiecutter-data-science/) for a more elaborate data science project template.
 ```
+
+This will create an instance of the `true-neutral-cookiecutter` project skeleton, which is hosted on my personal github. Follow the prompts and it will create the folder structure above, including the setup file. Next, pip install the package you've created for yourself, and sync to your own remote repository, following the github instructions.
 
 ## Discussion
 
