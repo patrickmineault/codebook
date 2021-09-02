@@ -75,7 +75,7 @@ figclass: boxed
 Generating a research paper can be a messy process.
 ```
 
-Future you will have forgotten 90% of that process. Code that sticks to convention, is tidy and well-documented will be far easier to use in the future that clever, obtuse code. Boring code is good code! 
+Future you will have forgotten 90% of that process. Code that sticks to convention, is tidy and well-documented will be far easier to use in the future than clever, obtuse code. Boring code is good code! 
 
 ## Discussion
 
