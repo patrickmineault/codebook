@@ -1,5 +1,5 @@
 #site-navigation {
-    background-color: transparent !important;
+    background-color: #fffff8 !important;
 }
 
 .topbar {
@@ -12,7 +12,7 @@
     box-shadow: 0 0 0 0 white !important;
 }
 
-.topbar-main {
+.dropdown-buttons-trigger, .full-screen-button {
     visibility: hidden;
 }
 

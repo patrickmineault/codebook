@@ -1,18 +1,18 @@
 format: jb-book
-root: intro.myst
+root: intro
 parts:
 - caption: Intro
   chapters:
-    - file: attitude.myst
-    - file: brains.myst
+    - file: roadmap
+    - file: brains
 - caption: Lessons
   chapters:
-    - file: setup.myst
-    - file: tidy.myst
+    - file: setup
+    - file: tidy
     - file: decoupled
     - file: testing
     - file: docs
-    - file: social.myst
+    - file: social
 - caption: Extras
   chapters:
-    - file: tools.myst
+    - file: tools
