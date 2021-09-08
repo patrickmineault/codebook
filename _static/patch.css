@@ -3,13 +3,13 @@
 }
 
 .topbar {
-    background-color: transparent !important;
+    background-color: #fffff8 !important;
     box-shadow: 0 !important;
 }
 
 .scrolled .topbar {
-    background-color: transparent !important;
-    box-shadow: 0 0 0 0 white !important;
+    background-color: #fffff8 !important;
+    box-shadow: 0 0 0 0 #fffff8 !important;
 }
 
 .dropdown-buttons-trigger, .full-screen-button {
@@ -168,7 +168,9 @@ main.bd-content #main-content dl.simple dd:not(:last-child), main.bd-content #ma
     }
 }
 
-
+p.card-text {
+    margin-top: 0px;
+}
 
 
 /* Adds dark mode */
