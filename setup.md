@@ -1,6 +1,6 @@
 # Set up your project
 
-Setting up a project in an organized way is a great way to ensure that you will remain productive as your project grows. Here are the broad steps involved:
+Setting up a organized project will help you remain productive as your project grows. The broad steps involved are:
 
 1. Pick a name and create a folder for your project
 2. Initialize a git repository and sync to Github
@@ -8,15 +8,21 @@ Setting up a project in an organized way is a great way to ensure that you will 
 4. Create a project skeleton
 5. Install a project package
 
+The end result will be a logically organized project skeleton that's synced to version control. 
+
+```{warning}
+I will present most of the project setup in the terminal, but you can do many of these steps inside of an IDE or file explorer.
+```
+
 ## Pick a name and create a folder for your project
 
-When you start a project, you will need to decide how to structure it. As an academic, a project will tend to naturally map to one paper. Therefore, **one project = one paper = one folder = one git repository** is a generally a good default structure.
+When you start a project, you will need to decide how to structure it. As an academic, a project will tend to naturally map to a paper. Therefore, **one project = one paper = one folder = one git repository** is a generally a good default structure.
 
 ```{margin}
 You might want to create extra standalone projects for tools you re-use across different papers.
 ```
 
-Pick a short and descriptive name for your project and create a folder in your Documents folder. For instance, when I created the project for this book, the first step was to run:
+Pick a short and descriptive name for your project and create a folder in your Documents folder. For instance, when I created the project for this book, the first step was to create the `codebook` folder:
 
 ```console
 ~/Documents$ mkdir codebook
@@ -24,7 +30,7 @@ Pick a short and descriptive name for your project and create a folder in your D
 
 ## Initialize a git repository and sync to Github
 
-Since git is such a core tool to manage code-heavy projects, I recommend that you set up git next. The way I prefer to do this is by going to [Github](https://github.com) and clicking the big green **New** button to create a new repository. I name the remote the same as my local folder and hit **Create Repository**.
+Since git is such a core tool to manage code-heavy projects, I recommend that you set it up immediately. The way I prefer to do this is by going to [Github](https://github.com) and clicking the big green **New** button to create a new repository. I name the remote the same as my local folder and hit **Create Repository**.
 
 ```{figure} figures/github-repo.png
 ---
@@ -49,11 +55,17 @@ git push -u origin main
 I've never attempted to remember these commands. I always just copy and paste.
 ```
 
-From then on, you can commit anywhere between a few times a day to a few times per week, depending on how the project is going. Try to make the git commit messages meaningful and to group related changes together. A changelist with 100 changed files and a message "update" is not helpful when you're trying to track when a bug was introduced several months after the fact.
+How often do you think you should commit to git?
 
-```{note}
-If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I prefer [the git panel in VSCode](vscode). 
+```{dropdown} ⚠️ Spoilers
+Depending on your pace, you should aim to *commit your code from a few times a day to a few times per week*. Don't wait until the project is almost finished before you start to commit.
 ```
+
+The general rule of thumb is that one commit should represent a unit of related work. For example, if you made changes in 3 files to add a new functionality, that should be *one* commit. Splitting the commit into 3 would lose the relationship between the changes; combining these changes with 100 other changed files would make it very hard to track down what changed. Try to make your git commit messages meaningful, as it will help you keep track down bugs several months down the line.
+
+
+
+If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I prefer [the git panel in VSCode](vscode). 
 
 ## Set up a virtual environment
 

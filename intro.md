@@ -1,4 +1,4 @@
-# Good Research Code
+# The Good Research Code Handbook
 
 ```{epigraph}
 Is my code fast? No. But is it well documented? No. But does it work? Also no. 
@@ -17,7 +17,7 @@ The primary target audience for this book are grad students and postdocs who do 
 * Have trouble finishing projects
 * Contemplate buying a small organic farm in upstate Vermont and read far too much about goat husbandry
 
-Did I hit a nerve? Yes?! Then you're in for a treat! This book is there to help you get from 0 to 1 on good software engineering practices for research projects. 
+Did I hit a nerve? Yes?! Then you're in for a treat! This book will help you get from 0 to 1 on good software engineering practices for research projects. 
 
 ## Prerequisites
 

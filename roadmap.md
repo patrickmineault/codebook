@@ -1,10 +1,8 @@
 # Roadmap
 
-Learning to code is a lifelong journey. The upper ceiling on programming skills is very high. Much like cooking, coding can be done on a purely utilitarian basis, or it can be elevated to high art. [Professional programmers with decades of experience go on months-long retreats to acquire new skills](https://www.recurse.com/about). *A good frame* for getting better at coding is to think of it as a *craft*. Reading this book is a great way to refine your craft through focused practice [^CalNewport].
+This handbook covers practices and tools from big to small. We'll discuss how to write and organize modular code, how to write docs, how to make your code robust. We'll finally reveal the correct number of spaces to use to indent code [^four]. This roadmap shows some of the concepts we'll cover in the book. Take stock of where you are now. Come back to this figure after you've read parts of this book - you'll be surprised how much you can learn in a few hours!
 
-[^CalNewport]: CS professor Cal Newport explores these themes in his book [So Good They Can't Ignore You](https://www.calnewport.com/books/so-good/).
-
-Take a look at this roadmap, which shows some of the concepts we'll cover in the book. Take stock of where you are now. Come back to this figure after you've read parts of this book - you'll be surprised how much you can learn in a few hours!
+[^four]: [Four. Four is the correct number](https://www.python.org/dev/peps/pep-0008/).
 
 ```{figure} figures/concepts.svg
 ---
@@ -14,6 +12,10 @@ Some concepts we'll cover in this book. I've highlighted in green and blue diffe
 ```
 
 ## Breaking the cycle of frustration
+
+Learning to code is a lifelong journey. The upper ceiling on programming skills is very high. Much like cooking, coding can be done on a purely utilitarian basis, or it can be elevated to high art. [Professional programmers with decades of experience go on months-long retreats to acquire new skills](https://www.recurse.com/not-a-bootcamp). *A good frame* for getting better at coding is to think of it as a *craft*. Reading this book is a great way to refine your craft through focused practice [^CalNewport].
+
+[^CalNewport]: CS professor Cal Newport explores these themes in his book [So Good They Can't Ignore You](https://www.calnewport.com/books/so-good/).
 
 When I talk to students about writing code, a lot of them describe feelings like:
 
