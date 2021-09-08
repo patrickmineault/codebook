@@ -63,9 +63,12 @@ Depending on your pace, you should aim to *commit your code from a few times a d
 
 The general rule of thumb is that one commit should represent a unit of related work. For example, if you made changes in 3 files to add a new functionality, that should be *one* commit. Splitting the commit into 3 would lose the relationship between the changes; combining these changes with 100 other changed files would make it very hard to track down what changed. Try to make your git commit messages meaningful, as it will help you keep track down bugs several months down the line.
 
+If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I tend to prefer [the git panel in VSCode](vscode). 
 
-
-If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I prefer [the git panel in VSCode](vscode). 
+```{figure} figures/git-vscode.png
+---
+The git panel in VSCode
+```
 
 ## Set up a virtual environment
 
