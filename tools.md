@@ -1,5 +1,84 @@
 # Use good tools
 
+## Use the tools introduced in each section
+
+For your convenience, here is a list of tools and packages discussed in each section of the book. 
+
+### Set up your project
+
+[git](https://git-scm.com/)
+: a command line tool for code versioning
+
+[github](https://github.com/)
+: a website where you can share code
+
+[conda](https://docs.conda.io/en/latest/)
+: a command line package manager and virtual environment manager
+
+[setuptools](https://setuptools.readthedocs.io/en/latest/userguide/quickstart.html)
+: a Python library to define pip installable packages
+
+[cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.3/)
+: a command line tool to create projects from templates
+
+### Keep things tidy
+
+[flake8](https://flake8.pycqa.org/en/latest/) and [pylint](https://pylint.org/)
+: command line linters for Python
+
+[black](https://github.com/psf/black)
+: a command line auto-formatter for Python code, with plugins for popular IDEs
+
+[vulture](https://github.com/jendrikseipp/vulture)
+: a Python package to identify dead code in your codebase
+
+[jupytext](https://github.com/mwouts/jupytext)
+: a command line tool to seamlessly translate between regular jupyter notebooks and a markdown-based representation
+
+### Write decoupled code
+
+[pandas](https://pandas.pydata.org/)
+: a Python library to represent columnar data
+
+[xarray](http://xarray.pydata.org/en/stable/)
+: a Python library to represent multidimensional tensors with named dimensions
+
+[collections](https://docs.python.org/3/library/collections.html)
+: a Python standard library of containers, including defaultdict, counter, etc.
+
+### Test your code
+
+[pytest](https://docs.pytest.org/en/6.2.x/)
+: a Python library for unit testing, along with a command line utilities
+
+### Write good docs
+
+[argparse](https://docs.python.org/3/library/argparse.html)
+: a Python library to parse command-line arguments, part of the Python standard library
+
+[shellcheck](https://github.com/koalaman/shellcheck)
+: a command-line tool that checks for common errors in bash scripts, with plugins for popular IDEs
+
+[make](https://www.gnu.org/software/make/)
+: a command-line tool to define and run directed acyclic graphs of computation
+
+[sphinx](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html)
+: a command-line tool to generate documentation from Python code and text files
+
+[readthedocs](https://readthedocs.org/)
+: a website to host documentation
+
+### Make it social
+
+[vscode live share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack)
+: IDE extension for code sharing
+
+[deepnote](https://deepnote.com/) and [cocalc](https://cocalc.com/)
+: collaborative jupyter notebooks in the browser
+
+[replit](https://replit.com)
+: collaborative IDE in the browser
+
 (vscode)=
 ## Choose an IDE
 

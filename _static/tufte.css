@@ -57,12 +57,15 @@ body {
 }
 
 /* Adds dark mode */
+/*
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #151515;
         color: #ddd;
     }
 }
+*/
+
 .heading-style, h1, h2, h3, h4, h5, h6 {
     font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
@@ -260,11 +263,13 @@ a:visited {
 }
 
 /* Adds dark mode */
+/*
 @media (prefers-color-scheme: dark) {
     a:link, .tufte-underline, .hover-tufte-underline:hover {
         text-shadow: 0.03em 0 #151515, -0.03em 0 #151515, 0 0.03em #151515, 0 -0.03em #151515, 0.06em 0 #151515, -0.06em 0 #151515, 0.09em 0 #151515, -0.09em 0 #151515, 0.12em 0 #151515, -0.12em 0 #151515, 0.15em 0 #151515, -0.15em 0 #151515;
     }
 }
+*/
 
 a:link::selection,
 a:link::-moz-selection {

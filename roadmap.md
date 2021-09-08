@@ -10,7 +10,7 @@ Take a look at this roadmap, which shows some of the concepts we'll cover in the
 ---
 figclass: boxed
 ---
-Some concepts we'll cover in this book. How many do you know now? 
+Some concepts we'll cover in this book. I've highlighted in green and blue different concepts which are relevant to short-term and to long-term memory, respectively - we'll discuss what that means in the next section. How many concepts are you familiar with now? How many do you know well?
 ```
 
 ## Breaking the cycle of frustration

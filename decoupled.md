@@ -57,7 +57,7 @@ Spaghetti code. From Brown et al. (1998), AntiPatterns. Notice the late 90's cli
 
 ## What does spaghetti code look like?
 
-I wanted to find an example of real-life spaghetti code, without being mean-spirited. `wave_clus` is a piece of software that runs in Matlab which is very useful to neuroscientists, and which I've personally use and appreciated. It's used to tease out signals from different neurons. Here's [an excerpt from real code from a function](://github.com/csn-le/wave_clus/blob/master/wave_clus.m#L964):
+I wanted to find an example of real-life spaghetti code, without being mean-spirited. `wave_clus` is a piece of software that runs in Matlab which is very useful to neuroscientists, and which I've personally used and appreciated. It's used to tease out signals from different neurons. Here's [an excerpt from real code from a function](https://github.com/csn-le/wave_clus/blob/master/wave_clus.m#L964):
 
 ```matlab
 function isi_reject_button_Callback(hObject, eventdata, handles,developer_mode)
@@ -106,7 +106,7 @@ Great code exhibits *separation of concerns*:
 
 For instance, your data loading function should just load data, and your computation function should just compute. Each function should be small and should stand on its own. If a function is longer than a screen's worth of code (80 columns, 40 lines), it's usually a good sign it's time to split it off into two. **Make small functions**.
 
-### Learn to identidy and use pure functions
+### Learn to identify and use pure functions
 
 When novices are introduced to Python functions, they usually start with pure functions. Pure functions follow the *canonical data flow*:
 

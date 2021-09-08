@@ -181,7 +181,7 @@ Let's say you create a command line program `train_net.py` that trains a neural 
 Real training scripts for neural nets can take dozens of parameters. [Here's an example](https://github.com/patrickmineault/your-head-is-there-to-move-you-around/blob/main/train_net.py#L677).
 ```
 
-```{code-cell}
+```python
 import argparse
 
 def main(args):
@@ -236,7 +236,7 @@ set -e
 mkdir assets
 
 # Download files
-aws s3 cp s3://examplebucket/images/ assets/images --recursive
+aws s3 cp s3://codebook-testbucket/images/ assets/images --recursive
 
 # Train network
 python scripts/train_net.py --model resnet --niter 100000 --in_dir assets/images --out_dir assets/trained_model
@@ -245,7 +245,7 @@ python scripts/train_net.py --model resnet --niter 100000 --in_dir assets/images
 mkdir docs/figures/
 
 # Generate plots
-python generate_plots.py --in_dir assets/trained_model --out_dir docs/figures/
+python scripts/generate_plots.py --in_dir assets/images --out_dir docs/figures/ --ckpt  asserts/trained_model/model.ckpt
 ```
 
 This allows you to see, at a glance, how to use the code, and what's more, it runs. 
@@ -277,21 +277,25 @@ You can use a more specialized build tool to build and document a pipeline. GNU 
 
 ```makefile
 .PHONY: plot
-plot: assets/trained_model docs/figures
-    python generate_plots.py --in_dir assets/trained_model --out_dir docs/figures/
+plot: assets/trained_model/model.ckpt docs/figures
+	python scripts/generate_plots.py --in_dir assets/images --out_dir docs/figures/ --ckpt  asserts/trained_model/model.ckpt
 
-assets/trained_model: assets/images
-    python scripts/train_net.py --model resnet --niter 100000 --in_dir assets/images --out_dir assets/trained_model
+assets/trained_model/model.ckpt: assets/images
+	python scripts/train_net.py --model resnet --niter 100000 --in_dir assets/images --out_dir assets/trained_model
 
 assets/images: assets
-    aws s3 cp s3://examplebucket/images/ assets/images --recursive
+	aws s3 cp s3://codebook-testbucket/images/ assets/images --recursive
 
 assets docs/figures:
-    mkdir assets
-    mkdir docs/figures/
+	mkdir assets
+	mkdir docs/figures/
 ```
 
-The plot can be created with `make plot`. The `Makefile` contains a complete description of the inputs and outputs to different scripts, and thus serves as a self-documenting artifact. [Software carpentry](https://swcarpentry.github.io/make-novice/) has an excellent tutorial on `make`. What's more, `make` only rebuilds what needs to rebuilt. In particular, if the network is already trained, `make` will detect it and won't retrain the network again, skipping ahead to the plotting task.
+```{margin}
+`make` can be pretty finicky. For instance, it requires using tabs to indent and does not support spaces.
+```
+
+The plot can be created with `make plot`. The `Makefile` contains a complete description of the inputs and outputs to different scripts, and thus serves as a self-documenting artifact. [Software carpentry](https://swcarpentry.github.io/make-novice/) has an excellent tutorial on `make`. What's more, `make` only rebuilds what needs to be rebuilt. In particular, if the network is already trained, `make` will detect it and won't retrain the network again, skipping ahead to the plotting task.
 
 `make` uses a domain-specific language (DSL) to define a DAG. It might feel daunting to learn yet another language to document a pipeline. There are numerous alternatives to `make` that define DAGs in pure Python, including [`doit`](https://pydoit.org/). There are also more complex tools that can implement Python DAGs and run them in the cloud, including [`luigi`](https://github.com/spotify/luigi), [`airflow`](https://airflow.apache.org/), and [`dask`](https://docs.dask.org/en/latest/custom-graphs.html).
 
