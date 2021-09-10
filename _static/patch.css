@@ -181,3 +181,7 @@ p.card-text {
     }
 }
 */
+
+#main-content a:link, .tufte-underline, .hover-tufte-underline:hover {
+    background-repeat: no-repeat !important;
+}

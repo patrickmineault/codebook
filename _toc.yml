@@ -11,7 +11,7 @@ parts:
     - file: tidy
     - file: decoupled
     - file: testing
-    - file: docs
+    - file: pipelines
     - file: social
 - caption: Extras
   chapters:

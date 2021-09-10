@@ -10,6 +10,8 @@ kernelspec:
   name: python3
 ---
 
+(test)=
+
 # Test your code
 
 ```{epigraph}
@@ -372,6 +374,7 @@ What we've been focused on so far are *unit tests*. Unit tests test a *unit* of 
 * *Static tests*: your editor parses and runs your code as you write it to figure out if it will crash
 * *Inline asserts*: test whether intermediate computations are as expected
 * *Unit tests*: test whether one function or unit of code works as expected
+* *Docstring tests*: unit tests embedded in docstrings
 * *Integration tests*: test whether multiple functions work correctly together
 * *Smoke tests*: test whether a large piece of code crashes at an intermediate stage
 * *Regression tests*: tests whether your code is working the way you expect to
