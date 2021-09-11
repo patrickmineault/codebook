@@ -43,7 +43,7 @@ I then follow Github's instructions to initialize the repo. In `~/Documents/code
 
 
 ```{margin}
-I've never attempted to remember these commands. I always just copy and paste.
+I've never attempted to remember these commands. I always copy and paste.
 ```
 
 ```{code}

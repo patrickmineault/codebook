@@ -42,4 +42,4 @@ You might have experienced talking about computer stuff to somebody more experie
 This is a safe space. You're in a learning environment. There will be no tests. The advice I give here is non-binding and non-sanctimonious. 
 ```
 
-It's ok to write bad code when you're learning or you're in a hurry. You have deadlines! Just remember to come back to the bad code and tidy it up after. Don't let the perfect be the enemy of the good. And remember, once you are empowered with this new knowledge, to be nice to beginners who are going through the same journey that you have.
+It's ok to write bad code when you're learning or you're in a hurry. You have deadlines! Remember to come back to the bad code and tidy it up after. Don't let the perfect be the enemy of the good. And remember, once you are empowered with this new knowledge, to be nice to beginners who are going through the same journey that you have.

@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# Don't document your code
+# Document your code
 
 ```{epigraph}
 
@@ -81,7 +81,7 @@ def conv(A, B, padding='valid'):
 
 This code does not tell you how to use it: it *yells* at you if you use it wrong. The first way relies on your good nature to read the docs; the second way *forces you* to use the code as it was intended. I would argue that the second is better [^combine]. There are several ways to generate user errors:
 
-[^combine]: You can combine raising errors and write good textual documentation.
+[^combine]: You can combine raising errors and write good docstrings.
 
 * `assert`: When an assert doesn't pass, it raises an `AssertionError`. You can optionally add an error message at the end. 
 * `NotImplementedError`, `ValueError`, `NameError`: [Commonly used, generic errors](https://docs.python.org/3/library/exceptions.html) you can raise. I probably overuse `NotImplementedError` compared to other types.
@@ -228,7 +228,7 @@ make html
 
 ## Discussion
 
-Good documentation helps maintain the long-term memory of a project. Very tricky code must be documented with care so that the memory of its intent and implementation is preserved. However, if you have a choice between documenting tricky code and refactoring the code so that it's less tricky, you'll often find that refactoring code pays off over the long term. Similarly, it's often more productive to write unit tests that lock in how the code should work than to explain how the code *should* work in words. Document code that needs to be documented, improve the code that needs to be improved, and develop the wisdom to tell apart which is which.
+Good documentation helps maintain the long-term memory of a project. Very tricky code must be documented with care so that the memory of its intent and implementation is preserved. However, if you have a choice between documenting tricky code and refactoring the code so that it's less tricky, you'll often find that refactoring code pays off over the long term. Similarly, it's often more productive to write unit tests that lock in how the code works than to explain how the code *should* work in words. Document code that needs to be documented, improve the code that can be improved, and develop the wisdom to tell them apart.
 
 ```{admonition} 5-minute exercise
 Write a docstring for a function you've worked on.
