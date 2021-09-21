@@ -341,13 +341,6 @@ Using structured projects linked to git will help your long-term memory. You wil
 
 Writing for your future self has an added bonus: it can make it easier for *other people* to use your project. Consider this: everything at Google is in one giant repository with [billions of lines of code](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext#FNE). As a new software engineer, you're invited to commit to that repository during your first week. Because everything is organized according to [strict conventions](https://github.com/google/styleguide/blob/gh-pages/pyguide.md), so it's not as *terrifying* as it sounds to jump in. Structure is what enables sustainable growth.
 
-```{figure} figures/google-day2.jpg
----
-width: 500px
----
-Day 2 at Google. Days later, these two bozos would go on to work on real Google code.
-```
-
 ```{admonition} 5-minute exercise
 Create an empty project with the true-neutral cookiecutter.
 ```
