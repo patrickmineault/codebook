@@ -29,7 +29,8 @@ A code smell is an issue with the source code of a program that indicates there 
 
 [^wikipedia]: Many of these and more are mentioned in the [Wikipedia article on code smells](https://en.wikipedia.org/wiki/Code_smell).
 
-* *Mysterious names and magic numbers*: variables have names which don't indicate their function
+* *Mysterious names*: variables have names which don't indicate their function
+* *Magic numbers*: unique values with unexplained meaning
 * *Duplicated code*: large portions of duplicated code with small tweaks
 * *Uncontrolled side effects and variable mutations*: code is written so that it's unclear where and when variables are changed (more on this later)
 * *Large functions*: big, unwieldy functions that do a little bit of everything

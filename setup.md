@@ -225,11 +225,13 @@ sys.path.append('/home/me/Documents/codebook/src')
 from code.lib import my_very_good_function
 ```
 
-The disadvantage is that this tends to be pretty brittle. You have to hard-code the name of folders in multiple places. If they move, you will break your package. It won't work on another computer with different paths, so it will make it hard to share your project with colleagues. Furthermore, dynamic paths don't play well with IDEs like [vscode](vscode) that can only look in the static environment. 
+This pattern is also frequently used in jupyter notebooks - I often see it in code cells at the top of notebooks. 
+
+The disadvantage of changing the path is that it tends to be pretty brittle. You have to hard-code the name of folders in multiple places. If they move, you will break your package. It won't work on another computer with different paths, so it will make it hard to share your project with colleagues. Furthermore, dynamic paths don't play well with IDEs like [vscode](vscode) that can only look in the static environment, so you won't get automatic code completion.
 
 ### Create a pip-installable package (recommended)
 
-This is the more scalable solution. [The packaging ecosystem in Python can feel frankly daunting](https://packaging.python.org/guides/), but creating a locally pip installable package only involves a few steps.
+This is a more scalable solution. [The packaging ecosystem in Python can feel frankly daunting](https://packaging.python.org/guides/), but a lot of it we don't need for our purposes. Creating a locally pip installable package actually only involves a few steps.
 
 #### 1. Create a `setup.py` file
 
@@ -246,7 +248,7 @@ setup(
 
 #### 2. Create a `__init__.py__` file
 
-Create an empty `__init__.py` file under the `src` directory. This will allow the `find_packages` function find the package.
+Create an empty `__init__.py` file under the `src` directory. This will allow the `find_packages` function to find the package.
 
 ```console
 (codebook) ~/Documents/codebook $ touch src/__init__.py
@@ -276,13 +278,13 @@ Now comes the fun part, installing the package. You can do so using:
 (codebook) ~/Documents/codebook $ pip install -e .
 ```
 
-`.` indicates that we're installing the package in the current directory. `-e` indicates that the package should be editable, which means that if you change the files inside the `src` folder, you don't need to re-install the package for your changes to be picked up by Python.
+`.` indicates that we're installing the package in the current directory. `-e` indicates that the package should be editable. That means that if you change the files inside the `src` folder, you don't need to re-install the package for your changes to be picked up by Python.
 
 #### 4. Use the package
 
-Once the package is locally installed, it can be easily used regardless of which directory you're in. For instance:
+Once the package is locally installed, it can be easily used *regardless of which directory you're in*. For instance:
 
-```
+```console
 (codebook) ~/Documents/codebook $ echo "print('hello world')" > src/helloworld.py
 (codebook) ~/Documents/codebook $ cd scripts
 (codebook) ~/Documents/codebook/scripts $ python
@@ -297,12 +299,30 @@ hello world
 
 How does this work? When you install a package in editable mode, Python essentially adds your code to its path. That makes it available from anywhere. The path is changed in such a way that `conda`, `vscode` and other tools are aware that your package is installed, so all these tools will know where to find your code.
 
+````{note}
+To find out where the code for an installed package is located, print the module info in the Python console:
+
+```pycon
+>>> import src
+>>> src
+<module 'src' from '/home/pmin/Documents/codebook/src/__init__.py'>
+>>> import numpy as np
+>>> np
+<module 'numpy' from '/home/pmin/anaconda3/envs/codebook/lib/python3.8/site-packages/numpy/__init__.py'>
+```
+````
+
 #### 5. (optional) Change the name of the package
 
-Note that the name of the folder which contains the code, `src`, becomes the name of the package. If you'd like to rename the package, for example to `cb`, change the name of the folder and reinstall the like so:
+Note that the name of the folder which contains the code, `src`, becomes the name of the package. If you'd like to rename the package, for example to `cb`, change the name of the folder:
 
 ```
 (codebook) ~/Documents/codebook $ mv src cb
+```
+
+If Python doesn't pick up your changes for whatever reason, re-install your package like so:
+
+```
 (codebook) ~/Documents/codebook $ pip install -e .
 ```
 
