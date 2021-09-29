@@ -81,11 +81,11 @@ end
 The fact that it's Matlab code allows us to evaluate this code with a little bit of distance. We see many different code smells:
 
 * Parsing a magic integer (`cn`) from the name of a component
-* Using `eval`
-* Using magic numbers (`USER_DATA{6}`)
+* Using magic numbers (`USER_DATA{6}`, `classes==3`)
 * Using globals (`USER_DATA`)
 * Mixing input and output (`imread` and `figure`)
 * A nested if statement which could be flattened out
+* Using `eval`
 
 The problem with spaghetti code is not that it doesn't work, is that it's *inscrutable* and *brittle*. 
 
@@ -195,7 +195,7 @@ Sometimes, code smells come from a lack of knowledge about the language. *Readin
 
 Some common issues are caused by using an idiom from another programming language in Python, where it doesn't translate. Many people using the Python data science ecosystem either come from a Matlab background, or were trained by someone who came from a Matlab background. As a consequence, they'll tend to write Matlab-like code, for example:
 
-*Using magic columns numbers to index into a numpy array*. Matlab has a matrix type that it uses for many things. You might use the 10'th column of a matrix to store a timestamp, which creates hard-to-read code. Dataframes are more appropriate to store parallel data. In 3 months from now, `A.timestamp` will be far clearer than `A[:, 10]`. [You can learn the basics of `pandas` in a weekend](https://github.com/jvns/pandas-cookbook), and it's a great time investment.
+*Using magic columns numbers to index into a numpy array*. Matlab has a matrix type that it uses for many things. You might use the 10th column of a matrix to store a timestamp, which creates hard-to-read code. Dataframes are more appropriate to store parallel data. In 3 months from now, `A.timestamp` will be far clearer than `A[:, 10]`. [You can learn the basics of `pandas` in a weekend](https://github.com/jvns/pandas-cookbook), and it's a great time investment.
 
 *Using unnamed dimensions in numpy*. Similarly, tensors with multiple dimensions can pose problems. If you have a mini-batch of images you're preparing for a deep learning pipeline, did the dimensions go `batch_size x channels x height x width`, or `batch_size x width x height x channels`? [xarray](http://xarray.pydata.org/en/stable/) and [named tensors in pytorch](https://pytorch.org/docs/stable/named_tensor.html) give you named dimensions, which will reduce your confusion down the line.
 
@@ -274,7 +274,7 @@ def count_words_in_file(in_file, out_file):
             f.write( k + ","+ str(counts[k]) + "\n")
 ```
 
-`count_words` is now a pure function - it takes in a string and returns a dict, and it has no side effects. This isolation can make t a little easier to notice bugs in the function. Indeed, if we run the code on a few test strings, we notice that this function does not work as expected.
+`count_words` is now a pure function - it takes in a string and returns a dict, and it has no side effects. This isolation can make it a little easier to notice bugs in the function. Indeed, if we run the code on a few test strings, we notice that this function does not work as expected.
 
 ```pycon
 >>> count_words("hello world")
