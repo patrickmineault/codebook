@@ -4,16 +4,16 @@ parts:
 - caption: Intro
   chapters:
     - file: roadmap
-    - file: brains
+    - file: brains.myst
 - caption: Lessons
   chapters:
-    - file: setup
-    - file: tidy
+    - file: setup.myst
+    - file: tidy.myst
     - file: decoupled
     - file: testing
-    - file: docs-code
+    - file: docs
     - file: pipelines
-    - file: social
+    - file: social.myst
 - caption: Extras
   chapters:
     - file: tools

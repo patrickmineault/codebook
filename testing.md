@@ -20,7 +20,7 @@ Most scientists who write software constantly test their code. That is, if you a
 --[Ariel Rokem](https://github.com/uwescience/shablona)
 ```
 
-Automated testing is one of the most powerful techniques that professional programmers use to make code robust. I think it should be taught in introductory Python classes for scientists - it's quite intuitive, and once you learn it, it will change the way you write code for the better.
+Automated testing is one of the most powerful techniques that professional programmers use to make code robust. Having never used testing until I went to industry, it changed the way I write code for the better.
 
 ## Testing to maintain your sanity
 
@@ -34,9 +34,9 @@ When you run an experiment and the results of the analysis don't make sense, you
 
 Testing can help you maintain your sanity by decreasing the surface of things that might be wrong with your experiment. Good code yells loudly when something goes wrong. Imagine that you had an experimental setup that alerted you when you had a ground loop, or that would sound off when you use the wrong reagent, or that would text you when it's about to overheat - how many hours or days would you save?
 
-## Testing by example
+## Unit testing by example
 
-The easiest way to understand testing is to illustrate it with a specific example. The Fibonacci sequence is defined as:
+Unit testing is the practice of testing a *unit* of code, typically a single function. The easiest way to understand what that means is to illustrate it with a specific example. The Fibonacci sequence is defined as:
 
 $$F(x) \equiv F(x-1) + F(x-2)$$
 $$F(0) \equiv 0 $$
@@ -96,7 +96,7 @@ Notice that there are no parentheses between `assert` and the statement. `assert
 
 We can also assemble multiple assert operations to create a lightweight test suite. You can hide your asserts behind an `__name__ == '__main__'` statement, so that they will only run when you directly run a file. Let's write some tests in `fib.py`:
 
-```{code-cell}
+```
 :tags: ["raises-exception"]
 def fib(x):
     if x <= 2:
@@ -125,7 +125,7 @@ AssertionError
 
 We see our test suite fail immediately for `fib(0)`. We can fix up the boundary conditions of the code, and run the code again. We repeat this process until all our tests pass. Let's look at the fixed up code:
 
-```{code-cell}
+```
 def fib(x):
     if x == 0:
         return 0
@@ -151,7 +151,7 @@ Our `fib(N)` function hangs for a large value of `N` because it spawns a lot of 
 
 We can re-implement this function so that it keeps a record of previously computed values. One straightforward way of doing this is with a global cache. **We keep our previously implemented tests**, and rewrite the function:
 
-```{code-cell}
+```
 cache = {}
 def fib(x):
     global cache
@@ -184,7 +184,7 @@ Tests passed
 
 Hurray! We can be confident that our code works as expected. What if we want to refactor our code so that it doesn't use globals? Not a problem, we keep the tests around, and we rewrite the code to use an inner function:
 
-```{code-cell}
+```
 def fib(x):
     cache = {}
     def fib_inner(x):
@@ -254,7 +254,7 @@ def test_raises():
         fib(1.5)
 ```
 
-Notice that pytest primarily relies on the `assert` statement to do the heavy lifting. `pytest` also allows offers extra functionality to deal with special test cases. `pytest.raises` creates a context manager that can be used to verify that a function raises an expected exception.
+Notice that pytest primarily relies on the `assert` statement to do the heavy lifting. `pytest` also offers extra functionality to deal with special test cases. `pytest.raises` creates a context manager that can be used to verify that a function raises an expected exception.
 
 Running the `pytest` utility from the command line, we find:
 
@@ -369,7 +369,7 @@ With remote calls and persistent storage, testing can rapidly become quite compl
 
 ## A hierarchy of tests
 
-What we've been focused on so far are *unit tests*. Unit tests test a *unit* of code, for example, a function. However, there are many different kinds of tests that people use. 
+We've been focused so far on *unit tests*. However, there are many different kinds of tests that people use. 
 
 * *Static tests*: your editor parses and runs your code as you write it to figure out if it will crash
 * *Inline asserts*: test whether intermediate computations are as expected
@@ -419,7 +419,7 @@ If you want, you can even integrate this workflow into github by running tests e
 
 ## Discussion
 
-Writing tests is not something is not part of common scientific practice yet. Half of people who answered a survey I put out on Twitter say they never test anything at all, and I have quite a few professional programmers as followers! However, testing deserves a higher place in scientific programming education. It's a centrally important practice.
+Writing tests is not not part of common scientific practice yet. Half of people who answered a survey I put out on Twitter say they never test anything at all, and I have quite a few professional programmers as followers! However, testing deserves a higher place in scientific programming education. It's a centrally important practice.
 
 Testing allows you to decrease the uncertainty surface of your code. With the right tests, you can convince yourself that parts of your code are *correct*, and that allows you to concentrate your debugging efforts. Keeping that uncertainty out of your head saves your working memory, and your debugging will be faster and more efficient. At the same time, code with tests is less stressful to refactor, so you will be able to continuously improve your code so that it doesn't slide towards an unmanageable mess of spaghetti.
 

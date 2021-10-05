@@ -174,11 +174,23 @@ def reversi(arr):
 ```
 ````
 
-Functions with side effects can be hard to reason about: you often need to understand their internals and state in order to use them properly. They're also hard to test. **Not every function with side effects is problematic, however**. My pragmatic advice is to first learn to spot and understand pure functions. Then organize your code so that many functions are pure, and those that are not are well-behaved. For instance:
+Functions with side effects can be hard to reason about: you often need to understand their internals and state in order to use them properly. They're also harder to test. **Not every function with side effects is problematic, however**. My pragmatic advice is to first learn to spot and understand pure functions. Then organize your code so that many functions are pure, and those that are not are well-behaved. 
+
+```{figure} figures/pure-impure.svg
+---
+width: 500px
+figclass: boxed
+---
+Shrinking the amount of impure functions in your code will make it easier to reason about. Graphic [inspired by CodeRefinery](https://cicero.xyz/v3/remark/0.14.0/github.com/coderefinery/modular-code-development/master/talk.md/#10).
+```
+
+For instance:
 
 * Write functions which modify their arguments, or return values, but not both
-* Use classes or decorators to encapsulate state rather than using stateful functions
 * Concentrate your IO in their own functions rather than sprinkling them throughout the code
+* Use classes to encapsulate state rather than using stateful functions and globals. Python classes use the convention that private variables, which shouldn't be modified from outside, start with an `_`. For example, `self._x` denotes a class member `_x` which should be managed by the class itself [^convention].
+
+[^convention]: Python doesn't restrict outside access to private class variables; it's just a convention to use `_` as a prefix.
 
 ### Make your code more Pythonic
 
@@ -194,7 +206,7 @@ Sometimes, code smells come from a lack of knowledge about the language. *Readin
 
 Some common issues are caused by using an idiom from another programming language in Python, where it doesn't translate. Many people using the Python data science ecosystem either come from a Matlab background, or were trained by someone who came from a Matlab background. As a consequence, they'll tend to write Matlab-like code, for example:
 
-*Using magic columns numbers to index into a numpy array*. Matlab has a matrix type that it uses for many things. You might use the 10'th column of a matrix to store a timestamp, which creates hard-to-read code. Dataframes are more appropriate to store parallel data. In 3 months from now, `A.timestamp` will be far clearer than `A[:, 10]`. [You can learn the basics of `pandas` in a weekend](https://github.com/jvns/pandas-cookbook), and it's a great time investment.
+*Using magic columns numbers to index into a numpy array*. Matlab has a matrix type that it uses for many things. You might use the tenth column of a matrix to store a timestamp, which creates hard-to-read code. Dataframes are more appropriate to store parallel data. In 3 months from now, `A.timestamp` will be far clearer than `A[:, 10]`. [You can learn the basics of `pandas` in a weekend](https://github.com/jvns/pandas-cookbook), and it's a great time investment.
 
 *Using unnamed dimensions in numpy*. Similarly, tensors with multiple dimensions can pose problems. If you have a mini-batch of images you're preparing for a deep learning pipeline, did the dimensions go `batch_size x channels x height x width`, or `batch_size x width x height x channels`? [xarray](http://xarray.pydata.org/en/stable/) and [named tensors in pytorch](https://pytorch.org/docs/stable/named_tensor.html) give you named dimensions, which will reduce your confusion down the line.
 
@@ -273,7 +285,7 @@ def count_words_in_file(in_file, out_file):
             f.write( k + ","+ str(counts[k]) + "\n")
 ```
 
-`count_words` is now a pure function - it takes in a string and returns a dict, and it has no side effects. This isolation can make t a little easier to notice bugs in the function. Indeed, if we run the code on a few test strings, we notice that this function does not work as expected.
+`count_words` is now a pure function - it takes in a string and returns a dict, and it has no side effects. This isolation can make it a little easier to notice bugs in the function. Indeed, if we run the code on a few test strings, we notice that this function does not work as expected.
 
 ```pycon
 >>> count_words("hello world")

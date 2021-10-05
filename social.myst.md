@@ -57,7 +57,7 @@ Joining an open source project doesn't have to be an all or none affair. You can
 
 Sometimes, you can pick a moribund open source project and maintain it. And if something doesn't exist yet, you can start your own open source project. You will do everything wrong, but you will learn a ton.
 
-## It doesn't have to be lonely
+## Find your community
 
 In addition to projects, there are communities of programers that support each other. [Hacker spaces](https://wiki.hackerspaces.org/w/index.php) promote self-reliance through learning technical skills, which include fabrication, woodworking, sewing and programming. Many meetups exist, focused on Python, data science, deep learning, or more. Some groups are designed as safe spaces for underrepresented people, for example [PyLadies](https://www.pyladies.com/).
 

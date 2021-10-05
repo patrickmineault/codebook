@@ -1,12 +1,14 @@
-# Document pipelines and projects
+# Document your project
 
-Research code is written in spurts and fits. You will often put code aside for several months and focus your energy on experiments, passing qualifying exams or working on another project. When you come back to your original project, you will be lost. A little prep work by writing docs will help you preserve your knowledge over the long run. 
+Research code is written in spurts and fits. You will often put code aside for several months and focus your energy on experiments, passing qualifying exams or working on another project. When you come back to your original project, you will be lost. A little prep work by writing docs will help you preserve your knowledge over the long run. In the previous chapter, I showed how to document small units of your code. In this section, I talk about how to document entire projects.
 
 ## Document pipelines
 
 It's a common practice to use graphical tools (GUIs) to perform analyses. It also happens more often than most people are willing to admit that different variants of a pipeline are run by commenting and un-commenting code. Both of these practices make it hard to reproduce a result 6 months down the line. What was run, and when?
 
-One approach is to textually document in detail what piece of code was run to obtain results. This method can be tedious and error-prone. It's usually worth it to push as much computation as possible into reproducible pipelines which are self-documenting. That way, there's no ambiguity as to what piece of code produced what graphic or table. Manual steps involving GUI tools should produce results which can be ingested by text-based pipelines. For instance, a GUI to interactively define regions-of-interest (ROI) should export the ROI coordinates so the rest pipeline can ingest it. 
+One approach is to textually document in detail what piece of code was run to obtain results. This method can be tedious and error-prone. It's usually worth it to push as much computation as possible into reproducible pipelines which are self-documenting. That way, there's no ambiguity about how results were produced. 
+
+Manual steps involving GUI tools should produce results which can be ingested by text-based pipelines. For instance, a interactive GUI to define regions-of-interest (ROI) should export the ROI coordinates in a way that the pipeline can ingest it. 
 
 ### Write console programs
 
@@ -178,9 +180,9 @@ figclass: boxed
 Record of one deep-learning run in wandb.ai
 ```
 
-## Write high-level text docs
+## Document projects
 
-In addition to documenting pipelines, it's important to write proper textual documentation. The secret is that once you've written good unit tests and have documented your pipelines, you won't have a lot of text docs to write. 
+In addition to documenting pipelines, it's important to write proper textual documentation for your project. The secret is that once you've written good unit tests and have documented your pipelines, you won't have a lot of text docs to write. 
 
 ### Write a `README.md` file
 
