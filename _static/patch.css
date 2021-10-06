@@ -153,6 +153,10 @@ main.bd-content #main-content dl.simple dd:not(:last-child), main.bd-content #ma
     .MathJax_Display, li::marker, .brackets, main.bd-content #main-content .prev-next-bottom .right-next .prevnext-label, main.bd-content #main-content .prev-next-bottom .left-prev .prevnext-label {
         color:rgba(var(--pst-color-paragraph));
     }
+
+    #main-content a:link, .tufte-underline, .hover-tufte-underline:hover {
+        background: none !important;
+    }
 }
 
 p.card-text {
