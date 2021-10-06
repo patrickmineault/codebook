@@ -24,7 +24,7 @@ Big software companies like Google [have their own coding style guide](https://g
 
 Reading style guides is nobody's idea of a good time, but thankfully tools exist to help you maintain good coding style. If you prefer to eventually learn the rules, you can install `flake8` or `pylint`. Both tools are *linters* - detectors of bad style - which allow you to find and correct common deviations from the style guide. The ideal place to use the linter is inside of an IDE, [for example VSCode](vscode). It's also possible to use linters from the command line. 
 
-A more radical way to impose style is to use a *code formatter*. A linter suggests fixes which you implement yourself; a formatter fixes issues automatically whenever you save a file. `black` [imposes consistent Python style](https://github.com/psf/black), and has plugins for all the popular IDEs.
+A more radical way to impose style is to use a *code formatter*. A linter suggests fixes which you implement yourself; a formatter fixes issues automatically whenever you save a file. `black` [imposes consistent Python style](https://github.com/psf/black), and has plugins for all the popular IDEs. `black` is particularly useful to run on old code with haphazard style; run it once to upgrade code to a standard format.
 
 ## Delete dead code
 
@@ -47,7 +47,7 @@ If you use notebooks to develop software, you are probably using the wrong tool.
 -- [Yihui Xie](https://yihui.org/en/2018/09/notebook-war/)
 ```
 
-Jupyter notebooks present a special challenge to keep tidy because of their inherently nonlinear nature. It's commonplace for long-running notebooks to accumulate lots of cruft: dead cells, out-of-date analyses, inaccurate commentary. Moreover, it takes a lot of discipline to put imports and functions at the start of notebooks.
+Jupyter notebooks present a special challenge to keep tidy because of their inherently nonlinear nature. It's commonplace for long-running notebooks to accumulate lots of cruft: dead cells, out-of-date analyses, inaccurate commentary. Moreover, it takes a lot of discipline to put imports and functions at the start of notebooks. They don't play well with source control, so it can be hard to track down what has changed from one version of a notebook to another.
 
 ```{figure} figures/jupyter.svg
 ---

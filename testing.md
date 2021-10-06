@@ -254,7 +254,7 @@ def test_raises():
         fib(1.5)
 ```
 
-Notice that pytest primarily relies on the `assert` statement to do the heavy lifting. `pytest` also offers extra functionality to deal with special test cases. `pytest.raises` creates a context manager that can be used to verify that a function raises an expected exception.
+Notice that pytest primarily relies on the `assert` statement to do the heavy lifting. `pytest` also offers extra functionality to deal with special test cases. `pytest.raises` creates a context manager to verify that a function raises an expected exception.
 
 Running the `pytest` utility from the command line, we find:
 
@@ -419,9 +419,9 @@ If you want, you can even integrate this workflow into github by running tests e
 
 ## Discussion
 
-Writing tests is not not part of common scientific practice yet. Half of people who answered a survey I put out on Twitter say they never test anything at all, and I have quite a few professional programmers as followers! However, testing deserves a higher place in scientific programming education. It's a centrally important practice.
+Writing tests is not part of common scientific practice yet, but I think it deserves a higher place in scientific programming education. 
 
-Testing allows you to decrease the uncertainty surface of your code. With the right tests, you can convince yourself that parts of your code are *correct*, and that allows you to concentrate your debugging efforts. Keeping that uncertainty out of your head saves your working memory, and your debugging will be faster and more efficient. At the same time, code with tests is less stressful to refactor, so you will be able to continuously improve your code so that it doesn't slide towards an unmanageable mess of spaghetti.
+Testing allows you to decrease the uncertainty surface of your code. With the right tests, you can convince yourself that parts of your code are *correct*, and that allows you to concentrate your debugging efforts. Keeping that uncertainty out of your head saves your working memory, and debugging will be faster and more efficient. At the same time, code with tests is less stressful to refactor, so you will be able to continuously improve your code so that it doesn't slide towards an unmanageable mess of spaghetti.
 
 Testing is not an all-or-none proposition: you can start writing lightweight inline tests in your code today. Find a commented out `print` statement in your code. Can you figure out how to replace it with an `assert`?
 

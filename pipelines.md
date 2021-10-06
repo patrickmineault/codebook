@@ -206,7 +206,7 @@ Different environments support slightly different variants of Markdown - Remarka
 
 Markdown has taken over the world of technical writing. Using the same format everywhere creates tremendous opportunities, so I highly recommend that you write your documentation in Markdown. With the same text, you can generate:
 
-* *Digital notes*. [notion](https://notion.so/), [notable](https://notable.app/), GitHub.
+* *Digital notes*. [Notion](https://notion.so/), [notable](https://notable.app/), GitHub.
 * *Blogs*. [Wordpress](https://wordpress.com), [Jekyll](https://jekyllrb.com/)
 * *Wikis*. Github.
 * *Static sites*. [Jekyll](https://jekyllrb.com/), [eleventy](https://11ty.dev/), GitHub Pages
@@ -216,7 +216,7 @@ Markdown has taken over the world of technical writing. Using the same format ev
 
 The same Markdown can be deployed in different environments depending on what exactly you want to accomplish. For some projects, the `README.md` file will be all that is needed. Others will want a static site that shows highlights of the paper. Yet other projects will be well-served by blog posts which discuss in longer form the tradeoffs involved in the design decisions. 
 
-Creating your documentation in Markdown you make it really easy for you to eventually migrate to another format. I tend to use a combination of all these tools. For instance, I write notes on papers in notion; I then export those notes to markdown as stubs for my Wordpress blog, for pandoc slides or for jupyterbook. 
+Creating your documentation in Markdown you make it really easy for you to eventually migrate to another format. I tend to use a combination of all these tools. For instance, I write notes on papers in Notion; I then export those notes to markdown as stubs for my Wordpress blog, for pandoc slides or for jupyterbook. 
 
 ```{epigraph}
 Some things are in our control and others not. [...] If [a thing] concerns anything not in your control, be prepared to say that it is nothing to you. 

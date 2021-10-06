@@ -29,7 +29,8 @@ A code smell is an issue with the source code of a program that indicates there 
 
 [^wikipedia]: Many of these and more are mentioned in the [Wikipedia article on code smells](https://en.wikipedia.org/wiki/Code_smell).
 
-* *Mysterious names and magic numbers*: variables have names which don't indicate their function
+* *Mysterious names*: variables have names which don't indicate their function
+* *Magic numbers*: unique values with unexplained meaning
 * *Duplicated code*: large portions of duplicated code with small tweaks
 * *Uncontrolled side effects and variable mutations*: code is written so that it's unclear where and when variables are changed (more on this later)
 * *Large functions*: big, unwieldy functions that do a little bit of everything
@@ -80,11 +81,11 @@ end
 The fact that it's Matlab code allows us to evaluate this code with a little bit of distance. We see many different code smells:
 
 * Parsing a magic integer (`cn`) from the name of a component
-* Using `eval`
-* Using magic numbers (`USER_DATA{6}`)
+* Using magic numbers (`USER_DATA{6}`, `classes==3`)
 * Using globals (`USER_DATA`)
 * Mixing input and output (`imread` and `figure`)
 * A nested if statement which could be flattened out
+* Using `eval`
 
 The problem with spaghetti code is not that it doesn't work, is that it's *inscrutable* and *brittle*. 
 
