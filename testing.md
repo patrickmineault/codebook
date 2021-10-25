@@ -231,6 +231,12 @@ If something caused a bug, write a test for it. 70% of bugs are old bugs that ke
 
 Testing with `assert` hidden behind `__name__ == '__main__'` works great for small-scale testing. However, once you have a lot of tests, it starts to make sense to group them into a *test suite* and run them with a *test runner*. There are two main frameworks to run unit tests in Python, `pytest` and `unittest`. `pytest` is the more popular of the two, so I'll cover that here.
 
+To install pytest on your system, first run:
+
+```python
+pip install -U pytest
+```
+
 Writing a test suite for pytest is a matter of taking our previous unit tests and putting them in a separate file, wrapping them in functions which start with `test_`. In `tests/test_fib.py`, we write:
 
 ```
