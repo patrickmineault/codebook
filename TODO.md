@@ -1,6 +1,4 @@
-* Get feedback from reviewers
 * Add a capstone project with accompanying repository for the book
-* Consider adding CKA back into the mix
 * Give people a place to chat about the book
 
 Read these resources:
