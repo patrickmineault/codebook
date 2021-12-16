@@ -8,7 +8,7 @@ Setting up a organized project will help you remain productive as your project g
 4. Create a project skeleton
 5. Install a project package
 
-The end result will be a logically organized project skeleton that's synced to version control. 
+The end result will be a logically organized project skeleton that's synced to version control.
 
 ```{warning}
 I will present most of the project setup in the terminal, but you can do many of these steps inside of an IDE or file explorer.
@@ -41,7 +41,6 @@ The big green New button.
 
 I then follow Github's instructions to initialize the repo. In `~/Documents/codebook`, I run:
 
-
 ```{margin}
 I've never attempted to remember these commands. I always copy and paste.
 ```
@@ -62,9 +61,9 @@ How often do you think you should commit to git?
 Depending on your pace, you should aim to commit your code from *a few times a day* to *a few times per week*. Don't wait until the project is almost finished before you start to commit.
 ```
 
-The general rule of thumb is that one commit should represent a unit of related work. For example, if you made changes in 3 files to add a new functionality, that should be *one* commit. Splitting the commit into 3 would lose the relationship between the changes; combining these changes with 100 other changed files would make it very hard to track down what changed. Try to make your git commit messages meaningful, as it will help you keep track down bugs several months down the line.
+The general rule of thumb is that one commit should represent a unit of related work. For example, if you made changes in 3 files to add a new functionality, that should be _one_ commit. Splitting the commit into 3 would lose the relationship between the changes; combining these changes with 100 other changed files would make it very hard to track down what changed. Try to make your git commit messages meaningful, as it will help you keep track down bugs several months down the line.
 
-If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I tend to prefer [the git panel in VSCode](vscode). 
+If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I tend to prefer [the git panel in VSCode](vscode).
 
 ```{figure} figures/git-vscode.png
 ---
@@ -81,7 +80,6 @@ Why do I use virtual Python environments? So I don't fuck up all my local shit.
 --[Nick Wan](https://twitter.com/nickwan)
 ```
 
-
 ```{figure} figures/python_environment_2x.png
 ---
 width: 492px
@@ -91,11 +89,11 @@ Python environments can be a real pain. From [xkcd.com](https://xkcd.com/1987/) 
 
 Many novices starting out in Python use one big monolithic Python environment. Every package is installed in that one environment. The problem is that this environment is not documented anywhere. Hence, if they need to move to another computer, or they need to recreate the environment from scratch several months later, they're in for several hours or days of frustration.
 
-The solution is to use a *virtual environment* to manage dependencies. Each virtual environment specifies which versions of software and packages a project uses. The specs can be different for different projects, and each virtual environment can be easily swapped, created, duplicated or destroyed. You can use software like `conda`,  `pipenv`, `poetry`, `venv`, `virtualenv`, `asdf` or `docker` - among others - to manage dependencies. Which one you prefer is a matter of personal taste and [countless internet feuds](https://twitter.com/patrickmineault/status/1429560804869873664?s=20). Here I present the `conda` workflow, which is particularly popular among data scientists and researchers.
+The solution is to use a _virtual environment_ to manage dependencies. Each virtual environment specifies which versions of software and packages a project uses. The specs can be different for different projects, and each virtual environment can be easily swapped, created, duplicated or destroyed. You can use software like `conda`, `pipenv`, `poetry`, `venv`, `virtualenv`, `asdf` or `docker` - among others - to manage dependencies. Which one you prefer is a matter of personal taste and [countless internet feuds](https://twitter.com/patrickmineault/status/1429560804869873664?s=20). Here I present the `conda` workflow, which is particularly popular among data scientists and researchers.
 
 ### Conda
 
-Conda is the *de facto* standard package manager data science-centric Python. `conda` is both a package manager (something that installs package on your system) and a virtual environment manager (something that can swap out different combinations of packages and binaries - virtual environments - easily). 
+Conda is the _de facto_ standard package manager for data science-centric Python. `conda` is both a package manager (something that installs package on your system) and a virtual environment manager (something that can swap out different combinations of packages and binaries - virtual environments - easily).
 
 [Once conda is installed](https://docs.conda.io/en/latest/miniconda.html) - for instance, through miniconda - you can create a new environment and activate it like so:
 
@@ -165,12 +163,12 @@ Let's look at each of these components in turn.
 
 ### Folders
 
-* `data`: Where you put raw data for your project. You usually won't sync this to source control, unless you use very small datasets (< 10 MBs).
-* `docs`: Where you put documentation, including Markdown and reStructuredText (reST). Calling it `docs` makes it easy to publish documentation online through Github pages.
-* `results`: Where you put results, including checkpoints, hdf5 files, pickle files, as well as figures and tables. If these files are heavy, you won't put these under source control.
-* `scripts`: Where you put scripts - Python and bash alike - as well as .ipynb notebooks.
-* `src`: Where you put reusable Python modules for your project. This is the kind of python code that you `import`.
-* `tests`: Where you put tests for your code. We'll cover testing in a later lesson.
+- `data`: Where you put raw data for your project. You usually won't sync this to source control, unless you use very small, text-based datasets (< 10 MBs).
+- `docs`: Where you put documentation, including Markdown and reStructuredText (reST). Calling it `docs` makes it easy to publish documentation online through Github pages.
+- `results`: Where you put results, including checkpoints, hdf5 files, pickle files, as well as figures and tables. If these files are heavy, you won't put these under source control.
+- `scripts`: Where you put scripts - Python and bash alike - as well as .ipynb notebooks.
+- `src`: Where you put reusable Python modules for your project. This is the kind of python code that you `import`.
+- `tests`: Where you put tests for your code. We'll cover testing in a later lesson.
 
 You can create this project structure manually using `mkdir` on the command line:
 
@@ -180,9 +178,9 @@ $ mkdir {data,docs,results,scripts,src,tests}
 
 ### Files
 
-* `.gitignore` contains a list of files that git should ignore.
-* `README.md` contains a description of your project, including installation instructions. This file is what people see by default when they navigate to your project on GitHub.
-* `environment.yml` contains the description of your conda environment.
+- `.gitignore` contains a list of files that git should ignore.
+- `README.md` contains a description of your project, including installation instructions. This file is what people see by default when they navigate to your project on GitHub.
+- `environment.yml` contains the description of your conda environment.
 
 `.gitignore` can be initialized to the following:
 
@@ -225,7 +223,7 @@ sys.path.append('/home/me/Documents/codebook/src')
 from code.lib import my_very_good_function
 ```
 
-This pattern is also frequently used in jupyter notebooks - I often see it in code cells at the top of notebooks. 
+This pattern is also frequently used in jupyter notebooks - I often see it in code cells at the top of notebooks.
 
 The disadvantage of changing the path is that it tends to be pretty brittle. You have to hard-code the name of folders in multiple places. If they move, you will break your package. It won't work on another computer with different paths, so it will make it hard to share your project with colleagues. Furthermore, dynamic paths don't play well with IDEs like [vscode](vscode) that can only look in the static environment, so you won't get automatic code completion.
 
@@ -282,7 +280,7 @@ Now comes the fun part, installing the package. You can do so using:
 
 #### 4. Use the package
 
-Once the package is locally installed, it can be easily used *regardless of which directory you're in*. For instance:
+Once the package is locally installed, it can be easily used _regardless of which directory you're in_. For instance:
 
 ```console
 (codebook) ~/Documents/codebook $ echo "print('hello world')" > src/helloworld.py
@@ -332,7 +330,7 @@ If Python doesn't pick up your changes for whatever reason, re-install your pack
 
 ## Use the true-neutral cookiecutter
 
-If doing all this for every new project sounds like a lot of work, you can save yourself some time using the *true neutral* cookiecutter, which creates the project skeleton outlined above automatically. `cookiecutter` is a Python tool which generates project folders from templates. You can install it in the base conda environment with:
+If doing all this for every new project sounds like a lot of work, you can save yourself some time using the _true neutral_ cookiecutter, which creates the project skeleton outlined above automatically. `cookiecutter` is a Python tool which generates project folders from templates. You can install it in the base conda environment with:
 
 ```
 (base) ~/Documents $ pip install cookiecutter
@@ -343,7 +341,6 @@ To create the `codebook` folder with all its subfolders and setup.py, use the fo
 ```
 (base) ~/Documents $ cookiecutter gh:patrickmineault/true-neutral-cookiecutter
 ```
-
 
 ```{margin}
 There are many other interesting cookiecutters. Check out the [data science cookiecutter](https://drivendata.github.io/cookiecutter-data-science/) for a more elaborate data science project template.
@@ -359,7 +356,7 @@ You can reorganize an existing project to align better with the guidelines here.
 
 Using structured projects linked to git will help your long-term memory. You will be able to instantly understand how files are laid out months after you've last worked on that project. Using a virtual environment will allow you to recreate that environment in the far future. And git will give you a time machine to work with.
 
-Writing for your future self has an added bonus: it can make it easier for *other people* to use your project. Consider this: everything at Google is in one giant repository with [billions of lines of code](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext#FNE). As a new software engineer, you're invited to commit to that repository during your first week. Because everything is organized according to [strict conventions](https://github.com/google/styleguide/blob/gh-pages/pyguide.md), so it's not as *terrifying* as it sounds to jump in. Structure is what enables sustainable growth.
+Writing for your future self has an added bonus: it can make it easier for _other people_ to use your project. Consider this: everything at Google is in one giant repository with [billions of lines of code](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext#FNE). As a new software engineer, you're invited to commit to that repository during your first week. Because everything is organized according to [strict conventions](https://github.com/google/styleguide/blob/gh-pages/pyguide.md), so it's not as _terrifying_ as it sounds to jump in. Structure is what enables sustainable growth.
 
 ```{admonition} 5-minute exercise
 Create an empty project with the true-neutral cookiecutter.

@@ -1,4 +1,4 @@
-# Testing numerical code: CKA
+# Test numerical code: CKA
 
 Let's look at an extended example of testing numerical code. This example implements a computational method called CKA which was introduced [in this paper](https://arxiv.org/abs/1905.00414). Importantly, CKA is not already implemented in scipy or sci-kit learn or in any other pip installable package: we're flying solo [^caveat].
 
