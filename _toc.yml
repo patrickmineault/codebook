@@ -16,6 +16,7 @@ parts:
     - file: social.myst
 - caption: Extras
   chapters:
+    - file: zipf
     - file: cka
     - file: tools
     - file: acknowledgements
