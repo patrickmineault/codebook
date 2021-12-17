@@ -111,7 +111,7 @@ From this point on, you can install packages through the conda installer like so
 To export a list of dependencies so you can easily recreate your environment, use the `export env` command:
 
 ```console
-(codebook) ~/Documents/codebook$ conda export env > environment.yml
+(codebook) ~/Documents/codebook$ conda env export > environment.yml
 ```
 
 You can then commit `environment.yml` to document this environment. You can recreate this environment - when you move to a different computer, for example - using:
