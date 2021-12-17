@@ -1,6 +1,8 @@
 # in _config.yml
 title: "Good research code"
-author: "Patrick Mineault"
+author: "<a href='https://xcorr.net'>Patrick Mineault</a> <a href='https://twitter.com/patrickmineault'><img height='24' width='24' src='_images/twitter.svg' alt='Twitter' style='width:24px'></a>"
+copyright: "2021"
+logo: figures/unicorn.png
 
 execute:
   execute_notebooks: "auto"
@@ -11,15 +13,17 @@ repository:
   branch                    : main  # Which branch of the repository should be used when creating links (optional)
 
 html:
+  google_analytics_id: G-3Q6LDVNS0X
   home_page_in_navbar: true
   use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
-  baseurl: https://locahost:8888/
+  baseurl: https://goodresearch.dev/
   favicon: images/favicon.ico
   use_fullscreen_button: false
   comments:
-    hypothesis: true
+    hypothesis: false
+  extra_footer: "<a href='https://github.com/patrickmineault/codebook/issues'>Report issue</a>."
 
 launch_buttons:
   thebe             : true
@@ -36,3 +40,12 @@ parse:
     - substitution
     - dollarmath
     - deflist
+    - html_image
+
+sphinx:
+  extra_extensions:
+  - sphinxext.opengraph
+  config:
+    ogp_site_url: "https://goodresearch.dev/"
+    ogp_image: "https://goodresearch.dev/_images/unicorn.png"
+    ogp_description_length: 200
