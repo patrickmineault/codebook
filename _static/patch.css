@@ -172,13 +172,15 @@ main.bd-content #main-content dl.field-list dd:not(:last-child) {
   li::marker,
   .brackets,
   main.bd-content #main-content .prev-next-bottom .right-next .prevnext-label,
-  main.bd-content #main-content .prev-next-bottom .left-prev .prevnext-label {
+  main.bd-content #main-content .prev-next-bottom .left-prev .prevnext-label,
+  .margin .sidebar {
     color: rgba(var(--pst-color-paragraph));
   }
 
   #main-content a:link,
   .tufte-underline,
-  .hover-tufte-underline:hover {
+  .hover-tufte-underline:hover,
+  div.sidebar {
     background: none !important;
   }
 }
@@ -251,4 +253,12 @@ body {
 
 #navbar-toggler {
   visibility: hidden;
+}
+
+.prev-next-bottom a.left-prev {
+  float: left;
+}
+
+.prev-next-bottom a.right-next {
+  float: right;
 }

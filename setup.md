@@ -192,7 +192,7 @@ data
 A `README.md` should have already been created during the initial sync to Github. You can create the `environment.yml` file as follows:
 
 ```console
-$ conda export env > environment.yml
+$ conda env export > environment.yml
 ```
 
 ## Install a project package

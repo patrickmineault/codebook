@@ -56,6 +56,17 @@ At the end of each main lesson, I ask you to put one of the lessons into practic
 Brush your teeth.
 ```
 
+## Materials
+
+This handbook is associated with several repositories:
+
+- [Source for the text of the book](https://github.com/patrickmineault/codebook)
+- [True neutral cookie cutter](github.com/patrickmineault/true-neutral-cookiecutter)
+- [CKA example](https://github.com/patrickmineault/codebook_examples/tree/main/cka)
+- [Zipf's law example project](https://github.com/patrickmineault/zipf/)
+
+You can take a look at a presentation built covering [the same materials](https://github.com/patrickmineault/research_code) [here](https://www.crowdcast.io/e/nma2021/29).
+
 ## Why did I make this?
 
 I'm <a href='https://xcorr.net'>Patrick Mineault</a> <a href='https://twitter.com/patrickmineault'><img height='24' width="24" src='figures/twitter.svg' alt='Twitter' style="width:24px"></a>. I did my PhD in computational neuroscience at McGill University, in Montreal. I wrote a lot of not very good code, mostly in Matlab. One time, my code was in a non-working state for an entire month - I would furiously type on the keyboard all day in the hopes it would eventually work, and it didn't. It made me sad. But I managed to graduate. Then I did a postdoc. More of the same.
