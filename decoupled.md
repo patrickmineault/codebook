@@ -239,9 +239,9 @@ def count_words_in_file(in_file, out_file):
             for w in W:
                 if w != '':
                     if w in counts:
-                        counts[word] += 1
+                        counts[w] += 1
                     else:
-                        counts[word] = 0
+                        counts[w] = 0
 
     with open(out_file, 'w') as f:
         for k in counts.keys():
@@ -427,9 +427,9 @@ def count_words_in_file(in_file, out_file):
             for w in W:
                 if w != '':
                     if w in counts:
-                        counts[word] += 1
+                        counts[w] += 1
                     else:
-                        counts[word] = 0
+                        counts[w] = 0
 
     with open(out_file, 'w') as f:
         for k in counts.keys():
