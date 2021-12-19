@@ -23,7 +23,7 @@ html:
   use_fullscreen_button: false
   comments:
     hypothesis: false
-  extra_footer: "<a href='https://github.com/patrickmineault/codebook/issues'>Report issue</a>."
+  extra_footer: "Licensed under <a href='https://github.com/patrickmineault/codebook/blob/main/LICENSE'>CC-BY 4.0</a> [<a href='https://github.com/patrickmineault/codebook'>source</a>].<br /><a href='https://github.com/patrickmineault/codebook/issues'>Report issue</a>."
 
 launch_buttons:
   thebe             : true

@@ -251,14 +251,38 @@ body {
   padding-right: 0%;
 }
 
-#navbar-toggler {
-  visibility: hidden;
-}
-
 .prev-next-bottom a.left-prev {
   float: left;
 }
 
 .prev-next-bottom a.right-next {
   float: right;
+}
+
+@media (max-width: 768px) {
+  .bd-search {
+    display: none !important;
+  }
+
+  #site-navigation {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+
+  .bd-sidenav:first-child {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  #main-content {
+    padding-top: 1em !important;
+  }
+
+  main.bd-content {
+    padding-top: 0px !important;
+  }
 }

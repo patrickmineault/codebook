@@ -60,12 +60,13 @@ Brush your teeth.
 
 This handbook is associated with several repositories:
 
-- [Source for the text of the book](https://github.com/patrickmineault/codebook)
-- [True neutral cookie cutter](github.com/patrickmineault/true-neutral-cookiecutter)
+- [True neutral cookie cutter](https://github.com/patrickmineault/true-neutral-cookiecutter)
 - [CKA example](https://github.com/patrickmineault/codebook_examples/tree/main/cka)
 - [Zipf's law example project](https://github.com/patrickmineault/zipf/)
+- [Source for the text of the book](https://github.com/patrickmineault/codebook)
+- [Tweaked sphinx book theme](https://github.com/patrickmineault/sphinx-book-theme/)
 
-You can take a look at a presentation built covering [the same materials](https://github.com/patrickmineault/research_code) [here](https://www.crowdcast.io/e/nma2021/29).
+You can take a look at a presentation covering [the same materials](https://github.com/patrickmineault/research_code) [here](https://www.crowdcast.io/e/nma2021/29).
 
 ## Why did I make this?
 
