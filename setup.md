@@ -244,7 +244,7 @@ setup(
 )
 ```
 
-#### 2. Create a `__init__.py__` file
+#### 2. Create a `__init__.py` file
 
 Create an empty `__init__.py` file under the `src` directory. This will allow the `find_packages` function to find the package.
 
