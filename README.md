@@ -15,3 +15,9 @@ Recreate the conda environment with:
 Run `jupyter-book build .` to build.
 
 Use `netlify deploy --prod` to deploy.
+
+## Citing this book
+
+<img data-toggle="modal" data-target="[data-modal='10.5281-zenodo.5796873']" src="https://zenodo.org/badge/398390273.svg" alt="10.5281/zenodo.5796873" />
+
+Patrick J Mineault & The Good Research Code Handbook Community (2021). *The Good Research Code Handbook*. Zenodo. [doi:10.5281/zenodo.5796873](https://dx.doir.org/10.5281/zenodo.5796873)
