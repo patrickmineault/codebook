@@ -204,7 +204,7 @@ Creating a project package is slightly annoying, but the payoff is quite substan
 You might notice a flaw in the preceding project structure. Let's say you create a reusable `lib.py` under the `src` folder, with a function `my_very_good_function`. How would you reference that function in `scripts/use_lib.py`? This doesn't work:
 
 ```pycon
->>> from ..code.lib import my_very_good_function
+>>> from ..src.lib import my_very_good_function
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ImportError: attempted relative import with no known parent package
@@ -220,7 +220,7 @@ You can put the `src` folder on your Python path. To do so, you can [append the 
 import sys
 sys.path.append('/home/me/Documents/codebook/src')
 
-from code.lib import my_very_good_function
+from src.lib import my_very_good_function
 ```
 
 This pattern is also frequently used in jupyter notebooks - I often see it in code cells at the top of notebooks.
@@ -239,7 +239,7 @@ Create a `setup.py` file in the root of your project. Here's a minimal setup fil
 from setuptools import find_packages, setup
 
 setup(
-    name='code',
+    name='src',
     packages=find_packages(),
 )
 ```
