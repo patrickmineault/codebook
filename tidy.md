@@ -77,7 +77,7 @@ It can be difficult to co-develop a notebook and a module side-by-side, because 
 %autoreload 2
 ```
 
-Now, it will feel uncomfortable to move away from jupyter notebooks for some workflows. You might be used to writing small snippets of code and then interact with it immediately to see whether it works - moving the code to a module means you can't use in this very immediate fashion. We'll fix this discomfort later as we learn about [testing](testing).
+Now, it will feel uncomfortable to move away from jupyter notebooks for some workflows. You might be used to writing small snippets of code and then interact with it immediately to see whether it works - moving the code to a module means you can't use it in this very immediate fashion. We'll fix this discomfort later as we learn about [testing](testing).
 
 ### Refactor comfortably
 
