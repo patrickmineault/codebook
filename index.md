@@ -78,6 +78,14 @@ At the invitation of Ella Batty, I gave a workshop for the students in neuroscie
 
 ![It me](figures/pic.jpeg)
 
+## Citing this handbook
+
+<span class='Z3988' title='url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=computerProgram&amp;rft.title=The%20Good%20Research%20Code%20Handbook&amp;rft.publisher=Zenodo&amp;rft.description=patrickmineault%2Fcodebook%3A%201.0.0.%20Initial%20release%20on%20Dec%2017th%2C%202021%2C%20plus%20hotpatches%20for%20style%20and%20typos.&amp;rft.identifier=https%3A%2F%2Fzenodo.org%2Frecord%2F5796873&amp;rft.aufirst=Patrick&amp;rft.aulast=Mineault&amp;rft.au=Patrick%20Mineault&amp;rft.au=The%20Good%20Research%20Code%20Handbook%20community%20&amp;rft.date=2021-12-21'></span>
+
+<img data-toggle="modal" data-target="[data-modal='10.5281-zenodo.5796873']" src="https://zenodo.org/badge/398390273.svg" alt="10.5281/zenodo.5796873" />
+
+Patrick J Mineault & The Good Research Code Handbook Community (2021). _The Good Research Code Handbook_. Zenodo. [doi:10.5281/zenodo.5796873](https://dx.doir.org/10.5281/zenodo.5796873)
+
 ## Contact me
 
 <a href="https://github.com/patrickmineault/codebook/issues">You can report issues with the handbook here</a>. <a href='https://twitter.com/patrickmineault'>I'm active on Twitter</a>. For speaking engagements or collaborations, send me an email at patrick DOT mineault AT gmail DOT com.
