@@ -37,7 +37,7 @@ Dead code is a liability. From "Piled Higher and Deeper" by Jorge Cham. [www.phd
 
 Code that gets developed over time can accumulate lots of dead ends and odds and ends. After a while, the majority of the code in your project might be dead: code that never gets called. You know who hates dead code? You, in three months. Navigating a project that contains stale or incorrect code can waste a huge amount of time. Whenever you're about to put aside a project for a long time - for instance, after submitting a manuscript - _clean up dead code_. Delete dead code from the main branch. With git and github, you have access to a time machine, so you can always revert if you mess up.
 
-If you're not used to this workflow, you might be scared of messing something up. You can download an archive of the repo before the cleanup to reassure yourself. If you've been diligent about committing and pushing code to Github, however, deleting dead code is a safe process. [`vulture` can help you find dead code in your codebase](https://github.com/jendrikseipp/vulture). Unit tests can help you verify that your codebase will still run after you eliminate dead code -- we will cover this is a later lesson.
+If you're not used to this workflow, you might be scared of messing something up. You can download an archive of the repo before the cleanup to reassure yourself. If you've been diligent about committing and pushing code to Github, however, deleting dead code is a safe process. [`vulture` can help you find dead code in your codebase](https://github.com/jendrikseipp/vulture). Unit tests can help you verify that your codebase will still run after you eliminate dead code -- we will cover this in a later lesson.
 
 ## Keep jupyter notebooks tidy
 
@@ -77,13 +77,13 @@ It can be difficult to co-develop a notebook and a module side-by-side, because 
 %autoreload 2
 ```
 
-Now, it will feel uncomfortable to move away from jupyter notebooks for some workflows. You might be used to writing small snippets of code and then interact with it immediately to see whether it works - moving the code to a module means you can't use in this very immediate fashion. We'll fix this discomfort later as we learn about [testing](testing).
+Now, it will feel uncomfortable to move away from jupyter notebooks for some workflows. You might be used to writing small snippets of code and then interact with it immediately to see whether it works - moving the code to a module means you can't use it in this very immediate fashion. We'll fix this discomfort later as we learn about [testing](testing).
 
 ### Refactor comfortably
 
 Refactoring and cleaning up a notebook can be a pain in the jupyter environment: moving a cell across several screens is a pain. [`jupytext` can seamlessly translate between a regular jupyter notebook and a markdown-based textual representation](https://jupytext.readthedocs.io/en/latest/). In my opinion, refactoring and moving cells around is far easier in the text representation. Checking in the jupytext representation of a notebook to source control also makes it easy to compare different versions of the same analysis.
 
-Move imports and function definitions to the top of your notebook. Look at Markdown headers and verify that they meaningfully summarize the analysis presented in that section. I find that it's better to write good headings and little long-form text at the start of an analysis, when the analysis still has a lot of room to shift, and to fill in the text later. Read the descriptions and check that they're up-to-date. Delete cells with obsolete analyses from the bottom of notebook - you can always recover them with source control if you're checked in the jupytext representation.
+Move imports and function definitions to the top of your notebook. Look at Markdown headers and verify that they meaningfully summarize the analysis presented in that section. I find that it's better to write good headings and little long-form text at the start of an analysis, when the analysis still has a lot of room to shift, and to fill in the text later. Read the descriptions and check that they're up-to-date. Delete cells with obsolete analyses from the bottom of notebook - you can always recover them with source control if you've checked in the jupytext representation.
 
 ## Discussion
 
