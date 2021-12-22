@@ -37,7 +37,7 @@ Dead code is a liability. From "Piled Higher and Deeper" by Jorge Cham. [www.phd
 
 Code that gets developed over time can accumulate lots of dead ends and odds and ends. After a while, the majority of the code in your project might be dead: code that never gets called. You know who hates dead code? You, in three months. Navigating a project that contains stale or incorrect code can waste a huge amount of time. Whenever you're about to put aside a project for a long time - for instance, after submitting a manuscript - _clean up dead code_. Delete dead code from the main branch. With git and github, you have access to a time machine, so you can always revert if you mess up.
 
-If you're not used to this workflow, you might be scared of messing something up. You can download an archive of the repo before the cleanup to reassure yourself. If you've been diligent about committing and pushing code to Github, however, deleting dead code is a safe process. [`vulture` can help you find dead code in your codebase](https://github.com/jendrikseipp/vulture). Unit tests can help you verify that your codebase will still run after you eliminate dead code -- we will cover this is a later lesson.
+If you're not used to this workflow, you might be scared of messing something up. You can download an archive of the repo before the cleanup to reassure yourself. If you've been diligent about committing and pushing code to Github, however, deleting dead code is a safe process. [`vulture` can help you find dead code in your codebase](https://github.com/jendrikseipp/vulture). Unit tests can help you verify that your codebase will still run after you eliminate dead code -- we will cover this in a later lesson.
 
 ## Keep jupyter notebooks tidy
 
