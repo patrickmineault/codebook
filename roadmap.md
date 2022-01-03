@@ -13,6 +13,45 @@ figclass: boxed
 Some concepts we'll cover in this book. I've highlighted in green and blue different concepts which are relevant to short-term and to long-term memory, respectively - we'll discuss what that means in the next section. How many concepts are you familiar with now? How many do you know well?
 ```
 
+## Conventions
+
+This book uses a number of conventions throughout. The command line is indicated by a `$` prompt:
+
+```
+$ ls -al
+```
+
+The Python command prompt is indicated by `>>>`:
+
+```
+$ python
+>>> import antigravity
+```
+
+Sometimes I will ask you a question, and will hide the answer behind a spoilers panel. For example, what is the answer to life, the universe, and everything?
+
+```{dropdown} ⚠️ Spoilers
+42
+```
+
+At the end of each main lesson, I ask you to put one of the lessons into practice through a 5-minute exercise. It looks like this:
+
+```{admonition} 5-minute exercise
+Brush your teeth.
+```
+
+## Code
+
+This handbook refers to code in several repositories:
+
+- [True neutral cookie cutter](https://github.com/patrickmineault/true-neutral-cookiecutter)
+- [CKA example](https://github.com/patrickmineault/codebook_examples/tree/main/cka)
+- [Zipf's law example project](https://github.com/patrickmineault/zipf/)
+- [Source for the text of the book](https://github.com/patrickmineault/codebook)
+- [Tweaked sphinx book theme](https://github.com/patrickmineault/sphinx-book-theme/)
+
+You can use these as references when you're working on your own projects.
+
 ## Breaking the cycle of frustration
 
 Learning to code is a lifelong journey. The upper ceiling on programming skills is very high. Much like cooking, coding can be done on a purely utilitarian basis, or it can be elevated to high art. [Professional programmers with decades of experience go on months-long retreats to acquire new skills](https://www.recurse.com/not-a-bootcamp). _A good frame_ for getting better at coding is to think of it as a _craft_. Reading this book is a great way to refine your craft through focused practice [^calnewport].

@@ -29,45 +29,6 @@ I've tried to write this book in a progressive manner: some content is targeted 
 
 Some of the examples I use are neuroscience-inspired - but neuroscience background is absolutely not a requirement. Appreciation for unicorns <img height='24' width="24" src='figures/unicorn.png' alt='Twitter' style="vertical-align:top"> is a big plus.
 
-## Conventions
-
-This book uses a number of conventions throughout. The command line is indicated by a `$` prompt:
-
-```
-$ ls -al
-```
-
-The Python command prompt is indicated by `>>>`:
-
-```
-$ python
->>> import antigravity
-```
-
-Sometimes I will ask you a question, and will hide the answer behind a spoilers panel. For example, what is the answer to life, the universe, and everything?
-
-```{dropdown} ⚠️ Spoilers
-42
-```
-
-At the end of each main lesson, I ask you to put one of the lessons into practice through a 5-minute exercise. It looks like this:
-
-```{admonition} 5-minute exercise
-Brush your teeth.
-```
-
-## Materials
-
-This handbook is associated with several repositories:
-
-- [True neutral cookie cutter](https://github.com/patrickmineault/true-neutral-cookiecutter)
-- [CKA example](https://github.com/patrickmineault/codebook_examples/tree/main/cka)
-- [Zipf's law example project](https://github.com/patrickmineault/zipf/)
-- [Source for the text of the book](https://github.com/patrickmineault/codebook)
-- [Tweaked sphinx book theme](https://github.com/patrickmineault/sphinx-book-theme/)
-
-You can take a look at a presentation covering [the same materials](https://github.com/patrickmineault/research_code) [here](https://www.crowdcast.io/e/nma2021/29).
-
 ## Why did I make this?
 
 I'm <a href='https://xcorr.net'>Patrick Mineault</a> <a href='https://twitter.com/patrickmineault'><img height='24' width="24" src='figures/twitter.svg' alt='Twitter' style="width:24px"></a>. I did my PhD in computational neuroscience at McGill University, in Montreal. I wrote a lot of not very good code, mostly in Matlab. One time, my code was in a non-working state for an entire month - I would furiously type on the keyboard all day in the hopes it would eventually work, and it didn't. It made me sad. But I managed to graduate. Then I did a postdoc. More of the same.
@@ -85,6 +46,10 @@ At the invitation of Ella Batty, I gave a workshop for the students in neuroscie
 <img data-toggle="modal" data-target="[data-modal='10.5281-zenodo.5796873']" src="https://zenodo.org/badge/398390273.svg" alt="10.5281/zenodo.5796873" />
 
 Patrick J Mineault & The Good Research Code Handbook Community (2021). _The Good Research Code Handbook_. Zenodo. [doi:10.5281/zenodo.5796873](https://dx.doi.org/10.5281/zenodo.5796873)
+
+## Alternative formats
+
+You can take a look at a presentation I gave covering [the same materials](https://github.com/patrickmineault/research_code) [here](https://www.crowdcast.io/e/nma2021/29). Please contact me if you'd like to see a print edition of this book -- I am alpha testing one currently.
 
 ## Contact me
 
