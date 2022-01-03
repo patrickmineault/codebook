@@ -119,11 +119,11 @@ The next step is to calculate word counts for each text. We will create a module
 - START OF THE PROJECT GUTENBERG EBOOK
 - END OF THE PROJECT GUTENBERG EBOOK
 
-Because we only have three books in our collection, we can manually test that each book is processed correctly. However, if we ever process a fourth, unusually formatted text, and our detection didn't work, we want our pipeline to fail in a graceful way. Thus, we add in-line `assert` statements to make sure our filter finds the two delimiters in reasonable locations in the text.
-
 ```{margin}
 [Ensuring data quality is huge chunk of the workload of data scientists](https://blog.ldodds.com/2020/01/31/do-data-scientists-spend-80-of-their-time-cleaning-data-turns-out-no/).
 ```
+
+Because we only have three books in our collection, we can manually test that each book is processed correctly. However, if we ever process a fourth, unusually formatted text, and our detection didn't work, we want our pipeline to fail in a graceful way. Thus, we add in-line `assert` statements to make sure our filter finds the two delimiters in reasonable locations in the text.
 
 ```python
 def _clean_gutenberg_text(text):
@@ -218,7 +218,7 @@ We are now ready to write glue code to run our pipeline from the command line. W
 - `out_folder`: where we will output the results
 
 ```{margin}
-Keep your command line programs to less than 20 flags. Beyond that, it becomes a pain for the maintainer to figure out where in the code the flags are used and which are safe to remove.
+Keep your command line programs to less than 20 flags. Beyond that, they become a pain to maintain.
 ```
 
 We create this command line interface using `argparse`. This looks like this:
