@@ -176,13 +176,13 @@ main.bd-content #main-content dl.field-list dd:not(:last-child) {
   .margin .sidebar {
     color: rgba(var(--pst-color-paragraph));
   }
+}
 
-  #main-content a:link,
-  .tufte-underline,
-  .hover-tufte-underline:hover,
-  div.sidebar {
-    background: none !important;
-  }
+#main-content a:link,
+.tufte-underline,
+.hover-tufte-underline:hover,
+div.sidebar {
+  background: none !important;
 }
 
 p.card-text {
