@@ -109,10 +109,10 @@ You can use a more specialized build tool to build and document a pipeline. GNU 
 
 ```makefile
 .PHONY: plot
-plot: assets/trained_model/model.ckpt docs/figures
-	python scripts/generate_plots.py --in_dir data/images --out_dir results/figures/ --ckpt  results/trained_model/model.ckpt
+plot: results/trained_model/model.ckpt results/figures
+	python scripts/generate_plots.py --in_dir data/images --out_dir results/figures/ --ckpt results/trained_model/model.ckpt
 
-assets/trained_model/model.ckpt: assets/images
+results/trained_model/model.ckpt: data/images
 	python scripts/train_net.py --model resnet --niter 100000 --in_dir data/images --out_dir results/trained_model
 
 data/images:
@@ -123,7 +123,7 @@ results/figures:
 ```
 
 ```{margin}
-`make` can be pretty finicky. For instance, it requires using tabs to indent and does not support spaces.
+`make` can be pretty finicky. For instance, you must use _tabs_, not spaces, to indent.
 ```
 
 The plot can be created with `make plot`. The `Makefile` contains a complete description of the inputs and outputs to different scripts, and thus serves as a self-documenting artifact. [Software carpentry](https://swcarpentry.github.io/make-novice/) has an excellent tutorial on `make`. What's more, `make` only rebuilds what needs to be rebuilt. In particular, if the network is already trained, `make` will detect it and won't retrain the network again, skipping ahead to the plotting task.
@@ -206,9 +206,9 @@ Different environments support slightly different variants of Markdown - Remarka
 
 Markdown has taken over the world of technical writing. Using the same format everywhere creates tremendous opportunities, so I highly recommend that you write your documentation in Markdown. With the same text, you can generate:
 
-- _Digital notes_. [Notion](https://notion.so/), [notable](https://notable.app/), GitHub.
+- _Digital notes_. [Notion](https://notion.so/), [notable](https://notable.app/), [Obsidian](https://obsidian.md/), [HackMD](https://hackmd.io/), GitHub.
 - _Blogs_. [Wordpress](https://wordpress.com), [Jekyll](https://jekyllrb.com/)
-- _Wikis_. Github.
+- _Wikis_. GitHub.
 - _Static sites_. [Jekyll](https://jekyllrb.com/), [eleventy](https://11ty.dev/), GitHub Pages
 - _Executable books_. [jupyterbook](https://jupyterbook.org/) generates this book.
 - _Slide decks_. [Pandoc](https://pandoc.org/) via Beamer.
