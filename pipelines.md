@@ -211,7 +211,7 @@ Markdown has taken over the world of technical writing. Using the same format ev
 - _Wikis_. GitHub.
 - _Static sites_. [Jekyll](https://jekyllrb.com/), [eleventy](https://11ty.dev/), GitHub Pages
 - _Executable books_. [jupyterbook](https://jupyterbook.org/) generates this book.
-- _Slide decks_. [Pandoc](https://pandoc.org/) via Beamer.
+- _Slide decks_. [Pandoc](https://pandoc.org/) via conversion to LaTeX/Beamer.
 - _readthedocs-style documentation_. [Sphinx](https://www.sphinx-doc.org/en/master/) using MyST.
 
 The same Markdown can be deployed in different environments depending on what exactly you want to accomplish. For some projects, the `README.md` file will be all that is needed. Others will want a static site that shows highlights of the paper. Yet other projects will be well-served by blog posts which discuss in longer form the tradeoffs involved in the design decisions.
