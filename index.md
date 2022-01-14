@@ -49,7 +49,7 @@ Patrick J Mineault & The Good Research Code Handbook Community (2021). _The Good
 
 ## Alternative formats
 
-You can take a look at a presentation I gave covering [the same materials](https://github.com/patrickmineault/research_code) [here](https://www.crowdcast.io/e/nma2021/29). Please contact me if you'd like to see a print edition of this book -- I am alpha testing one currently.
+<a href="_static/book.pdf">You can download a PDF version of this book here</a>. You can also take a look at a presentation I gave covering [the same materials](https://github.com/patrickmineault/research_code) [here](https://www.crowdcast.io/e/nma2021/29). Please contact me if you'd like to see a print edition of this book.
 
 ## Contact me
 
