@@ -10,7 +10,7 @@ Please report any issues via the Issues tab.
 
 Recreate the conda environment with:
 
-`conda create --name cb --file environment.yml`
+`conda env create -n cb --file environment.yml`
 
 Run `jupyter-book build .` to build.
 
