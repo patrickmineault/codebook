@@ -121,6 +121,7 @@ dependencies:
   - zlib=1.2.11
   - zstd=1.4.9
   - pip:
+    - git+https://github.com/patrickmineault/sphinx-book-theme.git
     - alabaster
     - anyio
     - argon2-cffi
