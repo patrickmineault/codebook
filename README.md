@@ -12,6 +12,8 @@ Recreate the conda environment with:
 
 `conda env create -n cb --file environment.yml`
 
+Then `conda activate cb`.
+
 Run `jupyter-book build .` to build.
 
 Use Run `jupyter-book build . --all` to force a full rebuild.
