@@ -77,7 +77,7 @@ In fact, unstructured exploration is a very inefficient way to learn a complex s
 
 ## Our social contract
 
-You might have experienced talking about computer stuff to somebody more experienced and came out discouraged. Perhaps they were dismissive, or snooty, or just kind of a jerk. It's an unfortunate tendency in our profession, and I want to break that cycle, because I think that this lack of _psychological safety_ can make it hard to become proficient at coding.
+You might have experience talking about computer stuff with somebody more experienced, and left feeling discouraged. Perhaps they were dismissive, or snooty, or just kind of a jerk. It's an unfortunate tendency in our profession, and I want to break that cycle, because I think that this lack of _psychological safety_ can make it hard to become proficient at coding.
 
 ```{important}
 This is a safe space. You're in a learning environment. There will be no tests. The advice I give here is non-binding and non-sanctimonious.
