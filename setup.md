@@ -117,7 +117,7 @@ To export a list of dependencies so you can easily recreate your environment, us
 You can then commit `environment.yml` to document this environment. You can recreate this environment - when you move to a different computer, for example - using:
 
 ```console
-$ conda create --name recoveredenv --file environment.yml
+$ conda env create --name recoveredenv --file environment.yml
 ```
 
 Now, you might ask yourself, can I use both pip and conda together?
