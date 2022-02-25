@@ -108,18 +108,6 @@ From this point on, you can install packages through the conda installer like so
 (codebook) ~/Documents/codebook$ conda install pandas numpy scipy matplotlib seaborn
 ```
 
-To export a list of dependencies so you can easily recreate your environment, use the `export env` command:
-
-```console
-(codebook) ~/Documents/codebook$ conda env export > environment.yml
-```
-
-You can then commit `environment.yml` to document this environment. You can recreate this environment - when you move to a different computer, for example - using:
-
-```console
-$ conda env create --name recoveredenv --file environment.yml
-```
-
 Now, you might ask yourself, can I use both pip and conda together?
 
 ```{dropdown} ⚠️ Spoilers
@@ -138,6 +126,43 @@ For pip:
 
 `conda` tracks which packages are pip installed and will include a special section in `environment.yml` for pip packages. [However, installing pip packages may negatively affect conda's ability to install conda packages correctly after the first pip install](https://www.anaconda.com/blog/using-pip-in-a-conda-environment). Therefore, people generally recommend installing **big conda packages first**, then installing **small pip packages second**.
 ```
+
+### Export your environment
+
+To export a list of dependencies so you can easily recreate your environment, use the `export env` command:
+
+```console
+(codebook) ~/Documents/codebook$ conda env export > environment.yml
+```
+
+You can then commit `environment.yml` to document this environment. You can recreate this environment - when you move to a different computer, for example - using:
+
+```console
+$ conda env create --name recoveredenv --file environment.yml
+```
+
+This `export` method will create a well-documented, perfectly _reproducible_ conda environment on your OS. However, it will document low-level, OS-specific packages, which means it won't be _portable_ to a different OS. If you need portability, you can instead manually document packages you go along. Here's an example file `environment.yml` file:
+
+```
+name: cb
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy=1.21.2
+  - pip
+  - pip:
+    - tqdm==4.62.3
+```
+
+`pip` and `conda` packages are documented separately. Note that `pip` package versions use `==` to identify the package number, while `conda` packages use `=`. If you need to add dependencies to your project, change the `environment.yml` file, then run this command to update your conda environment:
+
+```
+(cb) $ conda env update --prefix ./env --file environment.yml --prune
+```
+
+You can [read more about creating reproducible environments in this Carpentries tutorial](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html). You can also [use the `environment.yml` file for this book's repo](https://github.com/patrickmineault/codebook/blob/main/environment.yml) as an inspiration.
 
 ## Create a project skeleton
 
@@ -189,7 +214,7 @@ $ mkdir {data,docs,results,scripts,src,tests}
 data
 ```
 
-A `README.md` should have already been created during the initial sync to Github. You can create the `environment.yml` file as follows:
+A `README.md` should have already been created during the initial sync to Github. You can either create an `environment.yml` file manually or export an exhaustive list of the packages you are currently using:
 
 ```console
 $ conda env export > environment.yml
