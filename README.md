@@ -18,6 +18,10 @@ Run `jupyter-book build .` to build.
 
 Use Run `jupyter-book build . --all` to force a full rebuild.
 
+The book can be visualized locally using a development server. Typically, I use `netlify dev` for this purpose.
+
+To remove `thebe.js` includes (which causes a 500KB javascript file to be loaded), run `python strip_js.py` (a hack).
+
 Use `netlify deploy -d _build/html --prod` to deploy.
 
 ## Building the book to PDF
