@@ -7,5 +7,6 @@ dependencies:
   - pip
   - pip:
     - git+https://github.com/patrickmineault/sphinx-book-theme.git
-    - jupyter-book
+    - git+https://github.com/executablebooks/jupyter-book.git
+    - tqdm
     - sphinxext-opengraph
