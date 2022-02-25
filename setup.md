@@ -141,7 +141,7 @@ You can then commit `environment.yml` to document this environment. You can recr
 $ conda env create --name recoveredenv --file environment.yml
 ```
 
-This `export` method will create a well-documented, perfectly _reproducible_ conda environment on your OS. However, it will document low-level, OS-specific packages, which means it won't be _portable_ to a different OS. If you need portability, you can instead manually document packages you go along. Here's an example file `environment.yml` file:
+This `export` method will create a well-documented, perfectly _reproducible_ conda environment on your OS. However, it will document low-level, OS-specific packages, which means it won't be _portable_ to a different OS. If you need portability, you can instead write an `environment.yml` file manually. Here's an example file:
 
 ```
 name: cb
