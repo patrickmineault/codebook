@@ -27,7 +27,7 @@ I've tried to write this book in a progressive manner: some content is targeted 
 - **Git & Github**: a lot of the practices introduced here will require you to change your code, which could cause existing functionality to break. You might even accidentally delete something important! Mastering git and github means you will have a time machine for your code, so you can revert to an earlier state. [There's a great intro to git for beginners from software carpentries](https://swcarpentry.github.io/git-novice/).
 - **The command line**: You will need to run some commands on the command line to implement some of the advice in this book. I'm going to assume that you have some familiarity with running commands from a Unix-style shell (e.g. bash). [There's a great intro to the unix shell from software carpentries](http://swcarpentry.github.io/shell-novice/). If you're using Windows, you will still be able to run many tools from the Windows command prompt. Long term, your life will be easier if you [install the Windows Subsystem for Linux (WSL)](wsl) which will give you access to a Unix-style shell.
 
-Some of the examples I use are neuroscience-inspired - but neuroscience background is absolutely not a requirement. Appreciation for unicorns <img height='24' width="24" src='figures/unicorn.png' alt='Twitter' style="vertical-align:top"> is a big plus.
+Some of the examples I use are neuroscience-inspired - but neuroscience background is absolutely not a requirement. Appreciation for unicorns <img height='24' width="24" src='figures/unicorn.png' alt='unicorns' style="vertical-align:top"> is a big plus.
 
 ## Why did I make this?
 
