@@ -1,0 +1,4 @@
+git+https://github.com/patrickmineault/sphinx-book-theme.git
+git+https://github.com/executablebooks/jupyter-book.git
+tqdm
+sphinxext-opengraph
