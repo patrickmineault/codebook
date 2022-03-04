@@ -24,6 +24,8 @@ To remove `thebe.js` includes (which causes a 500KB javascript file to be loaded
 
 Use `netlify deploy -d _build/html --prod` to deploy.
 
+_Note_: when you push a PR through Github, it will build a preview of your work through Netlify automatically. When I merge the PR, it will automatically deploy the built website to [goodresearch.dev](https://goodresearch.dev).
+
 ## Building the book to PDF
 
 Manually change `_config.yml` so the author name appears correctly:

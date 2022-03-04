@@ -31,7 +31,7 @@ Some of the examples I use are neuroscience-inspired - but neuroscience backgrou
 
 ## Why did I make this?
 
-I'm <a href='https://xcorr.net'>Patrick Mineault</a> <a href='https://twitter.com/patrickmineault'><img height='24' width="24" src='figures/twitter.svg' alt='Twitter' style="width:24px"></a>. I did my PhD in computational neuroscience at McGill University, in Montreal. I wrote a lot of not very good code, mostly in Matlab. One time, my code was in a non-working state for an entire month - I would furiously type on the keyboard all day in the hopes it would eventually work, and it didn't. It made me sad. But I managed to graduate. Then I did a postdoc. More of the same.
+I'm [Patrick Mineault](https://xcorr.net). I did my PhD in computational neuroscience at McGill University, in Montreal. I wrote a lot of not very good code, mostly in Matlab. One time, my code was in a non-working state for an entire month - I would furiously type on the keyboard all day in the hopes it would eventually work, and it didn't. It made me sad. But I managed to graduate. Then I did a postdoc. More of the same.
 
 Eventually, I decided to properly study CS. I studied data structures, algorithms and software engineering practices, and I got a big-boy job as a software engineer at Google in California. It was then that I learned the error of my ways. I had lost time during my research days because I didn't know how to organize and write code that didn't self-destruct out of spite. But this is fixable! With knowledge!
 
