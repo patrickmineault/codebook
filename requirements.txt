@@ -1,4 +1,4 @@
 git+https://github.com/patrickmineault/sphinx-book-theme.git
-git+https://github.com/executablebooks/jupyter-book.git@419c863eb669efbbdaea82017902f592e7eaa8b1
+jupyter-book==0.11.3
 tqdm
 sphinxext-opengraph
