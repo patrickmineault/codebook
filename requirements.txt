@@ -1,3 +1,5 @@
+Jinja2==2.11.3
+MarkupSafe==2.0.1
 docutils==0.16
 sphinx-togglebutton==0.2.2
 attrs==20.3.0
