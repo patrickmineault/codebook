@@ -16,7 +16,7 @@ kernelspec:
 
 Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
 
--- Kernighan's law [^Kernighan]
+-- Kernighan's law [^kernighan]
 ```
 
 [^kernighan]: Brian Kernighan is a Canadian computer scientist who contributed to the development of Unix and co-authored the first book on the C programming language.

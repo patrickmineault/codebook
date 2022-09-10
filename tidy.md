@@ -52,6 +52,7 @@ Jupyter notebooks present a special challenge to keep tidy because of their inhe
 ```{figure} figures/jupyter.svg
 ---
 width: 500px
+figclass: boxed
 ---
 Jupyter notebooks are very good at literate programming - play to their strengths by focusing your jupyter notebooks on mixing explanations, text and graphics.
 ```

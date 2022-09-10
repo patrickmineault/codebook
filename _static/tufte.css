@@ -309,15 +309,6 @@ a:visited {
   }
 }
 
-/* Adds dark mode */
-/*
-@media (prefers-color-scheme: dark) {
-    a:link, .tufte-underline, .hover-tufte-underline:hover {
-        text-shadow: 0.03em 0 #151515, -0.03em 0 #151515, 0 0.03em #151515, 0 -0.03em #151515, 0.06em 0 #151515, -0.06em 0 #151515, 0.09em 0 #151515, -0.09em 0 #151515, 0.12em 0 #151515, -0.12em 0 #151515, 0.15em 0 #151515, -0.15em 0 #151515;
-    }
-}
-*/
-
 a:link::selection,
 a:link::-moz-selection {
   text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe,
@@ -677,6 +668,10 @@ main.bd-content #main-content dl.field-list dd:not(:last-child) {
     --pst-color-background: 32, 32, 32;
   }
 
+  .search {
+    color: rgba(var(--pst-color-primary)) !important;
+  }
+
   main.bd-content #main-content h1,
   main.bd-content #main-content h2,
   main.bd-content #main-content h3,
@@ -728,10 +723,6 @@ main.bd-content #main-content dl.field-list dd:not(:last-child) {
   main.bd-content #main-content .prev-next-bottom .left-prev .prevnext-label,
   .margin .sidebar {
     color: rgba(var(--pst-color-paragraph));
-  }
-
-  div {
-    color: rgba(var(--pst-color-primary)) !important;
   }
 }
 
