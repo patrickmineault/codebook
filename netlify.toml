@@ -1,0 +1,5 @@
+[dev]
+  framework = "#static"
+  targetPort = 3998
+  port = 9000 # The port that the netlify dev will be accessible on
+  publish = "_build/html" # The path to your static content folder
