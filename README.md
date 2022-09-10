@@ -8,6 +8,8 @@ Please report any issues via the Issues tab.
 
 ## Building the book
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f0bcb2b1-3782-4a4b-8611-94f5412b4f76/deploy-status)](https://app.netlify.com/sites/fervent-carson-5a9d17/deploys)
+
 Recreate the conda environment with:
 
 `conda env create -n cb --file environment.yml`
@@ -24,7 +26,7 @@ To remove `thebe.js` includes (which causes a 500KB javascript file to be loaded
 
 Use `netlify deploy -d _build/html --prod` to deploy.
 
-_Note_: when you push a PR through Github, it will build a preview of your work through Netlify automatically. When I merge the PR, it will automatically deploy the built website to [goodresearch.dev](https://goodresearch.dev).
+_Note_: when you push a PR through Github, it will build a preview of your work through Netlify automatically. When I merge the PR, it will automatically deploy the built website to [goodresearch.dev](https://goodresearch.dev). See the badge above for build status.
 
 ## Building the book to PDF
 
