@@ -6,6 +6,8 @@ dependencies:
   - python=3.8
   - pip
   - pip:
+    - Jinja2==2.11.3
+    - MarkupSafe==2.0.1
     - git+https://github.com/patrickmineault/sphinx-book-theme.git
     - jupyter-book==0.11.3
     - tqdm

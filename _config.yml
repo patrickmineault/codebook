@@ -1,7 +1,7 @@
 # in _config.yml
 title: "Good research code"
 author: "<a href='https://xcorr.net'>Patrick Mineault</a> <a href='https://twitter.com/patrickmineault'><img height='24' width='24' src='_images/twitter.svg' alt='Twitter' style='width:24px'></a>"
-copyright: "2021"
+copyright: "2021–2022"
 logo: figures/unicorn.png
 
 execute:
