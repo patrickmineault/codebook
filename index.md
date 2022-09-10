@@ -49,8 +49,10 @@ Patrick J Mineault & The Good Research Code Handbook Community (2021). _The Good
 
 ## Alternative formats
 
-<a href="_static/book.pdf">You can download a PDF version of this book here</a>. You can also take a look at a presentation I gave covering [the same materials](https://github.com/patrickmineault/research_code) [here](https://www.crowdcast.io/e/nma2021/29). Please contact me if you'd like to see a print edition of this book.
+<a href="_static/book.pdf">You can download a PDF version of this book here</a>. You can also take a look at a presentation I gave covering [the same materials](https://github.com/patrickmineault/research_code) [here](https://www.crowdcast.io/e/nma2021/29). [I discuss some of the practices in this book with Brian Okken on the Test & Code podcast](https://testandcode.com/193). Please contact me if you'd like to see a print edition of this book.
 
 ## Contact me
 
-<a href="https://github.com/patrickmineault/codebook/issues">You can report issues with the handbook here</a>. <a href='https://twitter.com/patrickmineault'>I'm active on Twitter</a>. For speaking engagements or collaborations, send me an email at patrick DOT mineault AT gmail DOT com.
+I help businesses and labs implement the practices outlined in this book through my consulting firm, [xcorr consulting](https://xcorr.dev). Please get in touch at [hello@xcorr.dev](mailto:hello@xcorr.dev) to find out how we can work together. I'm also available for speaking engagements and collabs – reach out to the same address for that. 
+
+<a href="https://github.com/patrickmineault/codebook/issues">Issues with the handbook can be reported on Github</a>. <a href='https://twitter.com/patrickmineault'>I'm also active on Twitter</a>.
