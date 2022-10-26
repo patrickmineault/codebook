@@ -1,3 +1,12 @@
+---
+title: Keep things tidy
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/tidy.tex
+---
+
 # Keep things tidy
 
 ```{epigraph}
@@ -28,7 +37,7 @@ A more radical way to impose style is to use a _code formatter_. A linter sugges
 
 ## Delete dead code
 
-```{figure} figures/final.doc.gif
+```{figure} figures/final.doc.png
 ---
 width: 450px
 ---

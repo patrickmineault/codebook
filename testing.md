@@ -8,6 +8,12 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+title: "Testing your code"
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/testing.tex
 ---
 
 (test)=
@@ -58,7 +64,7 @@ def fib(x):
 
 Let's say that a colleague brings you this code and asks you to check that the code they've written up works. How would check whether this code works?
 
-````{dropdown} ⚠️ Spoilers
+````{dropdown} Spoilers
 You could run this code on the command line with different inputs and check that the code works as expected. For instance, you expect that:
 
 ```pycon
@@ -217,7 +223,7 @@ With pure functions, such as `fib`, we can readily come up with ways to test whe
 
 - _Correctness for typical inputs_, e.g. $F(5) = 5$
 - _Edge cases_, e.g. $F(0) = 0$
-- _Errors_ with bad input, e.g. $F(-1)$ → _error_
+- _Errors_ with bad input, e.g. $F(-1)$ $\rightarrow$ _error_
 - _Functional goals are achieved_, e.g. that the function works for large numbers
 
 Pure functions don't require elaborate setups to test properly, and indeed they have some of the highest _bang for your buck_ when it comes to testing. If in your current workflow, you would have manually checked whether a procedure yielded reasonable results, write a test for it.
@@ -274,9 +280,9 @@ $ pytest test_fib.py
 E       RecursionError: maximum recursion depth exceeded in comparison
 
 ../src/fib.py:7: RecursionError
-============================= short test summary info =============================
-FAILED test_fib.py::test_raises - RecursionError: maximum recursion depth exceed...
-=========================== 1 failed, 2 passed in 1.18s ===========================
+============================= short test summary info ==========================
+FAILED test_fib.py::test_raises - RecursionError: maximum recursion depth exceed
+=========================== 1 failed, 2 passed in 1.18s ========================
 ```
 
 Notice how informative the output of pytest is compared to our homegrown test suite. `pytest` informs us that two of our tests passed - `test_typical` and `test_edge_case` - while the last one failed. Calling our `fib` function with a negative argument or a non-integer argument will make the function call itself recursively with negative numbers - it never stops! Hence, Python eventually will generate a `RecursionError`. However, our tests are expecting a `NotImplementedError` instead! Our test correctly detected that the code has this odd behavior. We can fix it up like so:
@@ -284,7 +290,7 @@ Notice how informative the output of pytest is compared to our homegrown test su
 ```{code-cell}
 def fib(x):
     if x % 1 != 0 or x < 0:
-        raise NotImplementedError('fib(x) only defined on non-negative integers.')
+        raise NotImplementedError('fib only defined on non-negative integers.')
     cache = {}
     def fib_inner(x):
         nonlocal cache
@@ -305,15 +311,15 @@ Now we can run tests again.
 
 ```console
 $ pytest test_fib.py
-=============================== test session starts ===============================
+=============================== test session starts ============================
 platform linux -- Python 3.8.8, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
 rootdir: /home/pmin/Documents/codebook
 plugins: anyio-3.1.0
 collected 3 items
 
-test_fib.py ...                                                             [100%]
+test_fib.py ...                                                           [100%]
 
-================================ 3 passed in 0.02s ================================
+================================ 3 passed in 0.02s =============================
 ```
 
 They pass!
@@ -400,7 +406,7 @@ You're going to get a lot of bang for your buck by writing unit tests - inline a
 
 What do you think is the ideal ratio of test code to real code?
 
-```{dropdown} ⚠️ Spoilers
+```{dropdown} Spoilers
 There's no ideal number per say, but 1:1 to 3:1 is a commonly quoted range for library code. For one-off code, you can usually get away with less test coverage. For more down-to-earth applications, 80% test coverage is a common target. [You can use the `Coverage.py` package to figure out your test coverage](https://coverage.readthedocs.io/en/coverage-5.3.1/).
 ```
 

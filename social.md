@@ -1,3 +1,12 @@
+---
+title: Make coding social
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/social.tex
+---
+
 # Make it social
 
 ```{epigraph}
@@ -21,7 +30,7 @@ This is how you get better at programming: by programming with people who are be
 
 ## Pair program
 
-*Pair programming* is a very effective method of sharing knowledge through active practice. It's commonly used in industry. Two programmers collaborate actively on a programming task. In the traditional driver-and-navigator style, two programmers are physically co-located. One of them - the *driver* or co-pilot - physically types the code into the terminal or code editor. They think about micro-issues in the code (tactics): what goes into the body of a `for` loop, the syntax of the code, etc.
+*Pair programming* is a very effective method of sharing knowledge through active practice. It's commonly used in industry. Two programmers collaborate actively on a programming task. In the traditional driver-and-navigator style, two programmers are physically co-located. One of them - the *driver* or pilot - physically types the code into the terminal or code editor. They think about micro-issues in the code (tactics): what goes into the body of a `for` loop, the syntax of the code, etc.
 
 The *navigator* or co-pilot assist the driver in telling them what to write. They typically focus on macro issues: what a function should accomplish, how the code is structured, etc. They can also perform other tasks on a second laptop, for example looking up documentation. 
 
@@ -29,10 +38,10 @@ The *navigator* or co-pilot assist the driver in telling them what to write. The
 I wrote this book in part to become better at the skills I'm now teaching you. Teaching is a great way to learn.
 ```
 
-Pair programming forces you to hone your communication skills. Nothing quite reveals your gaps in knowledge than trying to explain to someone what is going on with a piece of code. Sometimes, the people you're pairing with can immediately fill your gap in knowledge; in other cases, you can both learn about a new subject at the same time. Pair programming is especially effective at transmitting knowledge about under-documented systems. You may have explained to a new student in your lab how to perform mysterious experimental procedure X. The best way to transmit that knowledge is to have the student attempt to perform the procedure in front of you: active practice enhances learning.
+Pair programming forces you to hone your communication skills. Nothing quite reveals your gaps in knowledge than trying to explain to someone what is going on with a piece of code. Sometimes, the people you're pairing with can immediately fill your gap in knowledge; in other cases, you can both learn about a new subject at the same time. Pair programming is especially effective at transmitting knowledge about under-documented systems. You may have explained to a new student in your lab how to perform mysterious experimental procedure **X**. The best way to transmit that knowledge is to have the student attempt to perform the procedure in front of you: active practice enhances learning.
 
 ```{margin}
-I learned about Ctrl+Shift+R (reverse search in bash) through pair programming.
+I learned about `Ctrl+Shift+R` (reverse search in bash) through pair programming.
 ```
 
 Finally, pair programming can help you learn someone's productivity shortcuts. Seeing somebody work comfortably in an unfamiliar environment is enlightening. I have seen programmers be productive in vim, and it is a sight to behold. 

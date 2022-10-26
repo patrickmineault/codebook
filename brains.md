@@ -1,3 +1,12 @@
+---
+title: "The neuroscience of coding: a primer"
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/brains.tex
+---
+
 # Brains & coding
 
 ```{admonition} Optional
@@ -22,6 +31,7 @@ What do you think coding looks like in the brain? The term _programming language
 ```{figure} figures/wm-federenko.png
 ---
 figclass: boxed
+width: 90%
 ---
 Code problems (CP; purple bars) created activations with higher overlap with the multiple demand system (left and center) than with the language system (right) compared with other tasks like sentence problems (SP), sentence reading (SR) or non-word reading (NR). From Ivanova et al. (2020), used under a CC-BY 4.0 license.
 ```

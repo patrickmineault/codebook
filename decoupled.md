@@ -8,6 +8,12 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+title: "Write decoupled code"
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/decoupled.tex
 ---
 
 # Write decoupled code
@@ -156,7 +162,7 @@ This function has a side effect: it modifies its argument `arr`. In Python and m
 
 In the base Python library, a function which modifies its argument returns `None`. For instance, the function `sort` sorts its input argument, modifies it in place, and returns `None`. This function has a side effect, but it's obvious: if a function returns `None`, yet does useful work, it must have a side effect. When we both modify an argument and return it, we break this convention and confuse the Python reader. We can fix this by returning `None` in our function (good), or returning an entirely new list (better):
 
-````{tabbed} good
+````{tabbed} Good code
 ```
 def reversi(arr):
     """Reverses a list."""
@@ -166,7 +172,7 @@ def reversi(arr):
 ```
 ````
 
-````{tabbed} better
+````{tabbed} Better code
 ```
 def reversi(arr):
     """Reverses a list."""
@@ -184,7 +190,7 @@ Functions with side effects can be hard to reason about: you often need to under
 width: 500px
 figclass: boxed
 ---
-Shrinking the amount of impure functions in your code will make it easier to reason about. Graphic [inspired by CodeRefinery](https://cicero.xyz/v3/remark/0.14.0/github.com/coderefinery/modular-code-development/master/talk.md/#10).
+Shrinking the amount of impure functions in your code will make it easier to reason about. Graphic [inspired by CodeRefinery](https://cicero.xyz/v3/remark/0.14.0/github.com/coderefinery/modular-code-development/master/talk.md).
 ```
 
 For instance:
@@ -250,7 +256,7 @@ def count_words_in_file(in_file, out_file):
 
 Can you spot the code smells in the previous code?
 
-```{dropdown} ⚠️ Spoilers
+```{dropdown} Spoilers
 
 Here are some code smells in this example:
 

@@ -8,6 +8,12 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+title: "Write good documentation"
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/docs.tex
 ---
 
 # Document your code

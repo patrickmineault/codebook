@@ -1,6 +1,15 @@
+---
+title: "A sample project: Zipf's law"
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/zipf.tex
+---
+
 # A sample project: Zipf's law
 
-Let's look at how we can use the suggested organization in a real project. We use the example of calculating Zipf's law for a series of English texts, which was suggested in the book [Research Software Engineering in Python](https://merely-useful.tech/py-rse/), and was released under a CC-BY license. [You can see the completed project on Github](https://github.com/patrickmineault/zipf/).
+Let's look at how we can use the suggested organization in a real project. We use the example of calculating Zipf's law for a series of English texts, which was suggested in the book [Research Software Engineering in Python](https://merely-useful.tech/py-rse/), and was released under a CC-BY license. [You can see the completed project on Github](https://github.com/patrickmineault/zipf/) at `github.com/patrickmineault/zipf`.
 
 ## What is Zipf's law, anyway?
 
@@ -25,6 +34,7 @@ Let's consider different ways to organize the different subcomponents and define
 ```{figure} figures/zipf-diagram.svg
 ---
 figclass: boxed
+width: 100%
 ---
 The Zipf project can be described as a linear directed acyclic graph (DAG)
 ```
@@ -48,6 +58,7 @@ For this example, however, I have a slight preference for the second approach, s
 ```{figure} figures/zipf-diagram-coded.svg
 ---
 figclass: boxed
+width: 100%
 ---
 The Zipf project split into different sub-components.
 ```
@@ -96,8 +107,8 @@ If you prefer, you can instead go through github.com to create a new repo and fo
 We want to download three texts and put them in the `data` folder. Ideally, we'd do this automatically, for example with a bash file with calls to `wget`. However, the terms and conditions from Project Gutenberg state:
 
 ```{epigraph}
-The website is intended for human users only. Any perceived use of automated tools to access the Project Gutenberg website will result in a temporary or permanent block of your IP address.The website is intended for human users only. Any perceived use of automated tools to access the Project Gutenberg website will result in a temporary or permanent block of your IP address.
---[Project Gutenberg](https://www.gutenberg.org/policy/robot_access.html)
+The website is intended for human users only. Any perceived use of automated tools to access the Project Gutenberg website will result in a temporary or permanent block of your IP address.
+-- [Project Gutenberg](https://www.gutenberg.org/policy/robot_access.html)
 ```
 
 ```{caution}
@@ -106,9 +117,9 @@ Document manual steps in README.md!
 
 Not a big deal! We can download the files manually and document the source in the `README.md` file. Let's download the following files manually and put them in the data folder:
 
-- [Dracula](https://www.gutenberg.org/files/345/345-0.txt) → `data/dracula.txt`
-- [Frankenstein](https://www.gutenberg.org/ebooks/42324.txt.utf-8) → `data/frankenstein.txt`
-- [Jane Eyre](https://www.gutenberg.org/files/1260/1260-0.txt) → `data/jane_eyre.txt`
+- [Dracula](https://www.gutenberg.org/files/345/345-0.txt) $\rightarrow$ `data/dracula.txt`
+- [Frankenstein](https://www.gutenberg.org/ebooks/42324.txt.utf-8) $\rightarrow$ `data/frankenstein.txt`
+- [Jane Eyre](https://www.gutenberg.org/files/1260/1260-0.txt) $\rightarrow$ `data/jane_eyre.txt`
 
 ## Count the words
 
@@ -156,7 +167,8 @@ def count_words(f, clean_text=False):
 
     Arguments:
         f: an open file handle
-        clean_text (optional): a Boolean, if true, filters out boilerplate typical of a Gutenberg book.
+        clean_text (optional): a Boolean, if true, filters out boilerplate 
+            typical of a Gutenberg book.
 
     Returns:
         A dict keyed by word, with word counts

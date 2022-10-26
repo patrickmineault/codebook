@@ -1,3 +1,12 @@
+---
+title: "How to test numerical code: CKA"
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/cka.tex
+---
+
 # Test numerical code: CKA
 
 Let's look at an extended example of testing numerical code. This example implements a computational method called CKA which was introduced [in this paper](https://arxiv.org/abs/1905.00414). Importantly, CKA is not already implemented in scipy or sci-kit learn or in any other pip installable package: we're flying solo [^caveat].
@@ -76,7 +85,7 @@ from cka import cka
 import numpy as np
 
 def test_identity():
-    # Create a random matrix and check it is perfectly correlated with itself.
+    # Create a random matrix, check it is perfectly correlated with itself.
     X = np.random.randn(100, 2)
     assert cka(X, X) == 1.0
 ```
@@ -97,7 +106,7 @@ test_cka.py F                                                            [100%]
 ________________________________ test_identity _________________________________
 
     def test_identity():
-        # Create a random matrix and check it is perfectly correlated with itself.
+        # Create a random matrix, check it is perfectly correlated with itself.
         X = np.random.randn(100, 2)
 >       assert cka(X, X) == 1.0
 E       assert 0.9999999999999994 == 1.0
@@ -107,7 +116,7 @@ Here we've run into one of the tricky bits about writing numerical code - numeri
 
 ```python
 def test_identity_lenient():
-    # Create a random matrix and check it is perfectly correlated with itself.
+    # Create a random matrix, check it is perfectly correlated with itself.
     X = np.random.randn(100, 2)
     np.testing.assert_allclose(cka_start(X, X), 1.0)
 ```
@@ -116,7 +125,7 @@ And now we find the tests pass. Let's add one more test to the mix: a matrix and
 
 ```python
 def test_column_swaps():
-    # Check that a matrix is perfectly correlated with itself even with column swaps.
+    # A matrix is perfectly correlated with itself even with column swaps.
     X = np.random.randn(100, 2)
     c = cka_start(X[:, [0, 1]], X[:, [1, 0]])
     np.testing.assert_allclose(c, 1.0)
@@ -248,23 +257,25 @@ def _get_one():
     return X, Y
 
 def _get_multi():
-    X = np.cos(.1 * np.pi * np.arange(10).reshape((-1, 1)) * np.linspace(.5, 1.5, num=3).reshape((1, -1)))
-    Y = np.cos(.5 + .07 * np.pi * np.arange(10).reshape((-1, 1)) * np.linspace(.7, 1.3, num=4).reshape((1, -1)))
+    X = (np.cos(.1 * np.pi * np.arange(10).reshape((-1, 1)) * 
+         np.linspace(.5, 1.5, num=3).reshape((1, -1))))
+    Y = (np.cos(.5 + .07 * np.pi * np.arange(10).reshape((-1, 1)) * 
+         np.linspace(.7, 1.3, num=4).reshape((1, -1))))
     return X, Y
 
 def test_identity_lenient():
-    """Create a random matrix and check it is perfectly correlated with itself."""
+    """Create a random matrix, check it is perfectly correlated with itself."""
     X, _ = _get_multi()
     np.testing.assert_allclose(cka(X, X), 1.0)
 
 def test_column_swaps():
-    """Check that a matrix is perfectly correlated with itself even with column swaps."""
+    """A matrix is perfectly correlated with itself even with column swaps."""
     X, _ = _get_multi()
     c = cka(X[:, [0, 1]], X[:, [1, 0]])
     np.testing.assert_allclose(c, 1.0)
 
 def test_centering():
-    """Check that a matrix is perfectly correlated with itself even with adding column offsets."""
+    """A matrix is perfectly correlated with itself with column offsets."""
     X, _ = _get_multi()
     Xp = X.copy()
     Xp[:, 1] += 1.0

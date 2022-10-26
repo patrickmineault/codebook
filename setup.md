@@ -1,3 +1,16 @@
+---
+title: Setting up your project
+authors:
+  - Patrick Mineault
+keywords:
+  - code
+  - academia
+exports:
+  - format: tex
+    template: ../templates/plain_latex_book_chapter
+    output: exports/setup.tex
+---
+
 # Set up your project
 
 Setting up a organized project will help you remain productive as your project grows. The broad steps involved are:
@@ -57,7 +70,7 @@ git push -u origin main
 
 How often do you think you should commit to git?
 
-```{dropdown} ⚠️ Spoilers
+```{dropdown} Spoilers
 Depending on your pace, you should aim to commit your code from *a few times a day* to *a few times per week*. Don't wait until the project is almost finished before you start to commit.
 ```
 
@@ -110,7 +123,7 @@ From this point on, you can install packages through the conda installer like so
 
 Now, you might ask yourself, can I use both pip and conda together?
 
-```{dropdown} ⚠️ Spoilers
+```{dropdown} Spoilers
 
 **You can use pip inside of a conda environment**. A big point of confusion is how conda relates to `pip`. For conda:
 
@@ -173,15 +186,15 @@ This project skeleton combines ideas from [shablona](https://github.com/uwescien
 In many different programming frameworks - Ruby on Rails, React, etc. - people use a highly consistent directory structure from project to project, which makes it seamless to jump back into an old project. In Python, things are much less standardized. I went into a deep rabbit hole looking at different directory structures suggested by different projects. Here's a consensus structure you can use as inspiration:
 
 ```{code}
-├── data
-├── docs
-├── results
-├── scripts
-├── src
-├── tests
-└── .gitignore
-└── environment.yml
-└── README.md
+|-- data
+|-- docs
+|-- results
+|-- scripts
+|-- src
+|-- tests
+ -- .gitignore
+ -- environment.yml
+ -- README.md
 ```
 
 Let's look at each of these components in turn.
@@ -280,17 +293,17 @@ Create an empty `__init__.py` file under the `src` directory. This will allow th
 Your files should now look like:
 
 ```
-├── data
-├── doc
-├── results
-├── scripts
-├── src
-│   └── __init__.py
-├── tests
-├── .gitignore
-├── environment.yml
-├── README.md
-└── setup.py
+|-- data
+|-- doc
+|-- results
+|-- scripts
+|-- src
+|    -- __init__.py
+|-- tests
+ -- .gitignore
+ -- environment.yml
+ -- README.md
+ -- setup.py
 ```
 
 #### 3. `pip install` your package
@@ -331,7 +344,7 @@ To find out where the code for an installed package is located, print the module
 <module 'src' from '/home/pmin/Documents/codebook/src/__init__.py'>
 >>> import numpy as np
 >>> np
-<module 'numpy' from '/home/pmin/anaconda3/envs/codebook/lib/python3.8/site-packages/numpy/__init__.py'>
+<module 'numpy' from '/envs/cb/lib/python3.8/site-packages/numpy/__init__.py'>
 ```
 ````
 

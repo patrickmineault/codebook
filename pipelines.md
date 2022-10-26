@@ -1,3 +1,12 @@
+---
+title: "Document your project"
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/pipelines.tex
+---
+
 # Document your project
 
 Research code is written in spurts and fits. You will often put code aside for several months and focus your energy on experiments, passing qualifying exams or working on another project. When you come back to your original project, you will be lost. A little prep work by writing docs will help you preserve your knowledge over the long run. In the previous chapter, I showed how to document small units of your code. In this section, I talk about how to document entire projects.
@@ -30,10 +39,14 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Train a neural net")
 
-    parser.add_argument("--model", required=True, help="Model type (resnet or alexnet)")
-    parser.add_argument("--niter", type=int, default=1000, help="Number of iterations")
-    parser.add_argument("--in_dir", required=True, help="Input directory with images")
-    parser.add_argument("--out_dir", required=True, help="Output directory with trained model")
+    parser.add_argument("--model", required=True, 
+      help="Model type (resnet or alexnet)")
+    parser.add_argument("--niter", type=int, default=1000, 
+      help="Number of iterations")
+    parser.add_argument("--in_dir", required=True, 
+      help="Input directory with images")
+    parser.add_argument("--out_dir", required=True, 
+      help="Output directory with trained model")
 
     args = parser.parse_args()
     main(args)
@@ -73,13 +86,15 @@ set -e
 aws s3 cp s3://codebook-testbucket/images/ data/images --recursive
 
 # Train network
-python scripts/train_net.py --model resnet --niter 100000 --in_dir data/images --out_dir results/trained_model
+python scripts/train_net.py --model resnet --niter 100000 --in_dir data/images \
+  --out_dir results/trained_model
 
 # Create output directory
 mkdir results/figures/
 
 # Generate plots
-python scripts/generate_plots.py --in_dir data/images --out_dir results/figures/ --ckpt results/trained_model/model.ckpt
+python scripts/generate_plots.py --in_dir data/images \ 
+  --out_dir results/figures/ --ckpt results/trained_model/model.ckpt
 ```
 
 This shell file serves both as runnable code and as documentation for the pipeline. Now we know how our figure was generated! Don't forget to check in this shell file to git to have a record of this file.
@@ -99,6 +114,7 @@ Scientific pipelines often take the shape of DAGs - directed acyclic graphs. Thi
 ```{figure} figures/pcbi.1007358.g002.PNG_L.png
 ---
 figclass: boxed
+width: 90%
 ---
 DAG from Van Vliet (2020). CC-BY 4.0
 ```
@@ -110,20 +126,22 @@ You can use a more specialized build tool to build and document a pipeline. GNU 
 ```makefile
 .PHONY: plot
 plot: results/trained_model/model.ckpt results/figures
-	python scripts/generate_plots.py --in_dir data/images --out_dir results/figures/ --ckpt results/trained_model/model.ckpt
+  python scripts/generate_plots.py --in_dir data/images --out_dir \
+    results/figures/ --ckpt results/trained_model/model.ckpt
 
 results/trained_model/model.ckpt: data/images
-	python scripts/train_net.py --model resnet --niter 100000 --in_dir data/images --out_dir results/trained_model
+  python scripts/train_net.py --model resnet --niter 100000 \
+    --in_dir data/images --out_dir results/trained_model
 
 data/images:
-	aws s3 cp s3://codebook-testbucket/images/ data/images --recursive
+  aws s3 cp s3://codebook-testbucket/images/ data/images --recursive
 
 results/figures:
-	mkdir results/figures/
+  mkdir results/figures/
 ```
 
 ```{margin}
-`make` can be pretty finicky. For instance, you must use _tabs_, not spaces, to indent.
+`make` can be pretty finicky. For instance, you must use _tabs_, not spaces, to indent. Use an editor like vscode to spot issues early.
 ```
 
 The plot can be created with `make plot`. The `Makefile` contains a complete description of the inputs and outputs to different scripts, and thus serves as a self-documenting artifact. [Software carpentry](https://swcarpentry.github.io/make-novice/) has an excellent tutorial on `make`. What's more, `make` only rebuilds what needs to be rebuilt. In particular, if the network is already trained, `make` will detect it and won't retrain the network again, skipping ahead to the plotting task.
@@ -211,12 +229,15 @@ Markdown has taken over the world of technical writing. Using the same format ev
 - _Wikis_. GitHub.
 - _Static sites_. [Jekyll](https://jekyllrb.com/), [eleventy](https://11ty.dev/), GitHub Pages
 - _Executable books_. [jupyterbook](https://jupyterbook.org/) generates this book.
+- _Papers_. [CurveNote](https://curvenote.com/) uses MyST Markdown under the hood.
 - _Slide decks_. [Pandoc](https://pandoc.org/) via conversion to LaTeX/Beamer.
 - _readthedocs-style documentation_. [Sphinx](https://www.sphinx-doc.org/en/master/) using MyST.
 
 The same Markdown can be deployed in different environments depending on what exactly you want to accomplish. For some projects, the `README.md` file will be all that is needed. Others will want a static site that shows highlights of the paper. Yet other projects will be well-served by blog posts which discuss in longer form the tradeoffs involved in the design decisions.
 
 Creating your documentation in Markdown you make it really easy for you to eventually migrate to another format. I tend to use a combination of all these tools. For instance, I write notes on papers in Notion; I then export those notes to markdown as stubs for my Wordpress blog, for pandoc slides or for jupyterbook.
+
+# Discussion
 
 ```{epigraph}
 Some things are in our control and others not. [...] If [a thing] concerns anything not in your control, be prepared to say that it is nothing to you.

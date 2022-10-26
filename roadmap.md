@@ -1,3 +1,12 @@
+---
+title: How to read this book
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/roadmap.tex
+---
+
 # Roadmap
 
 This handbook covers practices and tools from big to small. We'll discuss how to write and organize modular code, how to write docs, how to make your code robust. We'll finally reveal the correct number of spaces to use to indent code [^four]. At the end of the main lessons, we'll go through an example project step-by-step.
@@ -9,6 +18,7 @@ This roadmap shows some of the concepts we'll cover in the book. Take stock of w
 ```{figure} figures/concepts.svg
 ---
 figclass: boxed
+width: 100%
 ---
 Some concepts we'll cover in this book. I've highlighted in green and blue different concepts which are relevant to short-term and to long-term memory, respectively - we'll discuss what that means in the next section. How many concepts are you familiar with now? How many do you know well?
 ```
@@ -30,7 +40,7 @@ $ python
 
 Sometimes I will ask you a question, and will hide the answer behind a spoilers panel. For example, what is the answer to life, the universe, and everything?
 
-```{dropdown} ⚠️ Spoilers
+```{dropdown} Spoilers
 42
 ```
 
@@ -44,11 +54,11 @@ Brush your teeth.
 
 This handbook refers to code in several repositories:
 
-- [True neutral cookie cutter](https://github.com/patrickmineault/true-neutral-cookiecutter)
-- [CKA example](https://github.com/patrickmineault/codebook_examples/tree/main/cka)
-- [Zipf's law example project](https://github.com/patrickmineault/zipf/)
-- [Source for the text of the book](https://github.com/patrickmineault/codebook)
-- [Tweaked sphinx book theme](https://github.com/patrickmineault/sphinx-book-theme/)
+- [True neutral cookie cutter](https://github.com/patrickmineault/true-neutral-cookiecutter): `github.com/patrickmineault/true-neutral-cookiecutter`
+- [CKA example](https://github.com/patrickmineault/codebook_examples/tree/main/cka): `github.com/patrickmineault/codebook_examples`
+- [Zipf's law example project](https://github.com/patrickmineault/zipf/): `github.com/patrickmineault/zipf`
+- [Source for the text of the book](https://github.com/patrickmineault/codebook): `github.com/patrickmineault/codebook`
+- [Tweaked sphinx book theme](https://github.com/patrickmineault/sphinx-book-theme/): `patrickmineault/sphinx-book-theme`
 
 You can use these as references when you're working on your own projects.
 

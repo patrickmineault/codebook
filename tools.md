@@ -1,3 +1,13 @@
+---
+title: Use good tools
+exports:
+  - format: tex
+    logo: false
+    template: ../templates/plain_latex_book_chapter
+    output: exports/tools.tex
+---
+
+
 # Use good tools
 
 ## Use the tools introduced in each section
@@ -86,7 +96,7 @@ Integrated development environments (IDE) can help you develop faster and make i
 
 ```{figure} figures/vscode.png
 ---
-width: 800px
+width: 90%
 ---
 Editing the Markdown source for this page in vscode. 
 ```
@@ -100,7 +110,7 @@ Others recommend [PyCharm](https://www.jetbrains.com/pycharm/) - it has best-in-
 
 ```{figure} figures/wsl.png
 ---
-width: 979px
+width: 90%
 ---
 WSL running on my Windows laptop
 ```
