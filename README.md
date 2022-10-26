@@ -16,21 +16,24 @@ Recreate the conda environment with:
 
 Then `conda activate cb`.
 
-Run `jupyter-book build .` to build.
+For local development, I recommend using the auto-reloading `sphinx-autobuild` package. This will not only build the book and create a local server for you to preview the book, it will also rebuild and reload the browser whenever you make a change. Neat! Use `make develop` to get that going.
 
-Use Run `jupyter-book build . --all` to force a full rebuild.
+To build a version ready to be deployed:
 
-The book can be visualized locally using a development server. Typically, I use `netlify dev` for this purpose.
+1. `jupyter-book build . --all` for a full rebuild
+2. `python strip_js.py` to remove `thebe.js` includes, which would otherwise cause a 500KB javascript file to be loaded
 
-To remove `thebe.js` includes (which causes a 500KB javascript file to be loaded), run `python strip_js.py` (a hack).
+These two can be run via `make build`.
 
-Use `netlify deploy -d _build/html --prod` to deploy.
+I use the `netlify deploy -d _build/html --prod` or `make deploy` to manually deploy the book to `goodreseach.dev`. This command won't work for you unless you have my netlify credentials.
 
 _Note_: when you push a PR through Github, it will build a preview of your work through Netlify automatically. When I merge the PR, it will automatically deploy the built website to [goodresearch.dev](https://goodresearch.dev). See the badge above for build status.
 
 ## Building the book to PDF
 
 The PDF of this book is built using LaTeX via CurveNote's MyST to tex conversion. As this feature is in alpha stage, there's an elaborate translation stage in `assemble_one_pager.py`. Because the CurveNote CLI is subject to change, make sure to use the exact version of the curvenote cli, `v0.8.2`, to build this.
+
+Run `git clone https://github.com/patrickmineault/plain_latex_book_chapter.git` to fetch a plain tex template. Then place this under `../templates/plain_latex_book_chapter`.
 
 Build using `make pdf`. This will create a number of temporary files and the final pdf will live in `tmp/exports/book-complete.pdf`.
 

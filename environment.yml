@@ -12,3 +12,4 @@ dependencies:
     - jupyter-book==0.11.3
     - tqdm
     - sphinxext-opengraph
+    - sphinx-autobuild
