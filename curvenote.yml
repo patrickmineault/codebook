@@ -1,0 +1,20 @@
+version: 1
+site:
+  title: Example project
+  projects:
+    - path: .
+      slug: example-project
+  nav:
+    - title: Example project
+      url: /example-project
+    - title: CENTER tech
+      url: /center-tech
+    - title: CENTER tech
+      url: /center-tech
+  actions:
+    - title: Learn More
+      url: https://curvenote.com/docs/web
+  domains:
+    - xcorr-example.curve.space
+  logo: public/logo.svg
+  logoText: Example project

@@ -30,11 +30,9 @@ _Note_: when you push a PR through Github, it will build a preview of your work 
 
 ## Building the book to PDF
 
-Manually change `_config.yml` so the author name appears correctly:
+The PDF of this book is built using LaTeX via CurveNote's MyST to tex conversion. As this feature is in alpha stage, there's an elaborate translation stage in `assemble_one_pager.py`. Because the CurveNote CLI is subject to change, make sure to use the exact version of the curvenote cli, `v0.8.2`, to build this.
 
-`author: "Patrick Mineault"`
-
-Use `jupyter-book build . --builder pdflatex` to build to PDF. [See here for the required environment](https://jupyterbook.org/advanced/pdf.html).
+Build using `make pdf`. This will create a number of temporary files and the final pdf will live in `tmp/exports/book-complete.pdf`.
 
 ## Citing this book
 
