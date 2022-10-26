@@ -5,3 +5,4 @@ _build
 .DS_Store
 tmp
 exports
+conf.py
