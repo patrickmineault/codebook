@@ -25,6 +25,7 @@ To build a version ready to be deployed:
 
 These two can be run via `make build`.
 
+
 I use the `netlify deploy -d _build/html --prod` or `make deploy` to manually deploy the book to `goodreseach.dev`. This command won't work for you unless you have my netlify credentials.
 
 _Note_: when you push a PR through Github, it will build a preview of your work through Netlify automatically. When I merge the PR, it will automatically deploy the built website to [goodresearch.dev](https://goodresearch.dev). See the badge above for build status.

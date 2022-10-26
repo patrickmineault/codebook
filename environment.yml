@@ -12,4 +12,5 @@ dependencies:
     - jupyter-book==0.11.3
     - tqdm
     - sphinxext-opengraph
+    - docutils==0.16
     - sphinx-autobuild
