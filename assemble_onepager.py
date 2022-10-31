@@ -3,7 +3,7 @@ import yaml
 
 
 template = r"""
-\documentclass[twoside,openright]{scrbook}
+\documentclass[letterpaper,twoside,openright]{scrbook}
 \usepackage{hyperref}
 \usepackage{datetime}
 \usepackage{graphicx}
