@@ -53,6 +53,6 @@ Patrick J Mineault & The Good Research Code Handbook Community (2021). _The Good
 
 ## Contact me
 
-I help businesses and labs implement the practices outlined in this book through my consulting firm, [xcorr consulting](https://xcorr.dev). Please get in touch at [hello@xcorr.dev](mailto:hello@xcorr.dev) to find out how we can work together. I'm also available for speaking engagements and collabs – reach out to the same address for that. 
+I help businesses and labs implement the practices outlined in this book through my consulting firm, [xcorr consulting](https://xcorr.dev). Please get in touch at [hello@xcorr.dev](mailto:hello@xcorr.dev) to find out how we can work together. I'm also available for speaking engagements and collabs – reach out to the same address for that.
 
 <a href="https://github.com/patrickmineault/codebook/issues">Issues with the handbook can be reported on Github</a>. <a href='https://twitter.com/patrickmineault'>I'm also active on Twitter</a>.

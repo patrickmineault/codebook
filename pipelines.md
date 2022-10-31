@@ -39,13 +39,13 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Train a neural net")
 
-    parser.add_argument("--model", required=True, 
+    parser.add_argument("--model", required=True,
       help="Model type (resnet or alexnet)")
-    parser.add_argument("--niter", type=int, default=1000, 
+    parser.add_argument("--niter", type=int, default=1000,
       help="Number of iterations")
-    parser.add_argument("--in_dir", required=True, 
+    parser.add_argument("--in_dir", required=True,
       help="Input directory with images")
-    parser.add_argument("--out_dir", required=True, 
+    parser.add_argument("--out_dir", required=True,
       help="Output directory with trained model")
 
     args = parser.parse_args()
@@ -93,7 +93,7 @@ python scripts/train_net.py --model resnet --niter 100000 --in_dir data/images \
 mkdir results/figures/
 
 # Generate plots
-python scripts/generate_plots.py --in_dir data/images \ 
+python scripts/generate_plots.py --in_dir data/images \
   --out_dir results/figures/ --ckpt results/trained_model/model.ckpt
 ```
 

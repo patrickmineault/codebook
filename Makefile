@@ -8,7 +8,7 @@ tmp/exports/book-complete.tex: $(wildcard *.md) _toc.yml assemble_onepager.py tm
 tmp:
 	mkdir tmp
 
-develop: 
+develop:
 	jupyter-book config sphinx . > conf.py
 	sphinx-autobuild . _build/html -b html
 

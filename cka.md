@@ -257,9 +257,9 @@ def _get_one():
     return X, Y
 
 def _get_multi():
-    X = (np.cos(.1 * np.pi * np.arange(10).reshape((-1, 1)) * 
+    X = (np.cos(.1 * np.pi * np.arange(10).reshape((-1, 1)) *
          np.linspace(.5, 1.5, num=3).reshape((1, -1))))
-    Y = (np.cos(.5 + .07 * np.pi * np.arange(10).reshape((-1, 1)) * 
+    Y = (np.cos(.5 + .07 * np.pi * np.arange(10).reshape((-1, 1)) *
          np.linspace(.7, 1.3, num=4).reshape((1, -1))))
     return X, Y
 

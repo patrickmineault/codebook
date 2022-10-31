@@ -37,16 +37,16 @@ template = r"""
 \usepackage{listings}
 \lstdefinestyle{mystyle}{
     basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
+    breakatwhitespace=false,
+    breaklines=true,
     captionpos=b,
     frame=tB,
     aboveskip=16pt,
     belowskip=16pt,
-    keepspaces=true,                 
-    showspaces=false,                
+    keepspaces=true,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2
 }
 

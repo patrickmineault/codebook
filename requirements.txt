@@ -6,3 +6,4 @@ tqdm
 sphinxext-opengraph
 docutils==0.16
 sphinx-autobuild
+pre-commit

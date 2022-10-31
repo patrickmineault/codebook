@@ -167,7 +167,7 @@ def count_words(f, clean_text=False):
 
     Arguments:
         f: an open file handle
-        clean_text (optional): a Boolean, if true, filters out boilerplate 
+        clean_text (optional): a Boolean, if true, filters out boilerplate
             typical of a Gutenberg book.
 
     Returns:
