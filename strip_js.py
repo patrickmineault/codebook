@@ -20,6 +20,5 @@ if __name__ == "__main__":
     # very silly, but upgrading sphinx-book-theme's version to reject the bad js
     # is very annoying
     files = pathlib.Path("_build/html").glob("*.html")
-    print(files)
     for f in tqdm(files):
         strip_js(f, ["thebe.js"])
