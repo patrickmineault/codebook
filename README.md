@@ -20,11 +20,10 @@ For local development, I recommend using the auto-reloading `sphinx-autobuild` p
 
 To build a version ready to be deployed:
 
-1. `jupyter-book build . --all` for a full rebuild
+1. `jupyter-book build docs --all` for a full rebuild
 2. `python strip_js.py` to remove `thebe.js` includes, which would otherwise cause a 500KB javascript file to be loaded
 
 These two can be run via `make build`.
-
 
 I use the `netlify deploy -d _build/html --prod` or `make deploy` to manually deploy the book to `goodreseach.dev`. This command won't work for you unless you have my netlify credentials.
 
