@@ -162,13 +162,13 @@ def clean_output(book):
 
 
 def assemble_onepager():
-    with open("_toc.yml", "r") as f:
+    with open("docs/_toc.yml", "r") as f:
         toc = yaml.safe_load(f)
     print(toc)
 
     # Copy files
     process = subprocess.Popen(
-        ["cp", "-r", "figures", "tmp"],
+        ["cp", "-r", "docs/figures", "tmp"],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     )

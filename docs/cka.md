@@ -162,7 +162,7 @@ def test_centering():
 
 Run it in pytest - it works! That means we did the centering correctly. Indeed, we correctly removed `X.mean(axis=0)` from `X` and `Y.mean(axis=0)` from `Y`. But wait a minute - when we center in our function, do we change the original matrix? We can add a test to check that:
 
-```console
+````console
 (cb) ~/Documents/codebook_examples/cka$ pytest .
 ============================= test session starts ==============================
 platform linux -- Python 3.8.11, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
@@ -186,7 +186,7 @@ __________________________________ test_pure ___________________________________
 >       np.testing.assert_allclose(Xp_original[:, 1], Xp[:, 1])
 E       AssertionError:
 E       Not equal to tolerance rtol=1e-07, atol=0
-```
+````
 
 We see that this function modifies its argument. If you scroll back up to the `cka` definition, you can see that we used the `-=` in-place assignment operator - that caused the original matrix to change. If this tripped you up - don't worry! I was very confused by this as well. This line changes the original array:
 
