@@ -10,13 +10,12 @@ exports:
 # Make it social
 
 ```{epigraph}
-
 Maybe the real *good research code* is the friends we made along the way.
 
---Patrick Mineault
+---Patrick Mineault
 ```
 
-People think that programming is a solitary activity. Engineers, and software engineers in particular, are caricatured as socially inept basement-dwelling dweebs in popular culture. The reality is that programming is a highly social activity. At a place like Google, for instance, programmers are in constant contact with other programmers, through:
+People think that programming is a solitary activity. Engineers, and software engineers in particular, are caricatured as socially inept, basement-dwelling dweebs in popular culture. The reality is that programming is a highly social activity. At a place like Google, for instance, programmers are in constant contact with other programmers, through:
 
 * readability reviews
 * code reviews
@@ -30,7 +29,7 @@ This is how you get better at programming: by programming with people who are be
 
 ## Pair program
 
-*Pair programming* is a very effective method of sharing knowledge through active practice. It's commonly used in industry. Two programmers collaborate actively on a programming task. In the traditional driver-and-navigator style, two programmers are physically co-located. One of them - the *driver* or pilot - physically types the code into the terminal or code editor. They think about micro-issues in the code (tactics): what goes into the body of a `for` loop, the syntax of the code, etc.
+*Pair programming* is a very effective method of sharing knowledge through active practice. It's commonly used in industry. Two programmers collaborate actively on a programming task. In the traditional driver-and-navigator style, two programmers are physically co-located. One of them---the *driver* or pilot -- physically types the code into the terminal or code editor. They think about micro-issues in the code (tactics): what goes into the body of a `for` loop, the syntax of the code, etc.
 
 The *navigator* or co-pilot assist the driver in telling them what to write. They typically focus on macro issues: what a function should accomplish, how the code is structured, etc. They can also perform other tasks on a second laptop, for example looking up documentation.
 
@@ -48,7 +47,7 @@ Finally, pair programming can help you learn someone's productivity shortcuts. S
 
 To many, pair programming sounds like a nightmare. It's certainly *uncomfortable*. Things might go too slow or too fast for you, and it can be mentally draining. It's best to do it in short increments (e.g. one hour). In all cases, remember to turn your empathy up to 11, and be excellent to each other.
 
-Although pair programming was traditionally done by physically co-located programmers, many find remote pair programming more comfortable. Screen sharing in Zoom works but can feel intrusive - imagine accidentally showing your inbox or IMs. Instead, you can use an IDE where you can see the other person's cursor. Some environments to do this:
+Although pair programming was traditionally done by physically co-located programmers, many find remote pair programming more comfortable. Screen sharing in Zoom works but can feel intrusive: imagine accidentally showing your inbox or IMs. Instead, you can use an IDE where you can see the other person's cursor. Some environments to do this:
 
 * [VSCode Liveshare for in-IDE editing](https://code.visualstudio.com/blogs/2017/11/15/live-share)
 * [DeepNote](https://deepnote.com/) and [cocalc](https://cocalc.com/) for jupyter notebooks

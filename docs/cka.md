@@ -112,7 +112,7 @@ ________________________________ test_identity _________________________________
 E       assert 0.9999999999999994 == 1.0
 ```
 
-Here we've run into one of the tricky bits about writing numerical code - numerical instability. 1.0 is very close to 0.9999999999999994, but it's not exactly equal. We can replace our test with a more lenient one. Numpy's `np.testing.assert_allclose` can test that two arrays are close enough to each other entry-wise:
+Here we've run into one of the tricky bits about writing numerical code: numerical instability. 1.0 is very close to 0.9999999999999994, but it's not exactly equal. We can replace our test with a more lenient one. Numpy's `np.testing.assert_allclose` can test that two arrays are close enough to each other entry-wise:
 
 ```python
 def test_identity_lenient():
@@ -146,7 +146,7 @@ test_cka_step1.py ..                                                     [100%]
 
 ## Checking centering
 
-Now let's add more tests - namely that CKA that we're doing centering correctly. It shouldn't matter how columns are centered. Let's add a test to this effect.
+Now let's add another test, to verify that our CKA implementation if centering correctly. It shouldn't matter how columns are centered, so we can add an offset and verify that we obtain the same result:
 
 ```python
 def test_centering():
@@ -160,7 +160,7 @@ def test_centering():
     np.testing.assert_allclose(c, 1.0)
 ```
 
-Run it in pytest - it works! That means we did the centering correctly. Indeed, we correctly removed `X.mean(axis=0)` from `X` and `Y.mean(axis=0)` from `Y`. But wait a minute - when we center in our function, do we change the original matrix? We can add a test to check that:
+Run it in pytest---it works! That means we did the centering correctly. Indeed, we correctly removed `X.mean(axis=0)` from `X` and `Y.mean(axis=0)` from `Y`. But wait a minute---when we center in our function, do we change the original matrix? We can add a test to check that:
 
 ````console
 (cb) ~/Documents/codebook_examples/cka$ pytest .
@@ -188,7 +188,7 @@ E       AssertionError:
 E       Not equal to tolerance rtol=1e-07, atol=0
 ````
 
-We see that this function modifies its argument. If you scroll back up to the `cka` definition, you can see that we used the `-=` in-place assignment operator - that caused the original matrix to change. If this tripped you up - don't worry! I was very confused by this as well. This line changes the original array:
+We see that this function modifies its argument. If you scroll back up to the `cka` definition, you can see that we used the `-=` in-place assignment operator. This caused the original matrix to change. If this tripped you up: don't worry! I was very confused by this as well. This line changes the original array:
 
 ```python
 X -= X.mean(axis=0)
@@ -332,7 +332,7 @@ It's starting to get quite long! For numeric code, it's not unusual that the tes
 
 Before we add more features to the code, it's important to make sure that what is already there is correct. It's all too easy to build in a vacuum, and we are left debugging a giant chunk of code.
 
-In our case, a nice feature we might want is the ability to deal with wide matrices. The implementation we have works well for tall, skinny matrices - but neural nets are generally over-parametrized and frequently have big intermediate representations. The paper introduces another method to compute the CKA with these wide matrices that is far more memory efficient. We can change our implementation to deal with these larger matrices efficiently - and of course, add more tests to make sure we didn't mess up anything! Tests are what allow us to move with confidence. [Take a look at the final version of the code](https://github.com/patrickmineault/codebook_examples/tree/main/cka) to see how we can test that the code works as expected.
+In our case, a nice feature we might want is the ability to deal with wide matrices. The implementation we have works well for tall, skinny matrices. However, neural nets are generally over-parametrized and frequently have big intermediate representations. The paper introduces another method to compute the CKA with these wide matrices that is far more memory-efficient. We can change our implementation to deal with these larger matrices efficiently---and of course, add more tests to make sure we didn't mess up anything! Tests are what allow us to move with confidence. [Take a look at the final version of the code](https://github.com/patrickmineault/codebook_examples/tree/main/cka) to see how we can test that the code works as expected.
 
 ## Final thoughts
 

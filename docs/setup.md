@@ -90,7 +90,7 @@ The git panel in VSCode.
 ```{epigraph}
 Why do I use virtual Python environments? So I don't fuck up all my local shit.
 
---[Nick Wan](https://twitter.com/nickwan)
+---[Nick Wan](https://twitter.com/nickwan)
 ```
 
 ```{figure} figures/python_environment_2x.png
@@ -102,13 +102,13 @@ Python environments can be a real pain. From [xkcd.com](https://xkcd.com/1987/) 
 
 Many novices starting out in Python use one big monolithic Python environment. Every package is installed in that one environment. The problem is that this environment is not documented anywhere. Hence, if they need to move to another computer, or they need to recreate the environment from scratch several months later, they're in for several hours or days of frustration.
 
-The solution is to use a _virtual environment_ to manage dependencies. Each virtual environment specifies which versions of software and packages a project uses. The specs can be different for different projects, and each virtual environment can be easily swapped, created, duplicated or destroyed. You can use software like `conda`, `pipenv`, `poetry`, `venv`, `virtualenv`, `asdf` or `docker` - among others - to manage dependencies. Which one you prefer is a matter of personal taste and [countless internet feuds](https://twitter.com/patrickmineault/status/1429560804869873664?s=20). Here I present the `conda` workflow, which is particularly popular among data scientists and researchers.
+The solution is to use a _virtual environment_ to manage dependencies. Each virtual environment specifies which versions of software and packages a project uses. The specs can be different for different projects, and each virtual environment can be easily swapped, created, duplicated or destroyed. You can use software like `conda`, `pipenv`, `poetry`, `venv`, `virtualenv`, `asdf` or `docker`---among others---to manage dependencies. Which one you prefer is a matter of personal taste and [countless internet feuds](https://twitter.com/patrickmineault/status/1429560804869873664?s=20). Here I present the `conda` workflow, which is particularly popular among data scientists and researchers.
 
 ### Conda
 
-Conda is the _de facto_ standard package manager for data science-centric Python. `conda` is both a package manager (something that installs package on your system) and a virtual environment manager (something that can swap out different combinations of packages and binaries - virtual environments - easily).
+Conda is the _de facto_ standard package manager for data science-centric Python. `conda` is both a package manager (something that installs package on your system) and a virtual environment manager (something that can swap out different combinations of packages and binaries---virtual environments---easily).
 
-[Once conda is installed](https://docs.conda.io/en/latest/miniconda.html) - for instance, through miniconda - you can create a new environment and activate it like so:
+[Once conda is installed](https://docs.conda.io/en/latest/miniconda.html)---for instance, through miniconda---you can create a new environment and activate it like so:
 
 ```console
 ~/Documents/codebook$ conda create --name codebook python=3.8
@@ -148,7 +148,7 @@ To export a list of dependencies so you can easily recreate your environment, us
 (codebook) ~/Documents/codebook$ conda env export > environment.yml
 ```
 
-You can then commit `environment.yml` to document this environment. You can recreate this environment - when you move to a different computer, for example - using:
+You can then commit `environment.yml` to document this environment. You can recreate this environment---when you move to a different computer, for example---using:
 
 ```console
 $ conda env create --name recoveredenv --file environment.yml
@@ -175,7 +175,7 @@ dependencies:
 (cb) $ conda env update --prefix ./env --file environment.yml --prune
 ```
 
-You can [read more about creating reproducible environments in this Carpentries tutorial](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html). You can also [use the `environment.yml` file for this book's repo](https://github.com/patrickmineault/codebook/blob/main/environment.yml) as an inspiration.
+You can [read more about creating reproducible environments in the Carpentries tutorial on conda](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html). You can also [use the `environment.yml` file for this book's repo](https://github.com/patrickmineault/codebook/blob/main/environment.yml) as an inspiration.
 
 ## Create a project skeleton
 
@@ -183,7 +183,7 @@ You can [read more about creating reproducible environments in this Carpentries 
 This project skeleton combines ideas from [shablona](https://github.com/uwescience/shablona) and [good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510).
 ```
 
-In many different programming frameworks - Ruby on Rails, React, etc. - people use a highly consistent directory structure from project to project, which makes it seamless to jump back into an old project. In Python, things are much less standardized. I went into a deep rabbit hole looking at different directory structures suggested by different projects. Here's a consensus structure you can use as inspiration:
+Many different programming frameworks---Ruby on Rails, React, etc.---use a highly consistent directory structure from project to project, which makes it seamless to jump back into an old project. In Python, things are much less standardized. I went into a deep rabbit hole looking at different directory structures suggested by different projects. Here's a consensus structure you can use as inspiration:
 
 ```{code}
 |-- data
@@ -204,7 +204,7 @@ Let's look at each of these components in turn.
 - `data`: Where you put raw data for your project. You usually won't sync this to source control, unless you use very small, text-based datasets (< 10 MBs).
 - `docs`: Where you put documentation, including Markdown and reStructuredText (reST). Calling it `docs` makes it easy to publish documentation online through Github pages.
 - `results`: Where you put results, including checkpoints, hdf5 files, pickle files, as well as figures and tables. If these files are heavy, you won't put these under source control.
-- `scripts`: Where you put scripts - Python and bash alike - as well as .ipynb notebooks.
+- `scripts`: Where you put scripts---Python and bash alike---as well as .ipynb notebooks.
 - `src`: Where you put reusable Python modules for your project. This is the kind of python code that you `import`.
 - `tests`: Where you put tests for your code. We'll cover testing in a later lesson.
 
@@ -252,7 +252,7 @@ You need to tell Python where to look for your library code. You have two option
 
 ### Change your Python path (not recommended)
 
-You can put the `src` folder on your Python path. To do so, you can [append the `src` folder to the system variable PYTHONPATH when bash starts up (in ~/.bashrc)](https://bic-berkeley.github.io/psych-214-fall-2016/using_pythonpath.html). You might alternatively dynamically append to the system path from Python, via:
+You can put the `src` folder on your Python path. To do so, you can [append the `src` folder to the system variable PYTHONPATH when bash starts up (in `~/.bashrc`)](https://bic-berkeley.github.io/psych-214-fall-2016/using_pythonpath.html). You might alternatively dynamically append to the system path from Python, via:
 
 ```{code}
 import sys
@@ -261,7 +261,7 @@ sys.path.append('/home/me/Documents/codebook/src')
 from src.lib import my_very_good_function
 ```
 
-This pattern is also frequently used in jupyter notebooks - I often see it in code cells at the top of notebooks.
+This pattern is also frequently used in jupyter notebooks---I often see it in code cells at the top of notebooks.
 
 The disadvantage of changing the path is that it tends to be pretty brittle. You have to hard-code the name of folders in multiple places. If they move, you will break your package. It won't work on another computer with different paths, so it will make it hard to share your project with colleagues. Furthermore, dynamic paths don't play well with IDEs like [vscode](vscode) that can only look in the static environment, so you won't get automatic code completion.
 
@@ -298,7 +298,7 @@ Your files should now look like:
 |-- results
 |-- scripts
 |-- src
-|    -- __init__.py
+|   -- __init__.py
 |-- tests
  -- .gitignore
  -- environment.yml

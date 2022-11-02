@@ -13,7 +13,7 @@ Let's look at how we can use the suggested organization in a real project. We us
 
 ## What is Zipf's law, anyway?
 
-Zipf's law comes from quantitative linguistics. It states the most used word in a language is used twice as much as the second most used word, three times as much of the third, etc. It's an empirical law that holds in different languages and texts. There's a lot of interesting theories about why it should hold - [have a look at the Wikipedia article if you're curious](https://en.wikipedia.org/wiki/Zipf%27s_law). A generalized form of Zipf's law states that:
+Zipf's law comes from quantitative linguistics. It states the most used word in a language is used twice as much as the second most used word, three times as much of the third, etc. It's an empirical law that holds in different languages and texts. There's a lot of interesting theories about why it should hold: [have a look at the Wikipedia article if you're curious](https://en.wikipedia.org/wiki/Zipf%27s_law). A generalized form of Zipf's law states that:
 
 $$p(r) = \frac{1}{Cr^\alpha}$$
 
@@ -45,12 +45,12 @@ _Approach 1_. We could make each box a separate script with command line argumen
 The amount of cruft for command line interfaces could be reduced significantly using the [`click`](https://palletsprojects.com/p/click/) library.
 ```
 
-_Approach 2_. We could make each box a separate function, held in a module. Then, we would glue these functions together with a Python script. This Python script would have its own command line arguments, which we could set in a bash script. One merit of the approach is that it has less overhead - fewer files and cruft - than the first approach.
+_Approach 2_. We could make each box a separate function, held in a module. Then, we would glue these functions together with a Python script. This Python script would have its own command line arguments, which we could set in a bash script. One merit of the approach is that it has less overhead---fewer files and cruft---than the first approach.
 
-The tradeoff between these two approaches lies in the balance between generality and complexity. The first is a bit more flexible than the second. We can't run a single component of our analysis separately from the command line - we'll need to implement tests instead, which feel a little less intuitive. If we wanted to run an analysis of tens of thousands of books, parallelizing would also be easier with the first approach (e.g. [with `make`](https://www.gnu.org/software/make/manual/html_node/Parallel.html)).
+The tradeoff between these two approaches lies in the balance between generality and complexity. The first is a bit more flexible than the second. We can't run a single component of our analysis separately from the command line: we'll need to implement tests instead, which feel a little less intuitive. If we wanted to run an analysis of tens of thousands of books, parallelizing would also be easier with the first approach (e.g. [with `make`](https://www.gnu.org/software/make/manual/html_node/Parallel.html)).
 
 ```{margin}
-Different people - and sometimes the same person at different points in time - can disagree on the very best approach for a particular problem. In the end, what matters more is that the process through which the code was deliberate. If you put some thought into the organization - you're 90% of the way there.
+Different people---and sometimes the same person at different points in time---can disagree on the very best approach for a particular problem. In the end, what matters more is that the process through which the code was deliberate. If you put some thought into the organization: you're 90% of the way there.
 ```
 
 For this example, however, I have a slight preference for the second approach, so that's the one we will implement. Keeping the number of command line tools to create to one means we'll worry less about cruft and more about the computations. Let's take a look at the DAG again to see how we'll split the job:
@@ -108,7 +108,8 @@ We want to download three texts and put them in the `data` folder. Ideally, we'd
 
 ```{epigraph}
 The website is intended for human users only. Any perceived use of automated tools to access the Project Gutenberg website will result in a temporary or permanent block of your IP address.
--- [Project Gutenberg](https://www.gutenberg.org/policy/robot_access.html)
+
+---[Project Gutenberg](https://www.gutenberg.org/policy/robot_access.html)
 ```
 
 ```{caution}
@@ -264,7 +265,7 @@ We used the standard choice of matplotlib for the figures, although with the sty
 
 ## What did we learn?
 
-We saw how to organize an analysis according to the organization proposed in this handbook. We created a new project folder and module with the true neutral cookiecutter. If this analysis were part of a larger project - a paper or book chapter - we would re-use the same project folder, and add new pipelines and analyses to the project.
+We saw how to organize an analysis according to the organization proposed in this handbook. We created a new project folder and module with the true neutral cookiecutter. If this analysis were part of a larger project---a paper or book chapter---we would re-use the same project folder, and add new pipelines and analyses to the project.
 
 When I started this project, I was surprised by how many macro- and micro-decisions were needed to be made about how a pipeline works and how it's organized. A little bit of thinking ahead can avoid days of headaches later on. In this case, we chose a lightweight structure with one entry script calling module functions. These module functions are short and most of them are pure functions. Pure functions are easier to test. Indeed, we wrote unit tests to check that these functions worked as intended. That way, once the code was written and tests passed, it was crystal clear that the code worked as intended. We separated module code from glue code and plotting code. The resulting code is decoupled and easily maintainable.
 

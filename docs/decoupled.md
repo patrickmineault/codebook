@@ -19,10 +19,9 @@ exports:
 # Write decoupled code
 
 ```{epigraph}
-
 Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
 
--- Kernighan's law [^kernighan]
+---Kernighan's law [^kernighan]
 ```
 
 [^kernighan]: Brian Kernighan is a Canadian computer scientist who contributed to the development of Unix and co-authored the first book on the C programming language.
@@ -84,7 +83,7 @@ if cn == 3
 end
 ```
 
-The fact that it's Matlab code can help us to evaluate this code with a little bit of distance - a beginner's mindset, if you will. We see many different code smells:
+The fact that it's Matlab code can help us to evaluate this code with a little bit of distance: a beginner's mindset, if you will. We see many different code smells:
 
 - Parsing a magic integer (`cn`) from the name of a component
 - Using magic numbers (`USER_DATA{6}`, `classes==3`)
@@ -131,7 +130,7 @@ def add_two_nums(num0, num1):
 A stateless function doesn't have persistent state that carries over from call to call. A function which uses a global has state.
 ```
 
-This function is also _deterministic_, and _stateless_. This is the computational analogue of a mathematical function. You can think of them as unchanging black boxes: you put stuff in, computation happens, you get a result out, and neither the input or the black box gets changed. Because of this, pure functions are easy to reason about - they are the best kind of function. _If something that you write makes sense as a pure function_, write it that way.
+This function is also _deterministic_, and _stateless_. This is the computational analogue of a mathematical function. You can think of them as unchanging black boxes: you put stuff in, computation happens, you get a result out, and neither the input or the black box gets changed. Because of this, pure functions are easy to reason about: they are the best kind of function. _If something that you write makes sense as a pure function_, write it that way.
 
 ### Avoid side effects
 
@@ -158,7 +157,7 @@ def reversi(arr):
 You can reverse a list directly with `arr[::-1]`, but we don't use this primitive here for the sake of illustration.
 ```
 
-This function has a side effect: it modifies its argument `arr`. In Python and many other languages, arguments of complex types like lists, dictionaries and objects are passed by reference, which means they can be modified by the function. That breaks the normal data flow - the arguments are also returns!
+This function has a side effect: it modifies its argument `arr`. In Python and many other languages, arguments of complex types like lists, dictionaries and objects are passed by reference, which means they can be modified by the function. That breaks the normal data flow: the arguments are also returns!
 
 In the base Python library, a function which modifies its argument returns `None`. For instance, the function `sort` sorts its input argument, modifies it in place, and returns `None`. This function has a side effect, but it's obvious: if a function returns `None`, yet does useful work, it must have a side effect. When we both modify an argument and return it, we break this convention and confuse the Python reader. We can fix this by returning `None` in our function (good), or returning an entirely new list (better):
 
@@ -206,7 +205,7 @@ For instance:
 ```{epigraph}
 If it ain't broke, fix it till it is.
 
--- [Steve Porter](https://www.youtube.com/channel/UCfOrKQtC1tDfGf_fFVb8pYw)
+---[Steve Porter](https://www.youtube.com/channel/UCfOrKQtC1tDfGf_fFVb8pYw)
 ```
 
 Sometimes, code smells come from a lack of knowledge about the language. _Reading other people's code_, _pair programming_, and _reading programming books_ can help fine tune your knowledge of a programming language and get out of this local minimum.
@@ -223,7 +222,7 @@ _Using bespoke casting for string formatting_. Python has a great string formatt
 
 _Avoiding for loops_. You may have been taught to avoid for loops as much as possible in Matlab by vectorizing everything. However, this often sacrifices readability. Tricky indexing may look clever, but can be next to impossible to debug. Because Python has a different performance profile than Matlab, some Matlab-specific optimizations won't make your code faster. For instance, unlike Matlab vectors, Python lists are very cheap to grow. Appending to a list in a for loop and then turning that list into a numpy array in a single call has little performance overhead compared to preallocating.
 
-To be clear, modern Matlab doesn't have to be written this way: for instance, Matlab has a capable dataframe class. But a lot of people that come from Matlab still use old Matlab idioms. I have three more tutorials for you if you come from a Matlab background to ease your transition [[1]](https://xcorr.net/2020/02/21/transitioning-away-from-matlab/) [[2]](https://xcorr.net/2020/02/29/orienting-yourself-through-python/) [[3]](https://xcorr.net/2020/03/04/rewriting-matlab-code-in-python/).
+To be clear, modern Matlab doesn't have to be written this way: for instance, Matlab has a capable dataframe class. But a lot of people that come from Matlab still use old Matlab idioms. I've written three more tutorials to ease your transition away from Matlab, available on `xcorr.net` [[1]](https://xcorr.net/2020/02/21/transitioning-away-from-matlab/) [[2]](https://xcorr.net/2020/02/29/orienting-yourself-through-python/) [[3]](https://xcorr.net/2020/03/04/rewriting-matlab-code-in-python/).
 
 ## Put it all together
 
@@ -294,7 +293,7 @@ def count_words_in_file(in_file, out_file):
             f.write( k + ","+ str(counts[k]) + "\n")
 ```
 
-`count_words` is now a pure function - it takes in a string and returns a dict, and it has no side effects. This isolation can make it a little easier to notice bugs in the function. Indeed, if we run the code on a few test strings, we notice that this function does not work as expected.
+`count_words` is now a pure function: it takes in a string and returns a dict, and it has no side effects. This isolation can make it a little easier to notice bugs in the function. Indeed, if we run the code on a few test strings, we notice that this function does not work as expected.
 
 ```pycon
 >>> count_words("hello world")
@@ -370,7 +369,7 @@ def count_words(text):
     return counts
 ```
 
-However, the root of the problem is that there can be multiple space characters next to each other - this creates empty words. One solution is to replace multiple spaces with one space. With regular expressions, this can be done in one line:
+However, the root of the problem is that there can be multiple space characters next to each other: this creates empty words. One solution is to replace multiple spaces with one space. With regular expressions, this can be done in one line:
 
 ```{code-cell}
 import collections
@@ -449,7 +448,7 @@ It's not perfect, but it's an improvement over the original in terms of legibili
 
 Decoupled code is something we all strive towards. Yet, code often has a natural tendency to become more and more tightly wound over time until it becomes an unmanageable mess. The strategies in this chapter will help you to identify code smells and correct them.
 
-Pure functions are easier to reason about, because they're stateless - that saves your working memory when you're reading code. Code that follows Python's idioms is also easier on your working memory: when you see a line of code that is a familiar pattern, you can see the entire line as one chunk rather than multiple disparate bits. That takes one working memory slot rather than several.
+Pure functions are easier to reason about, because they're stateless. This preserves your working memory when you're reading code. Code that follows Python's idioms is also easier on your working memory: when you see a line of code that is a familiar pattern, you can see the entire line as one chunk rather than multiple disparate bits. That takes one working memory slot rather than several.
 
 Changing existing code is not without its dangers, however. Perhaps we will make a mistake and introduce a bug in our code! How can we check that our improved code still does the correct thing? We'll cover this in the next chapter on testing.
 

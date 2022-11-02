@@ -11,7 +11,7 @@ exports:
 
 This handbook covers practices and tools from big to small. We'll discuss how to write and organize modular code, how to write docs, how to make your code robust. We'll finally reveal the correct number of spaces to use to indent code [^four]. At the end of the main lessons, we'll go through an example project step-by-step.
 
-This roadmap shows some of the concepts we'll cover in the book. Take stock of where you are now. Come back to this figure after you've read parts of this book - you'll be surprised how much you can learn in a few hours!
+This roadmap shows some of the concepts we'll cover in the book. Take stock of where you are now. Come back to this figure after you've read parts of this book: you'll be surprised how much you can learn in a few hours!
 
 [^four]: [Four. Four is the correct number](https://www.python.org/dev/peps/pep-0008/).
 
@@ -20,7 +20,7 @@ This roadmap shows some of the concepts we'll cover in the book. Take stock of w
 figclass: boxed
 width: 100%
 ---
-Some concepts we'll cover in this book. I've highlighted in green and blue different concepts which are relevant to short-term and to long-term memory, respectively - we'll discuss what that means in the next section. How many concepts are you familiar with now? How many do you know well?
+Some concepts we'll cover in this book. I've highlighted in green and blue different concepts which are relevant to short-term and to long-term memory, respectively: we'll discuss what that means in the next section. How many concepts are you familiar with now? How many do you know well?
 ```
 
 ## Conventions
@@ -81,7 +81,7 @@ Julia Evans [has a lovely zine](https://wizardzines.com/comics/attitude-matters/
 
 Much of that frustration comes from a mismatch between what you want to accomplish (a lot) and what you have the ability to accomplish (not as much as you'd like). Programming instruction often emphasizes _exploration_, embracing errors as learning opportunities, and encouraging you to let your imagination run free. This theory of change implies that you will learn a lot by simply programming a lot every day. You might then feel guilty and inadequate when you're not as proficient as you want after several years of daily programming.
 
-In fact, unstructured exploration is a very inefficient way to learn a complex skill like programming. It's like expecting a student to rediscover calculus by themselves after teaching them the rudiments of algebra! Research shows that _structured instruction_ - like the one in this book - is far more effective at teaching programming skills [^felienne]. You're taking the right step by reading this book!
+In fact, unstructured exploration is a very inefficient way to learn a complex skill like programming. It's like expecting a student to rediscover calculus by themselves after teaching them the rudiments of algebra! Research shows that _structured instruction_---like the one in this book---is far more effective at teaching programming skills [^felienne]. You're taking the right step by reading this book!
 
 [^felienne]: Felienne Hermans, [The Programmer's Brain](https://www.manning.com/books/the-programmers-brain) (2021).
 

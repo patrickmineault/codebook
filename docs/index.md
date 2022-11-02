@@ -16,7 +16,7 @@ Did I hit a nerve? Yes?! Then you're in for a treat! This book will help you get
 ```{epigraph}
 Is my code fast? No. But is it well documented? No. But does it work? Also no.
 
--- [@KyleMorgenstein](https://twitter.com/KyleMorgenstein)
+---[@KyleMorgenstein](https://twitter.com/KyleMorgenstein)
 ```
 
 ## Prerequisites
@@ -27,11 +27,11 @@ I've tried to write this book in a progressive manner: some content is targeted 
 - **Git & Github**: a lot of the practices introduced here will require you to change your code, which could cause existing functionality to break. You might even accidentally delete something important! Mastering git and github means you will have a time machine for your code, so you can revert to an earlier state. [There's a great intro to git for beginners from software carpentries](https://swcarpentry.github.io/git-novice/).
 - **The command line**: You will need to run some commands on the command line to implement some of the advice in this book. I'm going to assume that you have some familiarity with running commands from a Unix-style shell (e.g. bash). [There's a great intro to the unix shell from software carpentries](http://swcarpentry.github.io/shell-novice/). If you're using Windows, you will still be able to run many tools from the Windows command prompt. Long term, your life will be easier if you [install the Windows Subsystem for Linux (WSL)](wsl) which will give you access to a Unix-style shell.
 
-Some of the examples I use are neuroscience-inspired - but neuroscience background is absolutely not a requirement. Appreciation for unicorns <img height='24' width="24" src='figures/unicorn.png' alt='unicorns' style="vertical-align:top"> is a big plus.
+Some of the examples I use are neuroscience-inspired---but neuroscience background is absolutely not a requirement. Appreciation for unicorns <img height='24' width="24" src='figures/unicorn.png' alt='unicorns' style="vertical-align:top"> is a big plus.
 
 ## Why did I make this?
 
-I'm [Patrick Mineault](https://xcorr.net) <img height='1' width="1" src='figures/twitter.svg' alt='Twitter' style="width:24px; display:none" />. I did my PhD in computational neuroscience at McGill University, in Montreal. I wrote a lot of not very good code, mostly in Matlab. One time, my code was in a non-working state for an entire month - I would furiously type on the keyboard all day in the hopes it would eventually work, and it didn't. It made me sad. But I managed to graduate. Then I did a postdoc. More of the same.
+I'm [Patrick Mineault](https://xcorr.net) <img height='1' width="1" src='figures/twitter.svg' alt='Twitter' style="width:24px; display:none" />. I did my PhD in computational neuroscience at McGill University, in Montreal. I wrote a lot of not very good code, mostly in Matlab. One time, my code was in a non-working state for an entire month---I would furiously type on the keyboard all day in the hopes it would eventually work, and it didn't. It made me sad. But I managed to graduate. Then I did a postdoc. More of the same.
 
 Eventually, I decided to properly study CS. I studied data structures, algorithms and software engineering practices, and I got a big-boy job as a software engineer at Google in California. It was then that I learned the error of my ways. I had lost time during my research days because I didn't know how to organize and write code that didn't self-destruct out of spite. But this is fixable! With knowledge!
 
@@ -53,6 +53,6 @@ Patrick J Mineault & The Good Research Code Handbook Community (2021). _The Good
 
 ## Contact me
 
-I help businesses and labs implement the practices outlined in this book through my consulting firm, [xcorr consulting](https://xcorr.dev). Please get in touch at [hello@xcorr.dev](mailto:hello@xcorr.dev) to find out how we can work together. I'm also available for speaking engagements and collabs – reach out to the same address for that.
+I help businesses and labs implement the practices outlined in this book through my consulting firm, [xcorr consulting](https://xcorr.dev). Please get in touch at [hello@xcorr.dev](mailto:hello@xcorr.dev) to find out how we can work together. I'm also available for speaking engagements and collabs---reach out to the same address for that.
 
 <a href="https://github.com/patrickmineault/codebook/issues">Issues with the handbook can be reported on Github</a>. <a href='https://twitter.com/patrickmineault'>I'm also active on Twitter</a>.

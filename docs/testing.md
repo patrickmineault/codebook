@@ -23,7 +23,7 @@ exports:
 ```{epigraph}
 Most scientists who write software constantly test their code. That is, if you are a scientist writing software, I am sure that you have tried to see how well your code works by running every new function you write, examining the inputs and the outputs of the function, to see if the code runs properly (without error), and to see whether the results make sense. Automated code testing takes this informal practice, makes it formal, and automates it, so that you can make sure that your code does what it is supposed to do, even as you go about making changes around it.
 
---[Ariel Rokem](https://github.com/uwescience/shablona)
+---[Ariel Rokem](https://github.com/uwescience/shablona)
 ```
 
 Automated testing is one of the most powerful techniques that professional programmers use to make code robust. Having never used testing until I went to industry, it changed the way I write code for the better.
@@ -38,7 +38,7 @@ When you run an experiment and the results of the analysis don't make sense, you
 - your model is inappropriate for the data
 - the statistical test you used is inappropriate for the data distribution
 
-Testing can help you maintain your sanity by decreasing the surface of things that might be wrong with your experiment. Good code yells loudly when something goes wrong. Imagine that you had an experimental setup that alerted you when you had a ground loop, or that would sound off when you use the wrong reagent, or that would text you when it's about to overheat - how many hours or days would you save?
+Testing can help you maintain your sanity by decreasing the surface of things that might be wrong with your experiment. Good code yells loudly when something goes wrong. Imagine that you had an experimental setup that alerted you when you had a ground loop, or that would sound off when you use the wrong reagent, or that would text you when it's about to overheat: how many hours or days would you save?
 
 ## Unit testing by example
 
@@ -83,11 +83,11 @@ You could run this code on the command line with different inputs and check that
 You could also run the code with bad inputs, to check whether the code returns meaningful errors. For example, the sequence is undefined for negative numbers or non-integers.
 ````
 
-Informal testing can be done in an interactive computing environment, like the `ipython` REPL or a jupyter notebook. Run the code, check the output, repeat until the code works right -- it's a workflow you've probably used as well.
+Informal testing can be done in an interactive computing environment, like the `ipython` REPL or a jupyter notebook. Run the code, check the output, repeat until the code works right---it's a workflow you've probably used as well.
 
 ### Lightweight formal tests with `assert`
 
-One issue with informal tests is that they often have a short shelf life. Once the code is written and informal testing is over, you don't have a record of that testing - you might even discard the tests you wrote in jupyter! We can make our tests stick with `assert`.
+One issue with informal tests is that they often have a short shelf life. Once the code is written and informal testing is over, you don't have a record of that testing. You might even discard the tests you wrote in jupyter! We can make our tests stick with `assert`.
 
 `assert` is a special statement in Python that throws an error whenever the statement is false. For instance,
 
@@ -152,7 +152,7 @@ While the first few tests pass, the last one hangs for a long time. What's going
 
 ### Refactoring with confidence with tests
 
-Our `fib(N)` function hangs for a large value of `N` because it spawns a lot of repeated computation. `fib(N)` calls both `fib(N-1)` and `fib(N-2)`. In turn, `fib(N-1)` calls `fib` twice, and so on and so forth. Therefore, the time complexity of this function scales exponentially with $2^N$ - it's very slow.
+Our `fib(N)` function hangs for a large value of `N` because it spawns a lot of repeated computation. `fib(N)` calls both `fib(N-1)` and `fib(N-2)`. In turn, `fib(N-1)` calls `fib` twice, and so on and so forth. Therefore, the time complexity of this function scales exponentially as $O(2^N)$: it's very slow.
 
 We can re-implement this function so that it keeps a record of previously computed values. One straightforward way of doing this is with a global cache. **We keep our previously implemented tests**, and rewrite the function:
 
@@ -285,7 +285,7 @@ FAILED test_fib.py::test_raises - RecursionError: maximum recursion depth exceed
 =========================== 1 failed, 2 passed in 1.18s ========================
 ```
 
-Notice how informative the output of pytest is compared to our homegrown test suite. `pytest` informs us that two of our tests passed - `test_typical` and `test_edge_case` - while the last one failed. Calling our `fib` function with a negative argument or a non-integer argument will make the function call itself recursively with negative numbers - it never stops! Hence, Python eventually will generate a `RecursionError`. However, our tests are expecting a `NotImplementedError` instead! Our test correctly detected that the code has this odd behavior. We can fix it up like so:
+Notice how informative the output of pytest is compared to our homegrown test suite. `pytest` informs us that two of our tests passed---`test_typical` and `test_edge_case`---while the last one failed. Calling our `fib` function with a negative argument or a non-integer argument will make the function call itself recursively with negative numbers - it never stops! Hence, Python eventually will generate a `RecursionError`. However, our tests are expecting a `NotImplementedError` instead! Our test correctly detected that the code has this odd behavior. We can fix it up like so:
 
 ```{code-cell}
 def fib(x):

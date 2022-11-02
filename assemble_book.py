@@ -34,7 +34,7 @@ template = r"""
 
 % Listing code
 \usepackage{courier}
-\usepackage{listings}
+\usepackage[formats]{listings}
 \lstdefinestyle{mystyle}{
     basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,
@@ -49,6 +49,28 @@ template = r"""
     showtabs=false,
     tabsize=2
 }
+
+\lstdefineformat{Python}{~=\( \sim \)}
+
+
+% Blockquotes
+\usepackage[tikz]{bclogo}
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{calc,shapes}
+
+
+\makeatletter
+\NewTColorBox{quotebox}{+O{}+m}{%
+  enhanced,
+  sharp corners,
+  frame hidden,
+  % borderline west={\kvtcb@left@rule}{-2pt}{black!50!white},
+  borderline west={4pt}{0pt}{black!30!white},
+  colback = white,
+  left=15pt,
+  #1,
+}
+\makeatother
 
 \lstset{style=mystyle}
 
@@ -70,13 +92,19 @@ template = r"""
 
 \tableofcontents
 
+\part{Introduction}
+
 [-FRONTMATTER-]
 
 \mainmatter
 
+\part{Lessons}
+
 [-CONTENT-]
 
 \backmatter
+
+\part{Extras}
 
 [-BACKMATTER-]
 
@@ -111,7 +139,7 @@ def clean_input(md):
 
 
 def process_one(name):
-    with open(f"{name}.md", "r") as f:
+    with open(f"docs/{name}.md", "r") as f:
         md = f.read()
 
     md = clean_input(md)
@@ -145,18 +173,28 @@ def clean_output(book):
                 )
             )
             in_code = True
-        elif "\end{verbatim}" in line:
+        elif r"\end{verbatim}" in line:
             lines.append(line.replace(r"\end{verbatim}", r"\end{lstlisting}"))
             in_code = False
+        elif r"\begin{quote}" in line:
+            lines.append(r"\begin{quotebox}{quote}")
+        elif r"\end{quote}" in line:
+            lines.append(r"\end{quotebox}")
         else:
             if in_code:
                 lines.append(
                     line.replace("- -", "--")
                     .replace(" - ", "-")
-                    .replace("true -neutral -cookiecutter", "true-neural-cookiecutter")
+                    .replace("true -neutral -cookiecutter", "true-neutral-cookiecutter")
+                    .replace(" -forge", "-forge")
+                    .replace("| --", "|--")
+                    .replace("egg -info", "egg-info")
+                    .replace("sphinx -quickstart", "sphinx-quickstart")
+                    .replace("non -integer", "non-integer")
+                    .replace("codebook -testbucket", "codebook-testbucket")
                 )
             else:
-                lines.append(line)
+                lines.append(line.replace("testing.md", "testing"))
 
     return "\n".join(lines)
 
