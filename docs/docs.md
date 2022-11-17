@@ -185,7 +185,7 @@ def count_line(f, line):
     """
     num_instances = 0
     for l in f:
-        if l.strip() == word:
+        if l.strip() == line:
             num_instances += 1
 
     return num_instances
