@@ -176,7 +176,7 @@ def reversi(arr):
 def reversi(arr):
     """Reverses a list."""
     reved = []
-    for i in reversed(range(len(arr)):
+    for i in reversed(range(len(arr))):
         reved.append(arr[i])
     return reved
 ```
@@ -190,7 +190,7 @@ def reversi(arr):
 ```
 ````
 
-````{tabbed} Even better code version using builtin function
+````{tabbed} Even better code version using built-in functions
 ```
 def reversi(arr):
     """Reverses a list."""
