@@ -25,3 +25,15 @@ clean:
 
 deploy:
 	netlify deploy
+
+.PHONY: clean build deploy develop book sphinx-book
+
+help:
+	@echo "Please use \`make <target>' where <target> is one of"
+	@echo "  clean       to remove all build, test, coverage and Python artifacts"
+	@echo "  build       to build the book to HTML"
+	@echo "  deploy      to deploy the book to netlify"
+	@echo "  develop     to build the book and watch for changes"
+	@echo "  book        to build the book in PDF via manual pipeline"
+	@echo "  sphinx-book to build the book to PDF via sphinx-book pipeline"
+	@echo "  help        to show this message"
