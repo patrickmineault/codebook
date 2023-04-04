@@ -13,7 +13,7 @@ exports:
 
 # Set up your project
 
-Setting up a organized project will help you remain productive as your project grows. The broad steps involved are:
+Setting up an organized project will help you remain productive as your project grows. The broad steps involved are:
 
 1. Pick a name and create a folder for your project
 2. Initialize a git repository and sync to Github
@@ -29,7 +29,7 @@ I will present most of the project setup in the terminal, but you can do many of
 
 ## Pick a name and create a folder for your project
 
-When you start a project, you will need to decide how to structure it. As an academic, a project will tend to naturally map to a paper. Therefore, **one project = one paper = one folder = one git repository** is a generally a good default structure.
+When you start a project, you will need to decide how to structure it. As an academic, a project will tend to naturally map to a paper. Therefore, **one project = one paper = one folder = one git repository** is generally a good default structure.
 
 ```{margin}
 You might want to create extra standalone projects for tools you re-use across different papers.
@@ -74,7 +74,7 @@ How often do you think you should commit to git?
 Depending on your pace, you should aim to commit your code from *a few times a day* to *a few times per week*. Don't wait until the project is almost finished before you start to commit.
 ```
 
-The general rule of thumb is that one commit should represent a unit of related work. For example, if you made changes in 3 files to add a new functionality, that should be _one_ commit. Splitting the commit into 3 would lose the relationship between the changes; combining these changes with 100 other changed files would make it very hard to track down what changed. Try to make your git commit messages meaningful, as it will help you keep track down bugs several months down the line.
+The general rule of thumb is that one commit should represent a unit of related work. For example, if you made changes in 3 files to add a new functionality, that should be _one_ commit. Splitting the commit into 3 would lose the relationship between the changes; combining these changes with 100 other changed files would make it very hard to track down what changed. Try to make your git commit messages meaningful, as it will help you track down bugs several months down the line.
 
 If you don't use git very often, you might not like the idea of committing to git daily or multiple times per day. The git command line can feel like a formidable adversary; GUIs can ease you into it. I used to use the git command line exclusively. These days, I tend to prefer [the git panel in VSCode](vscode).
 
@@ -135,7 +135,7 @@ For pip:
 
 * pip is just a package manager
 * pip only installs Python packages
-* pip can install every package on PyPI in additional to local packages
+* pip can install every package on PyPI in addition to local packages
 
 `conda` tracks which packages are pip installed and will include a special section in `environment.yml` for pip packages. [However, installing pip packages may negatively affect conda's ability to install conda packages correctly after the first pip install](https://www.anaconda.com/blog/using-pip-in-a-conda-environment). Therefore, people generally recommend installing **big conda packages first**, then installing **small pip packages second**.
 ```
