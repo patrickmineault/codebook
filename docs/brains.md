@@ -90,7 +90,7 @@ Future you will have forgotten 90% of that process. Code that sticks to conventi
 ## Discussion
 
 ```{epigraph}
-Simple is better than complicated. Complicated is better than complex.
+Simple is better than complex. Complex is better than complicated.
 
 ---The Zen of Python
 ```
