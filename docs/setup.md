@@ -102,23 +102,23 @@ Python environments can be a real pain. From [xkcd.com](https://xkcd.com/1987/) 
 
 Many novices starting out in Python use one big monolithic Python environment. Every package is installed in that one environment. The problem is that this environment is not documented anywhere. Hence, if they need to move to another computer, or they need to recreate the environment from scratch several months later, they're in for several hours or days of frustration.
 
-The solution is to use a _virtual environment_ to manage dependencies. Each virtual environment specifies which versions of software and packages a project uses. The specs can be different for different projects, and each virtual environment can be easily swapped, created, duplicated or destroyed. You can use software like `conda`, `pipenv`, `poetry`, `venv`, `virtualenv`, `asdf` or `docker`---among others---to manage dependencies. Which one you prefer is a matter of personal taste and [countless internet feuds](https://twitter.com/patrickmineault/status/1429560804869873664?s=20). Here I present the `conda` workflow, which is particularly popular among data scientists and researchers.
+The solution is to use a _virtual environment_ to manage dependencies. Each virtual environment specifies which versions of software and packages a project uses. The specs can be different for different projects, and each virtual environment can be easily swapped, created, duplicated or destroyed. You can use software like `conda/mamba`, `pipenv`, `poetry`, `venv`, `virtualenv`, `asdf` or `docker`---among others---to manage dependencies. Which one you prefer is a matter of personal taste and [countless internet feuds](https://twitter.com/patrickmineault/status/1429560804869873664?s=20). Here I present the `conda/mamba` workflow, which is particularly popular among data scientists and researchers.
 
-### Conda
+### Conda/Mamba
 
-Conda is the _de facto_ standard package manager for data science-centric Python. `conda` is both a package manager (something that installs package on your system) and a virtual environment manager (something that can swap out different combinations of packages and binaries---virtual environments---easily).
+Conda is the _de facto_ standard package manager for data science-centric Python. `conda` is both a package manager (something that installs package on your system) and a virtual environment manager (something that can swap out different combinations of packages and binaries---virtual environments---easily). [Mamba](https://mamba.readthedocs.io/en/latest/index.html) is a much faster drop-in replacement for conda, which for the vast majority of people will be preferable.
 
-[Once conda is installed](https://docs.conda.io/en/latest/miniconda.html)---for instance, through miniconda---you can create a new environment and activate it like so:
+[Once conda and mamba are installed](https://github.com/conda-forge/miniforge)---for instance, through miniforge---you can create a new environment and activate it like so:
 
 ```console
-~/Documents/codebook$ conda create --name codebook python=3.8
-~/Documents/codebook$ conda activate codebook
+~/Documents/codebook$ mamba create --name codebook python=3.8
+~/Documents/codebook$ mamba activate codebook
 ```
 
-From this point on, you can install packages through the conda installer like so:
+From this point on, you can install packages through the mamba installer like so:
 
 ```console
-(codebook) ~/Documents/codebook$ conda install pandas numpy scipy matplotlib seaborn
+(codebook) ~/Documents/codebook$ mamba install pandas numpy scipy matplotlib seaborn
 ```
 
 Now, you might ask yourself, can I use both pip and conda together?
@@ -137,7 +137,7 @@ For pip:
 * pip only installs Python packages
 * pip can install every package on PyPI in addition to local packages
 
-`conda` tracks which packages are pip installed and will include a special section in `environment.yml` for pip packages. [However, installing pip packages may negatively affect conda's ability to install conda packages correctly after the first pip install](https://www.anaconda.com/blog/using-pip-in-a-conda-environment). Therefore, people generally recommend installing **big conda packages first**, then installing **small pip packages second**.
+`conda/mamba` tracks which packages are pip installed and will include a special section in `environment.yml` for pip packages. [However, installing pip packages may negatively affect conda's ability to install conda packages correctly after the first pip install](https://www.anaconda.com/blog/using-pip-in-a-conda-environment). Therefore, people generally recommend installing **big conda packages first**, then installing **small pip packages second**.
 ```
 
 ### Export your environment
@@ -145,13 +145,13 @@ For pip:
 To export a list of dependencies so you can easily recreate your environment, use the `export env` command:
 
 ```console
-(codebook) ~/Documents/codebook$ conda env export > environment.yml
+(codebook) ~/Documents/codebook$ mamba env export > environment.yml
 ```
 
 You can then commit `environment.yml` to document this environment. You can recreate this environment---when you move to a different computer, for example---using:
 
 ```console
-$ conda env create --name recoveredenv --file environment.yml
+$ mamba env create --name recoveredenv --file environment.yml
 ```
 
 This `export` method will create a well-documented, perfectly _reproducible_ conda environment on your OS. However, it will document low-level, OS-specific packages, which means it won't be _portable_ to a different OS. If you need portability, you can instead write an `environment.yml` file manually. Here's an example file:
@@ -172,7 +172,7 @@ dependencies:
 `pip` and `conda` packages are documented separately. Note that `pip` package versions use `==` to identify the package number, while `conda` packages use `=`. If you need to add dependencies to your project, change the `environment.yml` file, then run this command to update your conda environment:
 
 ```
-(cb) $ conda env update --prefix ./env --file environment.yml --prune
+(cb) $ mamba env update --prefix ./env --file environment.yml --prune
 ```
 
 You can [read more about creating reproducible environments in the Carpentries tutorial on conda](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html). You can also [use the `environment.yml` file for this book's repo](https://github.com/patrickmineault/codebook/blob/main/environment.yml) as an inspiration.
@@ -230,7 +230,7 @@ data
 A `README.md` should have already been created during the initial sync to Github. You can either create an `environment.yml` file manually or export an exhaustive list of the packages you are currently using:
 
 ```console
-$ conda env export > environment.yml
+$ mamba env export > environment.yml
 ```
 
 ## Install a project package
